@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 
 export default function Quests() {
-  const [posts, setPosts] = useState([]);
-  const baseUrl = "http://localhost:3030/jsonstore/blog";
+  const [quests, setQuests] = useState([]);
+  const baseUrl = "http://localhost:3030/jsonstore/quests";
 
   useEffect(() => {
-    fetch(baseUrl + "/posts")
+    fetch(baseUrl + "/quests")
       .then((res) => res.json())
-      .then((data) => setPosts(Object.values(data)));
+      .then((data) => {
+        console.log(data);
+
+        return setQuests(Object.values(data));
+      });
   }, []);
 
   return (
@@ -18,11 +22,11 @@ export default function Quests() {
         </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {posts.map((post) => (
-            <div key={post.id} className="group relative">
+          {quests.map((quest) => (
+            <div key={quest._id} className="group relative">
               <img
                 alt="plant"
-                src="https://images.unsplash.com/photo-1563127673-b35a42ef206c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={quest.img}
                 className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
               />
               <div className="mt-4 flex justify-between">
@@ -30,12 +34,14 @@ export default function Quests() {
                   <h3 className="text-sm text-gray-700">
                     <a href="https://images.unsplash.com/photo-1563127673-b35a42ef206c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                       <span aria-hidden="true" className="absolute inset-0" />
-                      {post.title}
+                      {quest.name}
                     </a>
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">Black</p>
+                  <p className="mt-1 text-sm text-gray-500">
+                    Likes: {quest.likes}
+                  </p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">35</p>
+                <p className="text-sm font-medium text-gray-900">Liked</p>
               </div>
             </div>
           ))}
