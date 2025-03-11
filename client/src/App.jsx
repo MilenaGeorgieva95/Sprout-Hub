@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Gallery from "./components/Gallery/Gallery";
 import Forum from "./components/Forum/Forum";
+import Quests from "./components/Quests/Quests";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/quests" element={<Quests />} />
       </Routes>
     </div>
   );
