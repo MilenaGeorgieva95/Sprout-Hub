@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 export default function Quests() {
   const [quests, setQuests] = useState([]);
@@ -18,7 +19,7 @@ export default function Quests() {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-          Customers also purchased
+          Quests
         </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -32,16 +33,24 @@ export default function Quests() {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700">
-                    <a href="https://images.unsplash.com/photo-1563127673-b35a42ef206c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <Link to="/quests/details">
                       <span aria-hidden="true" className="absolute inset-0" />
                       {quest.name}
-                    </a>
+                    </Link>
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    Likes: {quest.likes}
+                    Rating: {quest.likes}
                   </p>
                 </div>
                 <p className="text-sm font-medium text-gray-900">Liked</p>
+              </div>
+              <div>
+                <span>
+                  <Link to="quests/details">Details</Link>
+                </span>
+                <span>
+                  <Link to="suests/like">Like</Link>
+                </span>
               </div>
             </div>
           ))}
