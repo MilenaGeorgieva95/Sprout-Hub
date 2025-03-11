@@ -1,0 +1,78 @@
+{
+  "quests": {
+    "01": {
+      "_id": "01",
+      "name": "The Soil Science Experiment",
+      "img": "/images/nikola-jovanovic-OBok3F8buKY-unsplash.jpg",
+      "likes": 2
+    },
+    "02": {
+      "_id": "02",
+      "name": "The Seed Starter",
+      "img": "/images/almani-qhizq_V876M-unsplash.jpg",
+      "likes": 1
+    },
+    "03": {
+      "_id": "03",
+      "name": "The Herb Garden Hero",
+      "img": "/images/annie-spratt-PtDXMYgy418-unsplash.jpg",
+      "likes": 0
+    }
+  },
+  "details": {
+    "01": {
+      "_id": "01",
+      "name": "The Soil Science Experiment",
+      "img": "/images/nikola-jovanovic-OBok3F8buKY-unsplash.jpg",
+      "steps": [
+        "Collect Soil Samples: Dig small samples from different areas of your garden to get a representative sample.",
+        "Test Soil pH: Use a soil pH test kit to measure the acidity or alkalinity of your soil.",
+        "Analyze the Texture: Take a small amount of soil, moisten it, and try squeezing it into a ball. If it falls apart, it's sandy; if it holds, it’s clayey or loamy.",
+        "Amend the Soil: Depending on the pH and texture, add compost, peat moss, or lime to adjust the soil quality.",
+        "Test Again: After a few weeks, retest the soil to track improvements."
+      ],
+      "tips": [
+        "Use organic compost to enrich your soil and improve drainage.",
+        "Soil testing kits are inexpensive and easy to use, making it simple to adjust your soil as needed.",
+        "Adding mulch on top of soil can help retain moisture and reduce weeds."
+      ]
+    },
+    "02": {
+      "_id": "02",
+      "name": "The Seed Starter",
+      "img": "/images/zoe-richardson-tbiV-yc903g-unsplash.jpg",
+      "description": "In this quest, you'll start your gardening journey by planting seeds indoors and nurturing them until they sprout. This is the first step in creating a thriving garden, and it's an essential skill to learn as a beginner gardener.",
+      "steps": [
+        "Choose Your Seeds: Pick a few easy-to-grow plants like herbs (basil, parsley), flowers (sunflowers, marigolds), or vegetables (tomatoes, lettuce).",
+        "Prepare Your Containers: Get small pots or seed trays. Fill them with a light, well-draining potting mix.",
+        "Plant the Seeds: Follow the seed packet instructions for depth and spacing. Gently press the seeds into the soil.",
+        "Water Gently: Water the seeds lightly, keeping the soil moist but not soaking. Use a spray bottle for even moisture distribution.",
+        "Find the Right Spot: Place the containers in a warm, sunny area to encourage germination.",
+        "Monitor Growth: Watch for your seeds to sprout, and keep an eye on their moisture levels"
+      ],
+      "tips": [
+        "Keep the soil moist but not soggy to avoid root rot.",
+        "If possible, use a humidity dome or plastic wrap to keep the moisture in.",
+        "Label your pots so you know what's planted where."
+      ]
+    },
+    "03": {
+      "_id": "03",
+      "name": "The Herb Garden Hero",
+      "img": "/images/annie-spratt-PtDXMYgy418-unsplash.jpg",
+      "description": "Herb gardens are perfect for novice gardeners because they're low-maintenance and can thrive in small spaces. In this quest, you'll plant and care for a small herb garden to spice up your cooking and your garden.",
+      "steps": [
+        "Choose Your Herbs: Pick herbs like basil, mint, thyme, or rosemary. These are easy to grow and useful in cooking.",
+        "Select a Location: Herbs need at least 6 hours of sunlight a day, so choose a sunny spot, such as a windowsill or a small outdoor garden.",
+        "Prepare the Soil: Use well-draining soil in containers or raised beds. Herbs don't like to sit in water, so make sure the containers have drainage holes.",
+        "Plant the Herbs: Space the herbs according to the instructions on the seed packets or tags. Don't overcrowd them.",
+        "Water and Maintain: Water the herbs regularly but allow the soil to dry out between waterings. Trim leaves as needed to promote growth."
+      ],
+      "tips": [
+        "Keep herbs in a sunny spot and avoid overwatering, which can lead to root rot.",
+        "Some herbs, like mint, are invasive, so plant them in containers to prevent them from taking over your garden.",
+        "Regularly harvest herbs to encourage new growth and prevent them from flowering too early."
+      ]
+    }
+  }
+}
