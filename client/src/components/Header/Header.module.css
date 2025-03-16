@@ -4,13 +4,14 @@
 }
 
 .navIconContainer {
-  padding: 6px 8px;
+  padding: 12px 12px;
   margin: 2px 8px;
-  border-radius: 10px 5px 10px 5px;
+  border-radius: 19px 5px;
 }
 
 .navIcon {
-  height: 25px;
+  height: 27px;
+  width: 30px;
   fill: #ffff;
 }
 
@@ -20,4 +21,8 @@
 
 .navIcon:hover {
   fill: #006639;
+}
+.mainNav {
+  border-radius: 50%;
+  padding: 12px;
 }
