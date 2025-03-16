@@ -117,9 +117,11 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             to="auth/login"
-            className="text-sm/6 font-semibold text-gray-900"
+            className={
+              "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
+            }
           >
-            Log in <span aria-hidden="true">&rarr;</span>
+            SIGN IN / REGISTER
           </Link>
         </div>
       </nav>
@@ -129,15 +131,22 @@ export default function Header() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel
+          className={
+            "fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 " +
+            styles.burgerNavContainer
+          }
+        >
           <div className="flex items-center justify-between">
-            <Link to="#" className="-m-1.5 p-1.5">
+            <Link to="/" className={"-m-1.5 p-1.5 " + styles.mainNav}>
               <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="/icons/tree_6089640.png"
-                className="h-8 w-auto"
-              />
+              <svg
+                className={"fa-solid fa-carrot " + styles.navIconPop}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path d="M346.7 6C337.6 17 320 42.3 320 72c0 40 15.3 55.3 40 80s40 40 80 40c29.7 0 55-17.6 66-26.7c4-3.3 6-8.2 6-13.3s-2-10-6-13.2c-11.4-9.1-38.3-26.8-74-26.8c-32 0-40 8-40 8s8-8 8-40c0-35.7-17.7-62.6-26.8-74C370 2 365.1 0 360 0s-10 2-13.3 6zM244.6 136c-40 0-77.1 18.1-101.7 48.2l60.5 60.5c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0l-55.3-55.3 0 .1L2.2 477.9C-2 487-.1 497.8 7 505s17.9 9 27.1 4.8l134.7-62.4-52.1-52.1c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L199.7 433l100.2-46.4c46.4-21.5 76.2-68 76.2-119.2C376 194.8 317.2 136 244.6 136z" />
+              </svg>
             </Link>
             <button
               type="button"
@@ -166,7 +175,7 @@ export default function Header() {
                   to="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Log in
+                  SIGN IN / REGISTER
                 </Link>
               </div>
             </div>

@@ -32,3 +32,23 @@
   width: 25px;
   fill: #ffff;
 }
+
+.authBtn {
+  margin-right: 25px;
+  color: #ffff;
+  border: 2px solid #ffff;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.navIconPop {
+  height: 27px;
+  width: 30px;
+  fill: #127f4a;
+}
+.navIconPop:hover {
+  fill: #006639;
+}
+.burgerNavContainer a {
+  color: #127f4a;
+}
