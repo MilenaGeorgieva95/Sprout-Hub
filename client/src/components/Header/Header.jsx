@@ -21,10 +21,12 @@ export default function Header() {
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Global"
-        className="flex items-center justify-between p-6 lg:px-8"
+        className={
+          "flex items-center justify-between p-6 lg:px-8 " + styles.navContainer
+        }
       >
-        <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+        <div className="flex lg:flex-1 ">
+          <Link to="/" className={"-m-1.5 p-1.5 " + styles.navIconContainer}>
             <span className="sr-only">Your Company</span>
             {/* <i className={"stroke-1 fa-solid fa-carrot " + styles.navIcon}></i> */}
             <svg

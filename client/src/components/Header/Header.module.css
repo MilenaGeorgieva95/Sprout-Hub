@@ -1,3 +1,23 @@
+.navContainer {
+  background-color: #127f4a;
+  padding: 5px;
+}
+
+.navIconContainer {
+  padding: 6px 8px;
+  margin: 2px 8px;
+  border-radius: 10px 5px 10px 5px;
+}
+
 .navIcon {
   height: 25px;
+  fill: #ffff;
+}
+
+.navIconContainer:hover {
+  box-shadow: 2px 2px 5px #ffff;
+}
+
+.navIcon:hover {
+  fill: #006639;
 }
