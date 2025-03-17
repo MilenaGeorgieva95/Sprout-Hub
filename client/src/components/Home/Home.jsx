@@ -64,14 +64,60 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="container mt-5">
-        <h1 className="text-4xl font-bold text-center text-primary">
-          Welcome to React with Tailwind and Bootstrap
-        </h1>
-        <button className="btn btn-primary mt-4">Bootstrap Button</button>
-        <div className="bg-blue-500 p-6 mt-4 rounded-lg shadow-md">
-          <p className="text-white text-lg">This is a Tailwind-styled div!</p>
+      <div
+        id="carouselExample"
+        className="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              className="d-block w-100"
+              src="./images/almani-qhizq_V876M-unsplash.jpg"
+              alt="First slide"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block w-100"
+              src="./images/annie-spratt-PtDXMYgy418-unsplash.jpg"
+              alt="Second slide"
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block w-100"
+              src="./images/bon-vivant-mDd-u4tq6kY-unsplash.jpg"
+              alt="Third slide"
+            />
+          </div>
         </div>
+
+        {/* Carousel Controls */}
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
     </>
   );

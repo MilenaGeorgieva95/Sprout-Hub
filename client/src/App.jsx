@@ -6,6 +6,8 @@ import Home from "./components/Home/Home";
 import Gallery from "./components/Gallery/Gallery";
 import Forum from "./components/Forum/Forum";
 import Quests from "./components/Quests/Quests";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function App() {
   return (
