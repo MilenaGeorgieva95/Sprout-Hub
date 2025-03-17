@@ -1,4 +1,5 @@
 import Carousel from "../Carousel/Carousel";
+import GreenLogoBar from "../LogoBars/GreenLogoBar/GreenLogoBar";
 import TopPicksBar from "../TopPics/TopPicksBar";
 import styles from "./Home.module.css";
 
@@ -66,7 +67,9 @@ export default function Home() {
           />
         </div>
       </div>
+
       <Carousel />
+      <GreenLogoBar />
       <TopPicksBar />
     </>
   );
