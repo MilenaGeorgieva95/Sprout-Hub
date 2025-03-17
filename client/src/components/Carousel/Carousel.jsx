@@ -1,6 +1,9 @@
+import TopPicksBar from "../TopPics/TopPicksBar";
+import CarouselCardsContainer from "./CarouselCardsContainer";
+
 export default function Carousel() {
   return (
-    <div className="container">
+    <div>
       <div
         id="carouselExample"
         className="carousel slide"
@@ -8,25 +11,13 @@ export default function Carousel() {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img
-              className="d-block w-100"
-              src="./images/almani-qhizq_V876M-unsplash.jpg"
-              alt="First slide"
-            />
+            <CarouselCardsContainer />
           </div>
           <div className="carousel-item">
-            <img
-              className="d-block w-100"
-              src="./images/annie-spratt-PtDXMYgy418-unsplash.jpg"
-              alt="Second slide"
-            />
+            <CarouselCardsContainer />
           </div>
           <div className="carousel-item">
-            <img
-              className="d-block w-100"
-              src="./images/bon-vivant-mDd-u4tq6kY-unsplash.jpg"
-              alt="Third slide"
-            />
+            <CarouselCardsContainer />
           </div>
         </div>
 
