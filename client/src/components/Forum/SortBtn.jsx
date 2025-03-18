@@ -20,7 +20,12 @@ const sortParams = [
   },
   {
     id: 4,
-    name: "Date",
+    name: "Date Asc",
+    param: "/forum?sortBy=date",
+  },
+  {
+    id: 5,
+    name: "Date Desc",
     param: "/forum?sortBy=date",
   },
 ];

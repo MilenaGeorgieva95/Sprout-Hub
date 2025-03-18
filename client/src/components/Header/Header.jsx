@@ -89,7 +89,7 @@ export default function Header() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-light-700"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="size-6" />
+            <Bars3Icon aria-hidden="true" className="size-8 text-white" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
@@ -139,7 +139,7 @@ export default function Header() {
         >
           <div className="flex items-center justify-between">
             <Link to="/" className={"-m-1.5 p-1.5 " + styles.mainNav}>
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Sprout Hub</span>
               <svg
                 className={"fa-solid fa-carrot " + styles.navIconPop}
                 xmlns="http://www.w3.org/2000/svg"
