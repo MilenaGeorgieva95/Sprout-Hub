@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import SortBtn from "./SortBtn";
 import styles from "./Forum.module.css";
-import GreenLogoBar from "../logo-bars/green-logo-bar/GreenLogoBar";
-import TopPicksBar from "../top-picks/TopPicksBar";
+import GreenLogoBar from "../common/logo-bars/green-logo-bar/GreenLogoBar";
+import TopPicksBar from "../common/top-picks/TopPicksBar";
 
 export default function Forum() {
   const [posts, setPosts] = useState([]);
