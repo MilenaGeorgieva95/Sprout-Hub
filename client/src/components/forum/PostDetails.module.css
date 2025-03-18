@@ -1,0 +1,11 @@
+.mainContainer {
+  margin-top: 100px;
+  width: 70%;
+}
+
+.detailsBtn {
+  border-radius: 30px !important;
+  border: 2px solid hsl(154, 100%, 20%);
+  min-width: 100px;
+  margin-right: 20px;
+}
