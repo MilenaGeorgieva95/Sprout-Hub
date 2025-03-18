@@ -25,11 +25,4 @@ function App() {
   );
 }
 
-const navigation = [
-  { name: "Forum", href: "/forum" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Marketplace", href: "/marketplace" },
-  { name: "Our Books", href: "/books" },
-  { name: "Members", href: "/members" },
-];
 export default App;

@@ -5,7 +5,6 @@ import TopPicksBar from "../common/top-picks/TopPicksBar";
 import useFetch from "../../hooks/usefetch";
 import Spinner from "../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
-import PostDetails from "./PostDetails";
 
 export default function Forum() {
   const baseUrl = "http://localhost:3030/jsonstore/forum/posts";
@@ -24,7 +23,6 @@ export default function Forum() {
       </div>
       <GreenLogoBar />
       <TopPicksBar />
-      <PostDetails />
     </>
   );
 }
