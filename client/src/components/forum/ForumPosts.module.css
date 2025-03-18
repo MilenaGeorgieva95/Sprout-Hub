@@ -6,7 +6,6 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  /* height: 70%; */
   justify-content: space-between;
 }
 

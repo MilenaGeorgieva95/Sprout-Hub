@@ -1,4 +1,3 @@
-import TopPicksBar from "../top-picks/TopPicksBar";
 import CarouselCardsContainer from "./CarouselCardsContainer";
 
 export default function Carousel() {
