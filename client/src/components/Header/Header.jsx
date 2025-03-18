@@ -43,7 +43,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className=" inset-x-0 top-0 z-50">
       <nav
         aria-label="Global"
         className={
