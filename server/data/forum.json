@@ -1,0 +1,68 @@
+{
+  "posts": {
+    "1": {
+      "id": 1,
+      "title": "Growing Tomatoes for Beginners",
+      "text": "Tomatoes are one of the most rewarding plants to grow in your garden. They need plenty of sunlight, regular watering, and a good-quality soil mix to thrive. Start by planting seedlings after the last frost, and make sure to stake your plants as they grow to keep them off the ground.",
+      "owner_id": 101,
+      "createdAt": "2025-03-18T08:00:00Z",
+      "updatedAt": "2025-03-18T08:00:00Z"
+    },
+    "2": {
+      "id": 2,
+      "title": "How to Start a Raised Bed Garden",
+      "text": "Raised bed gardening is perfect for beginners, as it allows for better soil control and drainage. To start, choose a location with good sun exposure, and build a frame using wood, bricks, or other materials. Fill it with a mix of compost and soil, and you're ready to plant!",
+      "owner_id": 102,
+      "createdAt": "2025-03-17T10:15:00Z",
+      "updatedAt": "2025-03-17T10:15:00Z"
+    },
+    "3": {
+      "id": 3,
+      "title": "Easy Care for Indoor Plants",
+      "text": "Indoor plants are great for beginners because they require less maintenance. Some popular choices include pothos, peace lilies, and snake plants. Make sure to place them in areas with indirect sunlight, water them once a week, and keep an eye out for pests.",
+      "owner_id": 103,
+      "createdAt": "2025-03-16T14:30:00Z",
+      "updatedAt": "2025-03-16T14:30:00Z"
+    },
+    "4": {
+      "id": 4,
+      "title": "Dealing with Garden Pests Naturally",
+      "text": "If you're looking to avoid chemicals, try natural pest control methods. Companion planting, such as planting marigolds near tomatoes, can help keep insects away. You can also make your own organic sprays using ingredients like neem oil or garlic.",
+      "owner_id": 104,
+      "createdAt": "2025-03-15T12:45:00Z",
+      "updatedAt": "2025-03-15T12:45:00Z"
+    },
+    "5": {
+      "id": 5,
+      "title": "Growing Tomatoes for Beginners",
+      "text": "Tomatoes are one of the most rewarding plants to grow in your garden. They need plenty of sunlight, regular watering, and a good-quality soil mix to thrive. Start by planting seedlings after the last frost, and make sure to stake your plants as they grow to keep them off the ground.",
+      "owner_id": 101,
+      "createdAt": "2025-03-18T08:00:00Z",
+      "updatedAt": "2025-03-18T08:00:00Z"
+    },
+    "6": {
+      "id": 6,
+      "title": "How to Start a Raised Bed Garden",
+      "text": "Raised bed gardening is perfect for beginners, as it allows for better soil control and drainage. To start, choose a location with good sun exposure, and build a frame using wood, bricks, or other materials. Fill it with a mix of compost and soil, and you're ready to plant!",
+      "owner_id": 102,
+      "createdAt": "2025-03-17T10:15:00Z",
+      "updatedAt": "2025-03-17T10:15:00Z"
+    },
+    "7": {
+      "id": 7,
+      "title": "Easy Care for Indoor Plants",
+      "text": "Indoor plants are great for beginners because they require less maintenance. Some popular choices include pothos, peace lilies, and snake plants. Make sure to place them in areas with indirect sunlight, water them once a week, and keep an eye out for pests.",
+      "owner_id": 103,
+      "createdAt": "2025-03-16T14:30:00Z",
+      "updatedAt": "2025-03-16T14:30:00Z"
+    },
+    "8": {
+      "id": 8,
+      "title": "Dealing with Garden Pests Naturally",
+      "text": "If you're looking to avoid chemicals, try natural pest control methods. Companion planting, such as planting marigolds near tomatoes, can help keep insects away. You can also make your own organic sprays using ingredients like neem oil or garlic.",
+      "owner_id": 104,
+      "createdAt": "2025-03-15T12:45:00Z",
+      "updatedAt": "2025-03-15T12:45:00Z"
+    }
+  }
+}
