@@ -5,11 +5,11 @@ export default function TopPicksBar() {
     <>
       <div className="container-xxl py-5">
         <div className="container">
-          <div className="row g-4">
+          <div className="row g-4 flex">
             <Card
               title={"Gardening Deals & Promotions"}
               btnTxt="Find a Deal"
-              text="Get up to 10% off on gardening tools and services. Limited time offers in the UK, Germany, and France."
+              text="Get up to 10% off on gardening tools and services. Limited time offers in Bulgaria and France."
               imgSrc={"/img/gardening-tools-promotion.jpg"}
             />
             <Card
