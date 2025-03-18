@@ -9,3 +9,10 @@
   /* height: 70%; */
   justify-content: space-between;
 }
+
+.detailsBtn {
+  background-color: #006639;
+  color: #fff;
+  border-radius: 30px !important;
+  border: 2px solid #006639;
+}

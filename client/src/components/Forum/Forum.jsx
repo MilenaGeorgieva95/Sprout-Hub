@@ -46,7 +46,10 @@ export default function Forum() {
               </div>
               <button
                 type="submit"
-                className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+                className={
+                  "mt-6 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                  styles.detailsBtn
+                }
               >
                 Details
               </button>
