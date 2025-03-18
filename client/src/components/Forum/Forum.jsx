@@ -5,14 +5,10 @@ import TopPicksBar from "../common/top-picks/TopPicksBar";
 import useFetch from "../../hooks/usefetch";
 import Spinner from "../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
+import PostDetails from "./PostDetails";
 
 export default function Forum() {
   const baseUrl = "http://localhost:3030/jsonstore/forum/posts";
-  // useEffect(() => {
-  //   fetch(baseUrl + "/posts")
-  //     .then((res) => res.json())
-  //     .then((data) => setPosts(Object.values(data)));
-  // }, []);
   const [pending, postsData] = useFetch(baseUrl, []);
 
   return (
@@ -28,6 +24,7 @@ export default function Forum() {
       </div>
       <GreenLogoBar />
       <TopPicksBar />
+      <PostDetails />
     </>
   );
 }

@@ -8,6 +8,7 @@ import Forum from "./components/forum/Forum";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Quests from "./components/Quests/Quests";
+import PostDetails from "./components/forum/PostDetails";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/forum" element={<Forum />} />
+        <Route path="/posts" element={<Forum />} />
+        <Route path="/posts/:postId/details" element={<PostDetails />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/quests" element={<Quests />} />
       </Routes>
