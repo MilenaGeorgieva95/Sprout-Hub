@@ -13,7 +13,7 @@ export default function Card({ title, text, btnTxt, imgSrc }) {
         >
           <h5>{title}</h5>
           <p className={"text-primary " + styles.description}>{text}</p>
-          <a class="btn btn-primary" href="#" role="button">
+          <a className="btn btn-primary" href="#" role="button">
             Link
           </a>
 

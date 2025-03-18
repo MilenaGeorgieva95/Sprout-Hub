@@ -1,6 +1,6 @@
-import Carousel from "../Carousel/Carousel";
-import GreenLogoBar from "../LogoBars/GreenLogoBar/GreenLogoBar";
-import TopPicksBar from "../TopPics/TopPicksBar";
+import Carousel from "../carousel/Carousel";
+import GreenLogoBar from "../logo-bars/green-logo-bar/GreenLogoBar";
+import TopPicksBar from "../top-picks/TopPicksBar";
 import styles from "./Home.module.css";
 
 export default function Home() {
