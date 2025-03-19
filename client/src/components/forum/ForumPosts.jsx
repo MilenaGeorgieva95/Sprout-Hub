@@ -3,8 +3,6 @@ import styles from "./ForumPosts.module.css";
 import { Link } from "react-router";
 
 export default function ForumPosts({ posts }) {
-  console.log(posts);
-
   return (
     <>
       <div className={styles.subNavContainer}>
