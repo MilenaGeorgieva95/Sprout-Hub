@@ -1,11 +1,43 @@
-export default function PostEdit() {
+import useForm from "../../hooks/useForm";
+
+export default function PostCreate() {
+  const url = "http://localhost:3030/jsonstore/forum/posts";
+
+  const formSubmit = async (values) => {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: values.title,
+        text: values.text,
+        category: values.category,
+        imgUrl: values.imgUrl,
+      }),
+    };
+
+    const res = await fetch(url, options);
+    console.log(res);
+  };
+
+  const { values, changeHandler, submitHandler } = useForm(
+    {
+      title: "",
+      text: "",
+      category: "",
+      imgUrl: "",
+    },
+    formSubmit
+  );
+
   return (
     <div className="bg-gray-100 text-gray-900 font-sans py-8 ">
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center text-green-600 mb-6">
-          Edit Your Gardening Post
+          Create a Gardening Post
         </h1>
-        <form action="/submit-post" method="POST">
+        <form action={submitHandler}>
           <div className="mb-4">
             <label
               htmlFor="title"
@@ -19,6 +51,8 @@ export default function PostEdit() {
               name="title"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               required
+              onChange={changeHandler}
+              value={values.title}
             />
           </div>
 
@@ -29,13 +63,15 @@ export default function PostEdit() {
             >
               Text:
             </label>
-            <textarea
+            <input
               id="text"
               name="text"
               rows="4"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               required
-            ></textarea>
+              onChange={changeHandler}
+              value={values.text}
+            ></input>
           </div>
 
           <div className="mb-4">
@@ -51,6 +87,8 @@ export default function PostEdit() {
               name="category"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               required
+              onChange={changeHandler}
+              value={values.category}
             />
           </div>
 
@@ -67,15 +105,14 @@ export default function PostEdit() {
               name="imgUrl"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               required
+              onChange={changeHandler}
+              value={values.imgUrl}
             />
           </div>
 
           <div className="text-center">
-            <button
-              type="submit"
-              className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-            >
-              Save
+            <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+              Send
             </button>
           </div>
         </form>

@@ -77,7 +77,7 @@ export default function PostDetails() {
             <div className="mt-10">
               <div className="mt-4 space-b">
                 <Link
-                  to={`/posts/${postData.id}/edit`}
+                  to={`/posts/${postData._id}/edit`}
                   className={
                     "mt-6 flex items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
@@ -86,7 +86,7 @@ export default function PostDetails() {
                   Edit
                 </Link>
                 <Link
-                  to={`/posts/${postData.id}/delete`}
+                  to={`/posts/${postData._id}/delete`}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
@@ -95,7 +95,7 @@ export default function PostDetails() {
                   Delete
                 </Link>
                 <Link
-                  to={`/posts/${postData.id}/comment`}
+                  to={`/posts/${postData._id}/comment`}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
@@ -104,7 +104,7 @@ export default function PostDetails() {
                   Comment
                 </Link>
                 <Link
-                  to={`/posts/${postData.id}/like`}
+                  to={`/posts/${postData._id}/like`}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn

@@ -10,6 +10,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Quests from "./components/Quests/Quests";
 import PostDetails from "./components/forum/PostDetails";
 import PostEdit from "./components/forum/PostEdit";
+import PostCreate from "./components/forum/PostCreate";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/posts" element={<Forum />} />
         <Route path="/posts/:postId/details" element={<PostDetails />} />
         <Route path="/posts/:postId/edit" element={<PostEdit />} />
+        <Route path="/posts/create" element={<PostCreate />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/quests" element={<Quests />} />
       </Routes>
