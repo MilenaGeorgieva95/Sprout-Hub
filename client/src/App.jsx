@@ -11,6 +11,7 @@ import PostDetails from "./components/forum/PostDetails";
 import PostEdit from "./components/forum/PostEdit";
 import PostCreate from "./components/forum/PostCreate";
 import HomePage from "./components/home/HomePage";
+import Page404 from "./components/page404/Page404";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/quests" element={<Quests />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
   );
