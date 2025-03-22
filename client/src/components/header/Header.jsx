@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router";
 
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import styles from "./Header.module.css";
+import { UserContext } from "../../contexts/UserContext";
 
 const navigation = [
   {
@@ -42,6 +43,10 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const userCtx = useContext(UserContext);
+  const isUser = !!userCtx.user.email;
+  console.log(userCtx);
+
   return (
     <header className=" inset-x-0 top-0 z-50">
       <nav
@@ -115,30 +120,35 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
-            to="auth/register"
-            className={
-              "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
-            }
-          >
-            REGISTER
-          </Link>
-          <Link
-            to="auth/login"
-            className={
-              "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
-            }
-          >
-            LOGIN
-          </Link>
-          <Link
-            to="auth/logout"
-            className={
-              "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
-            }
-          >
-            LOGOUT
-          </Link>
+          {isUser ? (
+            <Link
+              to="auth/logout"
+              className={
+                "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
+              }
+            >
+              LOGOUT
+            </Link>
+          ) : (
+            <>
+              <Link
+                to="auth/register"
+                className={
+                  "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
+                }
+              >
+                REGISTER
+              </Link>
+              <Link
+                to="auth/login"
+                className={
+                  "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
+                }
+              >
+                LOGIN
+              </Link>
+            </>
+          )}
         </div>
       </nav>
       <Dialog

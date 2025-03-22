@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { UserContext } from "../../../contexts/UserContext";
 import { useLogout } from "../../../api/authApi";
@@ -9,12 +9,14 @@ export default function Logout() {
   const navigate = useNavigate();
 
   const logout = useLogout(userCtx);
-  try {
-    logout().then(userCtx.userLoginHandler({}));
-    navigate("/posts");
-  } catch (error) {
-    console.log(error);
-  }
+  useEffect(() => {
+    try {
+      logout().then(userCtx.userLoginHandler({}));
+      navigate("/posts");
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return <></>;
 }
