@@ -24,13 +24,16 @@ function App() {
   const [user, setUser] = useState({});
 
   const userLoginHandler = (userData) => {
-    console.log(user);
-
     setUser(userData);
+  };
+  const userLogoutHandler = (userData) => {
+    setUser({});
   };
 
   return (
-    <UserContext.Provider value={{ user, userLoginHandler }}>
+    <UserContext.Provider
+      value={{ ...user, userLoginHandler, userLogoutHandler }}
+    >
       <div className="bg-white h-full fullHeight">
         <Header />
         <Routes>

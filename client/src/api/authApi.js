@@ -52,8 +52,17 @@ export const useRegister = () => {
   };
 };
 
-export const useLogout = (userCtx) => {
-  const logout = () => request.get(`${baseUrl}/logout`, null, userCtx);
+export const useLogout = () => {
+  const { accessToken, userLogoutHandler } = useContext(UserContext);
 
-  return logout;
+  useEffect(() => {
+    if (!accessToken) {
+      return;
+    }
+    request
+      .get(`${baseUrl}/logout`, null, accessToken)
+      .then(() => userLogoutHandler());
+  }, [accessToken, userLogoutHandler]);
+
+  return { isLoggedOut: !!accessToken };
 };

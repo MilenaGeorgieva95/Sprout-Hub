@@ -5,8 +5,7 @@ import { useNavigate } from "react-router";
 
 export default function PostCreate() {
   const url = "http://localhost:3030/jsonstore/forum/posts";
-  const userCtx = useContext(UserContext);
-  const user = userCtx?.user;
+  const { _id } = useContext(UserContext);
   const navigate = useNavigate();
 
   const formSubmit = async (values) => {
@@ -20,7 +19,7 @@ export default function PostCreate() {
         text: values.text,
         category: values.category,
         imgUrl: values.imgUrl,
-        owner: user._id,
+        owner: _id,
       }),
     };
     try {

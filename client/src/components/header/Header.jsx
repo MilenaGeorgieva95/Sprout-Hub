@@ -43,9 +43,8 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const userCtx = useContext(UserContext);
-  const isUser = !!userCtx.user.email;
-  console.log(userCtx);
+  const { email } = useContext(UserContext);
+  const isUser = !!email;
 
   return (
     <header className=" inset-x-0 top-0 z-50">

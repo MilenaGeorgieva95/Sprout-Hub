@@ -11,7 +11,6 @@ export default function Login() {
 
   const loginHandler = async (previousState, formData) => {
     const formValues = Object.fromEntries(formData);
-    // onLogin(formValues.email);
 
     const authData = await login(formValues.email, formValues.password);
     authData.password = "";
@@ -24,9 +23,6 @@ export default function Login() {
     email: "",
     password: "",
   });
-
-  console.log(values);
-  console.log(isPending);
 
   return (
     <section>
