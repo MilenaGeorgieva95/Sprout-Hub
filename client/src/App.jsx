@@ -15,27 +15,41 @@ import Page404 from "./components/page404/Page404";
 import Footer from "./components/footer/Footer";
 import Register from "./components/authentication/register/Register";
 
+import { useState } from "react";
+import { UserContext } from "./contexts/UserContext";
+import Login from "./components/authentication/login/Login";
+
 function App() {
+  const [user, setuser] = useState({});
+
+  const userLoginHandler = (userData) => {
+    console.log(user);
+
+    setAuthData(userData);
+  };
+
   return (
-    <div className="bg-white h-full fullHeight">
-      <Header />
-      <Routes>
-        <Route path="/auth">
-          <Route path="/auth/register" element={<Register />} />
-          {/* <Route path="/auth/login" element={<Login />} />
-              <Route path="/auth/logout" element={<Logout />} /> */}
-        </Route>
-        <Route path="/posts" element={<Forum />} />
-        <Route path="/posts/:postId/details" element={<PostDetails />} />
-        <Route path="/posts/:postId/edit" element={<PostEdit />} />
-        <Route path="/posts/create" element={<PostCreate />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/quests" element={<Quests />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-      <Footer />
-    </div>
+    <UserContext.Provider value={{ user, userLoginHandler }}>
+      <div className="bg-white h-full fullHeight">
+        <Header />
+        <Routes>
+          <Route path="/auth">
+            <Route path="/auth/register" element={<Register />} />
+            <Route path="/auth/login" element={<Login />} />
+            {/* <Route path="/auth/logout" element={<Logout />} /> */}
+          </Route>
+          <Route path="/posts" element={<Forum />} />
+          <Route path="/posts/:postId/details" element={<PostDetails />} />
+          <Route path="/posts/:postId/edit" element={<PostEdit />} />
+          <Route path="/posts/create" element={<PostCreate />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/quests" element={<Quests />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+        <Footer />
+      </div>
+    </UserContext.Provider>
   );
 }
 
