@@ -1,6 +1,32 @@
-import { Link } from "react-router";
+import { useActionState, useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { UserContext } from "../../../contexts/UserContext";
+import { useLogin } from "../../../api/authApi";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { userLoginHandler } = useContext(UserContext);
+
+  const { login } = useLogin();
+
+  const loginHandler = async (previousState, formData) => {
+    const formValues = Object.fromEntries(formData);
+    // onLogin(formValues.email);
+
+    const authData = await login(formValues.email, formValues.password);
+    userLoginHandler(authData);
+    navigate("/posts");
+    return formValues;
+  };
+
+  const [values, loginAction, isPending] = useActionState(loginHandler, {
+    email: "",
+    password: "",
+  });
+
+  console.log(values);
+  console.log(isPending);
+
   return (
     <section>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 items-center fullHeight">
@@ -11,12 +37,12 @@ export default function Login() {
             className="mx-auto h-10 w-auto mb-3"
           />
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-            Sign in to your account
+            Login to your account
           </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form action={loginAction} className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -59,6 +85,7 @@ export default function Login() {
 
             <div>
               <button
+                disabled={isPending}
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 mb-1 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >

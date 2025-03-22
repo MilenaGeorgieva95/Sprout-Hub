@@ -20,12 +20,12 @@ import { UserContext } from "./contexts/UserContext";
 import Login from "./components/authentication/login/Login";
 
 function App() {
-  const [user, setuser] = useState({});
+  const [user, setUser] = useState({});
 
   const userLoginHandler = (userData) => {
     console.log(user);
 
-    setAuthData(userData);
+    setUser(userData);
   };
 
   return (
