@@ -7,7 +7,7 @@ export default function Footer() {
     <footer
       className={
         "text-center text-lg-start bg-body-tertiary text-muted " +
-        StyleSheet.footerContainer
+        styles.footerContainer
       }
     >
       {/* <!-- Section: Links  --> */}
