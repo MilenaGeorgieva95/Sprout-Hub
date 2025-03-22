@@ -1,9 +1,15 @@
 import Header from "../header/Header";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
     // <!-- Footer -->
-    <footer className="text-center text-lg-start bg-body-tertiary text-muted">
+    <footer
+      className={
+        "text-center text-lg-start bg-body-tertiary text-muted " +
+        styles.footerContainer
+      }
+    >
       <div
         style={{
           backgroundColor: "rgba(0, 0, 0, )",
