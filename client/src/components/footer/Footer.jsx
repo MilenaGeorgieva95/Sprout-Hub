@@ -1,4 +1,3 @@
-import Header from "../header/Header";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
