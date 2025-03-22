@@ -1,33 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { Link, useParams } from "react-router";
 
 import styles from "./PostDetails.module.css";
 import useFetch from "../../../hooks/usefetch";
 import { Radio, RadioGroup } from "@headlessui/react";
+import { UserContext } from "../../../contexts/UserContext";
 
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
-  href: "#",
-  images: [
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
-      alt: "Two each of gray, white, and black shirts laying flat.",
-    },
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-      alt: "Model wearing plain black basic tee.",
-    },
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-      alt: "Model wearing plain gray basic tee.",
-    },
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-      alt: "Model wearing plain white basic tee.",
-    },
-  ],
   colors: [
     { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
     { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
@@ -65,6 +47,9 @@ const baseUrl = "http://localhost:3030/jsonstore/forum/posts/";
 export default function PostDetails() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+
+  const userCtx = useContext(UserContext);
+  const user = userCtx?.user;
 
   const { postId } = useParams();
   const [pending, postData] = useFetch(baseUrl, {}, postId);
@@ -254,18 +239,12 @@ export default function PostDetails() {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
+                <p className="text-base text-gray-900">{postData.details}</p>
               </div>
             </div>
 
             <div className="mt-10">
-              <div className="mt-10">
-                <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
-                <div className="mt-4 space-y-6">
-                  <p className="text-sm text-gray-600">{product.details}</p>
-                </div>
-              </div>
+              <div className="mt-10"></div>
               <div className="mt-4 space-b">
                 <Link
                   to={`/posts/${postData._id}/edit`}

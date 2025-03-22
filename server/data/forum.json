@@ -8,7 +8,8 @@
       "createdAt": "2025-03-18T08:00:00Z",
       "updatedAt": "2025-03-18T08:00:00Z",
       "imgUrl": "/images/lawrence-aritao-k2sTHzAnmfY-unsplash.jpg",
-      "owner": "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0"
+      "owner": "35c62d76-8152-4626-8712-eeb96381bea8",
+      "details": "Tomatoes are highly versatile, great for a variety of culinary uses, and are perfect for home gardeners. They require a lot of sunlight, typically 6–8 hours a day, and need regular watering but not over-watering. They are also sensitive to frost, so timing your planting carefully is essential."
     },
     "2": {
       "_id": 2,
@@ -18,7 +19,8 @@
       "createdAt": "2025-03-17T10:15:00Z",
       "updatedAt": "2025-03-17T10:15:00Z",
       "imgUrl": "/images/jonathan-kemper-CbZh3kaPxrE-unsplash.jpg",
-      "owner": "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0"
+      "owner": "35c62d76-8152-4626-8712-eeb96381bea8",
+      "details": "Raised bed gardening is an efficient way to maximize space, improve soil quality, and reduce the risk of pests. The elevated structure allows for better drainage, which is essential for healthy root development. You can also control the soil mixture to suit specific plant needs."
     },
     "3": {
       "_id": 3,
@@ -28,7 +30,8 @@
       "createdAt": "2025-03-16T14:30:00Z",
       "updatedAt": "2025-03-16T14:30:00Z",
       "imgUrl": "https://images.unsplash.com/photo-1528467279403-46af96c37ab3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "owner": "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0"
+      "owner": "35c62d76-8152-4626-8712-eeb96381bea8",
+      "details": "Indoor plants are perfect for adding a touch of greenery to your home without much effort. Popular options like pothos and snake plants thrive in low light and require little maintenance. They help purify the air and create a calming atmosphere in your living space."
     },
     "4": {
       "_id": 4,
@@ -37,7 +40,8 @@
       "owner_id": 104,
       "createdAt": "2025-03-15T12:45:00Z",
       "updatedAt": "2025-03-15T12:45:00Z",
-      "imgUrl": "/images/lobostudio-hamburg-wj961KyCaNk-unsplash.jpg"
+      "imgUrl": "/images/lobostudio-hamburg-wj961KyCaNk-unsplash.jpg",
+      "details": "Instead of relying on chemicals, natural pest control offers an eco-friendly approach to garden care. Companion planting, like pairing marigolds with tomatoes, can deter pests. Additionally, homemade organic sprays are a great way to control bugs without harming the environment."
     },
     "5": {
       "_id": 5,
@@ -46,7 +50,9 @@
       "owner_id": 105,
       "createdAt": "2025-03-14T11:00:00Z",
       "updatedAt": "2025-03-14T11:00:00Z",
-      "imgUrl": "/images/almani-qhizq_V876M-unsplash.jpg"
+      "imgUrl": "/images/almani-qhizq_V876M-unsplash.jpg",
+      "owner": "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0",
+      "details": "Herb gardens are a great introduction to gardening, as herbs are easy to care for and don't require much space. Growing them in containers is ideal if you're limited on garden space, and they provide fresh, flavorful ingredients for your cooking."
     },
     "6": {
       "_id": 6,
@@ -55,7 +61,8 @@
       "owner_id": 106,
       "createdAt": "2025-03-13T09:00:00Z",
       "updatedAt": "2025-03-13T09:00:00Z",
-      "imgUrl": "https://images.unsplash.com/photo-1601906451998-bb5e51856e45?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "imgUrl": "https://images.unsplash.com/photo-1601906451998-bb5e51856e45?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "details": "Cucumbers are a great addition to any garden, but they require warm temperatures and space to spread. Planting cucumbers on a trellis is a great space-saving method, and it helps keep the fruit clean and off the ground, preventing rot."
     },
     "7": {
       "_id": 7,
@@ -64,7 +71,8 @@
       "owner_id": 107,
       "createdAt": "2025-03-12T08:30:00Z",
       "updatedAt": "2025-03-12T08:30:00Z",
-      "imgUrl": "https://images.unsplash.com/photo-1520711956682-ca8887a7e37c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "imgUrl": "https://images.unsplash.com/photo-1520711956682-ca8887a7e37c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "details": "Roses require regular care, but the effort is well worth it. With proper sunlight, regular pruning, and consistent fertilization, you can enjoy stunning blooms. Keep an eye out for common pests like aphids and fungal diseases to maintain your rose bushes' health."
     },
     "8": {
       "_id": 8,
@@ -73,7 +81,8 @@
       "owner_id": 108,
       "createdAt": "2025-03-11T07:15:00Z",
       "updatedAt": "2025-03-11T07:15:00Z",
-      "imgUrl": "https://images.unsplash.com/photo-1621460248137-1656be874a8b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "imgUrl": "https://images.unsplash.com/photo-1621460248137-1656be874a8b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "details": "Composting is a sustainable practice that benefits your garden by providing rich, organic material that improves soil health. By recycling organic waste, you reduce landfill contributions and create your own nutrient-rich compost to support plant growth."
     },
     "9": {
       "_id": 9,
@@ -83,7 +92,8 @@
       "createdAt": "2025-03-10T06:00:00Z",
       "updatedAt": "2025-03-10T06:00:00Z",
       "imgUrl": "https://images.unsplash.com/photo-1526403184940-93931285d324?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "owner": "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0"
+      "owner": "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0",
+      "details": "Succulents are low-maintenance plants that thrive in dry conditions and are perfect for small living spaces. Their ability to store water in their leaves means they don’t require frequent watering, and they thrive in bright light."
     },
     "10": {
       "_id": 10,
@@ -92,7 +102,8 @@
       "owner_id": 110,
       "createdAt": "2025-03-09T05:30:00Z",
       "updatedAt": "2025-03-09T05:30:00Z",
-      "imgUrl": "https://images.unsplash.com/photo-1527863280617-15596f92e5c8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "imgUrl": "https://images.unsplash.com/photo-1527863280617-15596f92e5c8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "details": "Flower beds can be a vibrant focal point in your garden. By selecting a mix of early, mid, and late-season bloomers, you can enjoy color throughout the growing season. Regular care, including watering, fertilizing, and deadheading, will keep your flower beds looking their best."
     },
     "11": {
       "_id": 11,
@@ -101,7 +112,8 @@
       "owner_id": 111,
       "createdAt": "2025-03-08T04:45:00Z",
       "updatedAt": "2025-03-08T04:45:00Z",
-      "imgUrl": "https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "imgUrl": "https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "details": "Container gardening is ideal for small spaces, allowing you to grow vegetables like peppers and lettuce even in limited areas. Ensure your containers have proper drainage, and use high-quality soil to support healthy growth and high yields."
     },
     "12": {
       "_id": 12,
@@ -110,7 +122,8 @@
       "owner_id": 112,
       "createdAt": "2025-03-07T03:30:00Z",
       "updatedAt": "2025-03-07T03:30:00Z",
-      "imgUrl": "https://images.unsplash.com/photo-1511985858324-23f5fff69d92?q=80&w=1018&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "imgUrl": "https://images.unsplash.com/photo-1511985858324-23f5fff69d92?q=80&w=1018&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "details": "A wildlife-friendly garden not only enhances the beauty of your space but also supports biodiversity. Native plants attract local wildlife and pollinators, while avoiding pesticides helps maintain a healthy ecosystem."
     }
   }
 }
