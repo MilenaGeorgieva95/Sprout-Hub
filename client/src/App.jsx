@@ -8,7 +8,7 @@ import Forum from "./components/forum/posts-page/Forum";
 
 import Quests from "./components/Quests/Quests";
 import PostDetails from "./components/forum/post-details/PostDetails";
-import PostEdit from "./components/forum/create-post/PostEdit";
+import PostEdit from "./components/forum/edit-post/PostEdit";
 import PostCreate from "./components/forum/create-post/PostCreate";
 import HomePage from "./components/home/HomePage";
 import Page404 from "./components/page404/Page404";

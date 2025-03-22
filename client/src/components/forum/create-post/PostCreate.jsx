@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import useForm from "../../../hooks/useForm";
+import { UserContext } from "../../../contexts/UserContext";
+import { useNavigate } from "react-router";
 
 export default function PostCreate() {
   const url = "http://localhost:3030/jsonstore/forum/posts";
+  const userCtx = useContext(UserContext);
+  const user = userCtx?.user;
+  const navigate = useNavigate();
 
   const formSubmit = async (values) => {
     const options = {
@@ -14,11 +20,16 @@ export default function PostCreate() {
         text: values.text,
         category: values.category,
         imgUrl: values.imgUrl,
+        owner: user._id,
       }),
     };
-
-    const res = await fetch(url, options);
-    console.log(res);
+    try {
+      const res = await fetch(url, options);
+      console.log(res);
+      navigate("/posts");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const { values, changeHandler, submitHandler } = useForm(
