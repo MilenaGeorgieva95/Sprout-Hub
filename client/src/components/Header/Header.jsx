@@ -116,12 +116,28 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            to="auth/login"
+            to="auth/register"
             className={
               "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
             }
           >
-            SIGN IN / REGISTER
+            REGISTER
+          </Link>
+          <Link
+            to="auth/register"
+            className={
+              "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
+            }
+          >
+            SIGN IN
+          </Link>
+          <Link
+            to="auth/logout"
+            className={
+              "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
+            }
+          >
+            LOGOUT
           </Link>
         </div>
       </nav>
@@ -172,10 +188,22 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Link
-                  to="#"
+                  to="/auth/register"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  SIGN IN / REGISTER
+                  REGISTER
+                </Link>
+                <Link
+                  to="/auth/login"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                >
+                  SIGN IN
+                </Link>
+                <Link
+                  to="/auth/logout"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                >
+                  LOGOUT
                 </Link>
               </div>
             </div>
