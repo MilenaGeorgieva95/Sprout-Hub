@@ -1,4 +1,4 @@
-import useForm from "../../hooks/useForm";
+import useForm from "../../../hooks/useForm";
 
 export default function PostCreate() {
   const url = "http://localhost:3030/jsonstore/forum/posts";

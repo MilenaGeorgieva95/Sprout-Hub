@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-
-import GreenLogoBar from "../common/logo-bars/green-logo-bar/GreenLogoBar";
-import TopPicksBar from "../common/top-picks/TopPicksBar";
-import useFetch from "../../hooks/usefetch";
-import Spinner from "../common/spinner/Spinner";
+import GreenLogoBar from "../../common/logo-bars/green-logo-bar/GreenLogoBar";
+import TopPicksBar from "../../common/top-picks/TopPicksBar";
+import useFetch from "../../../hooks/usefetch";
+import Spinner from "../../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
 
 export default function Forum() {

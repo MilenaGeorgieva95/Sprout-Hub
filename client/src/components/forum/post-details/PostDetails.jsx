@@ -3,7 +3,7 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { Link, useParams } from "react-router";
 
 import styles from "./PostDetails.module.css";
-import useFetch from "../../hooks/usefetch";
+import useFetch from "../../../hooks/usefetch";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 

@@ -7,17 +7,9 @@ export default function Footer() {
     <footer
       className={
         "text-center text-lg-start bg-body-tertiary text-muted " +
-        styles.footerContainer
+        StyleSheet.footerContainer
       }
     >
-      <div
-        style={{
-          backgroundColor: "rgba(0, 0, 0, )",
-        }}
-      >
-        <Header />
-      </div>
-
       {/* <!-- Section: Links  --> */}
       <section className="">
         <div className="container text-center text-md-start mt-5">
