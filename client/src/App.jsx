@@ -18,6 +18,7 @@ import Register from "./components/authentication/register/Register";
 import { useState } from "react";
 import { UserContext } from "./contexts/UserContext";
 import Login from "./components/authentication/login/Login";
+import Logout from "./components/authentication/logout/Logout";
 
 function App() {
   const [user, setUser] = useState({});
@@ -36,7 +37,7 @@ function App() {
           <Route path="/auth">
             <Route path="/auth/register" element={<Register />} />
             <Route path="/auth/login" element={<Login />} />
-            {/* <Route path="/auth/logout" element={<Logout />} /> */}
+            <Route path="/auth/logout" element={<Logout />} />
           </Route>
           <Route path="/posts" element={<Forum />} />
           <Route path="/posts/:postId/details" element={<PostDetails />} />

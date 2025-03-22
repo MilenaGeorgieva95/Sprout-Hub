@@ -11,7 +11,7 @@ export async function requester(method, url, body, userCtx) {
     options.body = JSON.stringify(body);
   }
 
-  const userData = userCtx;
+  const userData = userCtx?.user;
   if (userData && userData.accessToken) {
     options.headers["X-Authorization"] = userData.accessToken;
   }
@@ -24,8 +24,8 @@ export async function requester(method, url, body, userCtx) {
     }
 
     if (res.ok == false) {
-      if (res.status === 403) {
-        // clearUserData();
+      if (res.status === 403 && userCtx) {
+        userCtx.userLoginHandler({});
       }
       const error = data;
       throw error;
