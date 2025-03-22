@@ -8,6 +8,14 @@
 * {
   margin: 0;
 }
+.fullHeight {
+  height: 77vh;
+}
+
+twFormSection {
+  align-items: center;
+}
+
 body {
   /* 3. Add accessible line-height */
   line-height: 1.5;

@@ -13,12 +13,18 @@ import PostCreate from "./components/forum/create-post/PostCreate";
 import HomePage from "./components/home/HomePage";
 import Page404 from "./components/page404/Page404";
 import Footer from "./components/footer/Footer";
+import Register from "./components/authentication/register/Register";
 
 function App() {
   return (
-    <div className="bg-white">
+    <div className="bg-white h-full fullHeight">
       <Header />
       <Routes>
+        <Route path="/auth">
+          <Route path="/auth/register" element={<Register />} />
+          {/* <Route path="/auth/login" element={<Login />} />
+              <Route path="/auth/logout" element={<Logout />} /> */}
+        </Route>
         <Route path="/posts" element={<Forum />} />
         <Route path="/posts/:postId/details" element={<PostDetails />} />
         <Route path="/posts/:postId/edit" element={<PostEdit />} />
