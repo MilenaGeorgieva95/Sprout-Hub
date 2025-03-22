@@ -33,10 +33,10 @@ export const useLogin = () => {
 export const useRegister = () => {
   const abortRef = useRef(new AbortController());
 
-  const register = async (username, email, password) => {
+  const register = async (username, avatarUrl, email, password) => {
     const registerData = await request.post(
       `${baseUrl}/register`,
-      { username, email, password },
+      { username, avatarUrl, email, password },
       { signal: abortRef.current.signal }
     );
     return registerData;

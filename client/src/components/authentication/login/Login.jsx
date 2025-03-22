@@ -14,6 +14,7 @@ export default function Login() {
     // onLogin(formValues.email);
 
     const authData = await login(formValues.email, formValues.password);
+    authData.password = "";
     userLoginHandler(authData);
     navigate("/posts");
     return formValues;
