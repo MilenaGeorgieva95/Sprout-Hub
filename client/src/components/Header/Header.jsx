@@ -57,7 +57,7 @@ export default function Header() {
               "-m-1.5 p-1.5 " + styles.navIconContainer + " " + styles.mainNav
             }
           >
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Sprout Hub</span>
             <svg
               className={"fa-solid fa-carrot " + styles.navIcon}
               xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ export default function Header() {
             REGISTER
           </Link>
           <Link
-            to="auth/register"
+            to="auth/login"
             className={
               "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
             }
