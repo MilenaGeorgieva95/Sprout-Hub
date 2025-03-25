@@ -1,12 +1,11 @@
-import { useContext, useEffect, useRef } from "react";
-import { UserContext } from "../contexts/UserContext";
 import { request } from "../utils/requester";
+import useAuth from "../hooks/useAuth";
 const baseUrl = "/users";
 
 export const useLogin = () => {
   const abortRef = useRef(new AbortController());
 
-  const login = async (email, password, userCtx) => {
+  const login = async (email, password) => {
     const loginData = await request.post(
       `${baseUrl}/login`,
       {
@@ -14,7 +13,6 @@ export const useLogin = () => {
         password,
       },
       null,
-      userCtx,
       { signal: abortRef.current.signal }
     );
     return loginData;
@@ -53,7 +51,7 @@ export const useRegister = () => {
 };
 
 export const useLogout = () => {
-  const { accessToken, userLogoutHandler } = useContext(UserContext);
+  const { accessToken, userLogoutHandler } = useAuth();
 
   useEffect(() => {
     if (!accessToken) {

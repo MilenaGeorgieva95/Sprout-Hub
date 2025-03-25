@@ -1,11 +1,11 @@
-import { useActionState, useContext } from "react";
+import { useActionState } from "react";
 import { Link, useNavigate } from "react-router";
-import { UserContext } from "../../../contexts/UserContext";
 import { useLogin } from "../../../api/authApi";
+import useAuth from "../../../hooks/useAuth";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { userLoginHandler } = useContext(UserContext);
+  const { userLoginHandler } = useAuth();
 
   const { login } = useLogin();
 
@@ -13,9 +13,8 @@ export default function Login() {
     const formValues = Object.fromEntries(formData);
 
     const authData = await login(formValues.email, formValues.password);
-    authData.password = "";
     userLoginHandler(authData);
-    navigate("/posts");
+    // navigate("/posts");
     return formValues;
   };
 

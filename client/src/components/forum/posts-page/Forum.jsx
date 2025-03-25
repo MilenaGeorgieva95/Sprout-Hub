@@ -1,12 +1,11 @@
 import GreenLogoBar from "../../common/logo-bars/green-logo-bar/GreenLogoBar";
 import TopPicksBar from "../../common/top-picks/TopPicksBar";
-import useFetch from "../../../hooks/usefetch";
 import Spinner from "../../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
+import { usePosts } from "../../../api/postsApi";
 
 export default function Forum() {
-  const baseUrl = "http://localhost:3030/jsonstore/forum/posts";
-  const [pending, postsData] = useFetch(baseUrl, []);
+  const { pending, posts } = usePosts();
 
   return (
     <>
@@ -16,7 +15,7 @@ export default function Forum() {
             Browse All Posts
           </h2>
 
-          {pending ? <Spinner /> : <ForumPosts posts={postsData} />}
+          {pending ? <Spinner /> : <ForumPosts posts={posts} />}
         </div>
       </div>
       <GreenLogoBar />

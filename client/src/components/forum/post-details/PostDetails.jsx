@@ -3,9 +3,9 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { Link, useParams } from "react-router";
 
 import styles from "./PostDetails.module.css";
-import useFetch from "../../../hooks/usefetch";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { UserContext } from "../../../contexts/UserContext";
+import { request } from "../../../utils/requester";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -52,7 +52,7 @@ export default function PostDetails() {
   const user = userCtx?.user;
 
   const { postId } = useParams();
-  const [pending, postData] = useFetch(baseUrl, {}, postId);
+  const [pending, postData] = request.get(baseUrl, {}, postId);
   console.log(postData);
 
   return (
