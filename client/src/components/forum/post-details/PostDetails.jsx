@@ -55,7 +55,7 @@ export default function PostDetails() {
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <img
             alt={post.title}
-            src={post.imgUrl}
+            src={post.imageUrl}
             className="hidden size-full rounded-lg object-cover lg:block"
           />
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">

@@ -16,7 +16,7 @@ export default function ForumPosts({ posts }) {
           >
             <img
               alt="plant"
-              src={post.imgUrl}
+              src={post.imageUrl}
               className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
             />
             <div className="mt-4 flex justify-between">

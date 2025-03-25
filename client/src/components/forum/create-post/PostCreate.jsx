@@ -20,7 +20,7 @@ export default function PostCreate() {
       title: "",
       text: "",
       category: "",
-      imgUrl: "",
+      imageUrl: "",
     },
     formSubmit
   );
@@ -95,12 +95,12 @@ export default function PostCreate() {
             </label>
             <input
               type="url"
-              id="imgUrl"
-              name="imgUrl"
+              id="imageUrl"
+              name="imageUrl"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               required
               onChange={changeHandler}
-              value={values.imgUrl}
+              value={values.imageUrl}
             />
           </div>
 

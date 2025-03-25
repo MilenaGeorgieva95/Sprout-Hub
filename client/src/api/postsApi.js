@@ -36,3 +36,16 @@ export const usePost = (postId) => {
   }, [postId]);
   return { pending, post };
 };
+export const useEditPost = () => {
+  const { accessToken } = useAuth();
+
+  const edit = (postId, postData) =>
+    request.put(`${baseUrl}/${postId}`, postData, accessToken);
+  return { edit };
+};
+export const useDeletePost = () => {
+  const { accessToken } = useAuth();
+
+  const del = (postId) => request.del(`${baseUrl}/${postId}`, "", accessToken);
+  return { del };
+};
