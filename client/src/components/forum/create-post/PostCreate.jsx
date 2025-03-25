@@ -1,8 +1,5 @@
-import { useContext } from "react";
 import useForm from "../../../hooks/useForm";
-import { UserContext } from "../../../contexts/UserContext";
 import { useNavigate } from "react-router";
-import useAuth from "../../../hooks/useAuth";
 import { useCreatePost } from "../../../api/postsApi";
 
 export default function PostCreate() {

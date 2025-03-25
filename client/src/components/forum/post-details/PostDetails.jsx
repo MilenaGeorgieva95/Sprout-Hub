@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { Link, useParams } from "react-router";
 
 import styles from "./PostDetails.module.css";
 import { Radio, RadioGroup } from "@headlessui/react";
-import { UserContext } from "../../../contexts/UserContext";
-import { request } from "../../../utils/requester";
+import { usePost } from "../../../api/postsApi";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -42,18 +41,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const baseUrl = "http://localhost:3030/jsonstore/forum/posts/";
-
 export default function PostDetails() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
-  const userCtx = useContext(UserContext);
-  const user = userCtx?.user;
-
   const { postId } = useParams();
-  const [pending, postData] = request.get(baseUrl, {}, postId);
-  console.log(postData);
+  const { pending, post } = usePost(postId);
 
   return (
     <div className="bg-white">
@@ -61,25 +54,25 @@ export default function PostDetails() {
         {/* Image gallery */}
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <img
-            alt={postData.title}
-            src={postData.imgUrl}
+            alt={post.title}
+            src={post.imgUrl}
             className="hidden size-full rounded-lg object-cover lg:block"
           />
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
             <img
-              alt={postData.title}
-              src={postData.imgUrl}
+              alt={post.title}
+              src={post.imgUrl}
               className="aspect-3/2 w-full rounded-lg object-cover"
             />
             <img
-              alt={postData.title}
-              src={postData.imgUrl}
+              alt={post.title}
+              src={post.imgUrl}
               className="aspect-3/2 w-full rounded-lg object-cover"
             />
           </div>
           <img
-            alt={postData.title}
-            src={postData.imgUrl}
+            alt={post.title}
+            src={post.imgUrl}
             className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
           />
         </div>
@@ -88,7 +81,7 @@ export default function PostDetails() {
         <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              {postData.title}
+              {post.title}
             </h1>
           </div>
 
@@ -239,7 +232,7 @@ export default function PostDetails() {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{postData.details}</p>
+                <p className="text-base text-gray-900">{post.details}</p>
               </div>
             </div>
 
@@ -247,7 +240,7 @@ export default function PostDetails() {
               <div className="mt-10"></div>
               <div className="mt-4 space-b">
                 <Link
-                  to={`/posts/${postData._id}/edit`}
+                  to={`/posts/${post._id}/edit`}
                   className={
                     "mt-6 flex items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
@@ -256,7 +249,7 @@ export default function PostDetails() {
                   Edit
                 </Link>
                 <Link
-                  to={`/posts/${postData._id}/delete`}
+                  to={`/posts/${post._id}/delete`}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
@@ -265,7 +258,7 @@ export default function PostDetails() {
                   Delete
                 </Link>
                 <Link
-                  to={`/posts/${postData._id}/comment`}
+                  to={`/posts/${post._id}/comment`}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
@@ -274,7 +267,7 @@ export default function PostDetails() {
                   Comment
                 </Link>
                 <Link
-                  to={`/posts/${postData._id}/like`}
+                  to={`/posts/${post._id}/like`}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn

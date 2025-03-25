@@ -24,3 +24,15 @@ export const useCreatePost = () => {
   };
   return { create };
 };
+export const usePost = (postId) => {
+  const [post, setPost] = useState({});
+  const [pending, setPending] = useState(false);
+  useEffect(() => {
+    setPending(true);
+    request.get(`${baseUrl}/${postId}`).then((data) => {
+      setPending(false);
+      setPost(data);
+    });
+  }, [postId]);
+  return { pending, post };
+};
