@@ -2,29 +2,16 @@ import { useContext } from "react";
 import useForm from "../../../hooks/useForm";
 import { UserContext } from "../../../contexts/UserContext";
 import { useNavigate } from "react-router";
+import useAuth from "../../../hooks/useAuth";
+import { useCreatePost } from "../../../api/postsApi";
 
 export default function PostCreate() {
-  const url = "http://localhost:3030/jsonstore/forum/posts";
-  const { _id } = useContext(UserContext);
   const navigate = useNavigate();
+  const { create } = useCreatePost();
 
   const formSubmit = async (values) => {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: values.title,
-        text: values.text,
-        category: values.category,
-        imgUrl: values.imgUrl,
-        owner: _id,
-      }),
-    };
     try {
-      const res = await fetch(url, options);
-      console.log(res);
+      const newPost = await create(values);
       navigate("/posts");
     } catch (error) {
       console.log(error);
