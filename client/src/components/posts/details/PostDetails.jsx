@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 
 import styles from "./PostDetails.module.css";
 import { Radio, RadioGroup } from "@headlessui/react";
-import { usePost } from "../../../api/postsApi";
+import { useDeletePost, usePost } from "../../../api/postsApi";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -47,6 +47,19 @@ export default function PostDetails() {
 
   const { postId } = useParams();
   const { pending, post } = usePost(postId);
+  const { del } = useDeletePost();
+  const navigate = useNavigate();
+
+  const onDelHandler = async () => {
+    const hasConfirm = confirm(
+      `Are you sure you want to delete ${post.title} post?`
+    );
+    if (!hasConfirm) {
+      return;
+    }
+    del(postId);
+    navigate("/posts");
+  };
 
   return (
     <div className="bg-white">
@@ -248,15 +261,15 @@ export default function PostDetails() {
                 >
                   Edit
                 </Link>
-                <Link
-                  to={`/posts/${post._id}/delete`}
+                <button
+                  onClick={onDelHandler}
                   className={
                     "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                     styles.detailsBtn
                   }
                 >
                   Delete
-                </Link>
+                </button>
                 <Link
                   to={`/posts/${post._id}/comment`}
                   className={
