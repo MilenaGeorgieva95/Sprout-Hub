@@ -49,3 +49,21 @@ export const useDeletePost = () => {
   const del = (postId) => request.del(`${baseUrl}/${postId}`, "", accessToken);
   return { del };
 };
+
+export const useLatestPosts = (postId) => {
+  const [latestPosts, setPosts] = useState([]);
+
+  useEffect(() => {
+    console.log("details");
+
+    const PAGE_SIZE = 3;
+    const searchParams = new URLSearchParams({
+      sortBy: "_createdOn desc",
+      pageSize: PAGE_SIZE,
+      select: "_id,imageUrl,title",
+    });
+
+    request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
+  }, []);
+  return { latestPosts };
+};

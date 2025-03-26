@@ -74,7 +74,7 @@ export default function PostDetails() {
             className="hidden size-full rounded-lg object-cover lg:block"
           />
 
-          <LatestPosts post={post} />
+          <LatestPosts postId={postId} />
         </div>
 
         {/* Product info */}
