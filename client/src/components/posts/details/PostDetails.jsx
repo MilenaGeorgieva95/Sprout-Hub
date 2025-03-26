@@ -61,18 +61,18 @@ export default function PostDetails() {
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
             <img
               alt={post.title}
-              src={post.imgUrl}
+              src={post.imageUrl}
               className="aspect-3/2 w-full rounded-lg object-cover"
             />
             <img
               alt={post.title}
-              src={post.imgUrl}
+              src={post.imageUrl}
               className="aspect-3/2 w-full rounded-lg object-cover"
             />
           </div>
           <img
             alt={post.title}
-            src={post.imgUrl}
+            src={post.imageUrl}
             className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
           />
         </div>

@@ -4,12 +4,12 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes, Route } from "react-router";
 import Header from "./components/header/Header";
 import Gallery from "./components/gallery/Gallery";
-import Forum from "./components/forum/posts-page/Forum";
+import Forum from "./components/posts/catalog/Forum";
 
 import Quests from "./components/Quests/Quests";
-import PostDetails from "./components/forum/post-details/PostDetails";
-import PostEdit from "./components/forum/edit-post/PostEdit";
-import PostCreate from "./components/forum/create-post/PostCreate";
+import PostDetails from "./components/posts/details/PostDetails";
+import PostEdit from "./components/posts/edit/PostEdit";
+import PostCreate from "./components/posts/create/PostCreate";
 import HomePage from "./components/home/HomePage";
 import Page404 from "./components/page404/Page404";
 import Footer from "./components/footer/Footer";
