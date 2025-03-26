@@ -86,18 +86,6 @@ export default function PostDetails() {
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {post.title}
             </h1>
-            <p className="mt-5 text-2xl tracking-tight text-gray-900">
-              {post.category}
-            </p>
-          </div>
-
-          {/* Options */}
-          <div className=" lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">
-              {product.price}
-            </p>
-
             {/* Reviews */}
             <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
@@ -108,7 +96,7 @@ export default function PostDetails() {
                       key={rating}
                       aria-hidden="true"
                       className={classNames(
-                        reviews.average > rating
+                        post.rating > rating
                           ? "text-gray-900"
                           : "text-gray-200",
                         "size-5 shrink-0"
@@ -116,15 +104,26 @@ export default function PostDetails() {
                     />
                   ))}
                 </div>
-                <p className="sr-only">{reviews.average} out of 5 stars</p>
+                <p className="sr-only">{post.rating} out of 5 stars</p>
                 <Link
                   to={reviews.href}
-                  className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                  className="mx-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  {reviews.totalCount} reviews
+                  {reviews.totalCount} likes
                 </Link>
               </div>
             </div>
+            <p className="mt-3 text-2xl tracking-tight text-gray-900">
+              Category: {post.category}
+            </p>
+          </div>
+
+          {/* Options */}
+          <div className=" lg:row-span-3 lg:mt-0">
+            <h2 className="sr-only">Product information</h2>
+            <p className="text-3xl tracking-tight text-gray-900">
+              {product.price}
+            </p>
 
             <form className="mt-10">
               {/* Colors */}
