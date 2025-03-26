@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from "react-router";
 import styles from "./PostDetails.module.css";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { useDeletePost, usePost } from "../../../api/postsApi";
+import LatestPosts from "./latestPosts/LatestPosts";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -65,29 +66,15 @@ export default function PostDetails() {
     <div className="bg-white">
       <div className="pt-6">
         {/* Image gallery */}
+
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <img
             alt={post.title}
             src={post.imageUrl}
             className="hidden size-full rounded-lg object-cover lg:block"
           />
-          <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <img
-              alt={post.title}
-              src={post.imageUrl}
-              className="aspect-3/2 w-full rounded-lg object-cover"
-            />
-            <img
-              alt={post.title}
-              src={post.imageUrl}
-              className="aspect-3/2 w-full rounded-lg object-cover"
-            />
-          </div>
-          <img
-            alt={post.title}
-            src={post.imageUrl}
-            className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
-          />
+
+          <LatestPosts post={post} />
         </div>
 
         {/* Product info */}
