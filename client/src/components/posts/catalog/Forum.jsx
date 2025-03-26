@@ -3,12 +3,9 @@ import TopPicksBar from "../../common/top-picks/TopPicksBar";
 import Spinner from "../../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
 import { usePosts } from "../../../api/postsApi";
-import { useSearchParams } from "react-router";
 
 export default function Forum() {
   const { pending, posts } = usePosts();
-  const searchParams = useSearchParams();
-  console.log(searchParams);
 
   return (
     <>

@@ -53,8 +53,6 @@ export default function PostDetails() {
   const navigate = useNavigate();
   const { _id: userId } = useAuth();
   const isOwner = userId === post._ownerId;
-  console.log(isOwner);
-  console.log(typeof post._createdOn);
 
   const onDelHandler = async () => {
     const hasConfirm = confirm(

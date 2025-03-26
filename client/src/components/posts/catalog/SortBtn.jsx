@@ -9,22 +9,17 @@ const sortParams = [
   {
     id: 2,
     name: "Best Rating",
-    param: "/posts?top=true",
+    param: "/posts?sortBy=rating%20desc",
   },
   {
     id: 3,
-    name: "Popular",
-    param: "/posts?popular=true",
+    name: "Date Asc",
+    param: "/posts?sortBy=_createdOn",
   },
   {
     id: 4,
-    name: "Date Asc",
-    param: "/posts?sortBy=date",
-  },
-  {
-    id: 5,
     name: "Date Desc",
-    param: "/posts?sortBy=date",
+    param: "/posts?sortBy=_createdOn%20desc",
   },
 ];
 

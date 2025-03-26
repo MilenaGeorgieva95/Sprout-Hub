@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
 import { request } from "../utils/requester";
 import useAuth from "../hooks/useAuth";
+import { useLocation } from "react-router";
 
 const baseUrl = "/data/posts";
 
 export const usePosts = () => {
   const [posts, setPosts] = useState([]);
   const [pending, setPending] = useState(false);
+  const location = useLocation();
+  const search = location.search;
+  const queryParams = new URLSearchParams(search);
+  console.log(queryParams.get("sortBy"));
+
   useEffect(() => {
     setPending(true);
-    request.get(baseUrl).then((data) => {
+    request.get(baseUrl + `?${queryParams.toString()}`).then((data) => {
       setPending(false);
       setPosts(data);
     });
-  }, []);
+  }, [search]);
   return { pending, posts };
 };
 
@@ -54,8 +60,6 @@ export const useLatestPosts = (postId) => {
   const [latestPosts, setPosts] = useState([]);
 
   useEffect(() => {
-    console.log("details");
-
     const PAGE_SIZE = 3;
     const searchParams = new URLSearchParams({
       sortBy: "_createdOn desc",
