@@ -6,6 +6,7 @@ import styles from "./PostDetails.module.css";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { useDeletePost, usePost } from "../../../api/postsApi";
 import LatestPosts from "./latestPosts/LatestPosts";
+import useAuth from "../../../hooks/useAuth";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -50,6 +51,10 @@ export default function PostDetails() {
   const { pending, post } = usePost(postId);
   const { del } = useDeletePost();
   const navigate = useNavigate();
+  const { _id: userId } = useAuth();
+  const isOwner = userId === post._ownerId;
+  console.log(isOwner);
+  console.log(typeof post._createdOn);
 
   const onDelHandler = async () => {
     const hasConfirm = confirm(
@@ -83,6 +88,9 @@ export default function PostDetails() {
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {post.title}
             </h1>
+            <p className="mt-5 text-2xl tracking-tight text-gray-900">
+              {post.category}
+            </p>
           </div>
 
           {/* Options */}

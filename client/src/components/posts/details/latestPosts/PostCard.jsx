@@ -19,7 +19,7 @@ export default function PostCard({ post }) {
             </Link>
           </h4>
           <div>
-            <p className="mt-1 text-sm text-gray-500">John Doe</p>
+            <p className="mt-1 text-sm text-gray-500">{post.category}</p>
           </div>
         </div>
       </div>

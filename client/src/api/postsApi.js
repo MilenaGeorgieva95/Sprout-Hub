@@ -60,7 +60,7 @@ export const useLatestPosts = (postId) => {
     const searchParams = new URLSearchParams({
       sortBy: "_createdOn desc",
       pageSize: PAGE_SIZE,
-      select: "_id,imageUrl,title",
+      select: "_id,imageUrl,title,category",
     });
 
     request.get(`${baseUrl}?${searchParams.toString()}`).then((postsData) => {
