@@ -8,9 +8,9 @@
 * {
   margin: 0;
 }
-.fullHeight {
-  height: 77vh;
-}
+/* .fullHeight {
+  height: 100vh;
+} */
 
 twFormSection {
   align-items: center;

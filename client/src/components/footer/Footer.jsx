@@ -11,7 +11,7 @@ export default function Footer() {
     >
       {/* <!-- Section: Links  --> */}
       <section className="">
-        <div className="container text-center text-md-start mt-5">
+        <div className="container text-center text-md-start mt-2">
           {/* <!-- Grid row --> */}
           <div className="row mt-3">
             {/* <!-- Grid column --> */}
