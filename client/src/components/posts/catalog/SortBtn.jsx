@@ -4,27 +4,27 @@ const sortParams = [
   {
     id: 1,
     name: "All",
-    param: "/forum",
+    param: "/posts",
   },
   {
     id: 2,
     name: "Best Rating",
-    param: "/forum?top=true",
+    param: "/posts?top=true",
   },
   {
     id: 3,
     name: "Popular",
-    param: "/forum?popular=true",
+    param: "/posts?popular=true",
   },
   {
     id: 4,
     name: "Date Asc",
-    param: "/forum?sortBy=date",
+    param: "/posts?sortBy=date",
   },
   {
     id: 5,
     name: "Date Desc",
-    param: "/forum?sortBy=date",
+    param: "/posts?sortBy=date",
   },
 ];
 

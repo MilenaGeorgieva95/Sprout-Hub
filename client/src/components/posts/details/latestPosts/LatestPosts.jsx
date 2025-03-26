@@ -4,19 +4,19 @@ import PostCard from "./postCard";
 
 export default function LatestPosts() {
   const { postId } = useParams();
-  const { latestPosts } = useLatestPosts();
-  const displayPosts = latestPosts.filter((el) => el._id != postId);
+  const { latestPosts } = useLatestPosts(postId);
+  console.log(latestPosts);
 
   return (
     <>
-      {displayPosts.length >= 2 ? (
+      {latestPosts.length >= 2 ? (
         <>
           {" "}
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-6">
-            <PostCard post={displayPosts[0]} />
+            <PostCard post={latestPosts[0]} />
           </div>
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-6">
-            <PostCard post={displayPosts[1]} />
+            <PostCard post={latestPosts[1]} />
           </div>{" "}
         </>
       ) : null}

@@ -63,7 +63,10 @@ export const useLatestPosts = (postId) => {
       select: "_id,imageUrl,title",
     });
 
-    request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
-  }, []);
+    request.get(`${baseUrl}?${searchParams.toString()}`).then((postsData) => {
+      const displayPosts = postsData.filter((el) => el._id != postId);
+      setPosts(displayPosts);
+    });
+  }, [postId]);
   return { latestPosts };
 };
