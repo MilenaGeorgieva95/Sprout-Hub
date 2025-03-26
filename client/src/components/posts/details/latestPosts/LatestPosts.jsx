@@ -5,7 +5,6 @@ import PostCard from "./postCard";
 export default function LatestPosts() {
   const { postId } = useParams();
   const { latestPosts } = useLatestPosts(postId);
-  console.log(latestPosts);
 
   return (
     <>

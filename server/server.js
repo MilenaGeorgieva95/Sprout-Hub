@@ -1456,146 +1456,145 @@
   };
   var seedData = {
     posts: {
-      1: {
-        _id: 1,
+      "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
+        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
         title: "Growing Tomatoes for Beginners",
+        category: "Edible Plants",
         text: "Tomatoes are one of the most rewarding plants to grow in your garden. They need plenty of sunlight, regular watering, and a good-quality soil mix to thrive. Start by planting seedlings after the last frost, and make sure to stake your plants as they grow to keep them off the ground.",
-        _ownerId: 101,
-        _createdOn: "2025-03-18T08:00:00Z",
-        updatedAt: "2025-03-18T08:00:00Z",
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: 1616237272948,
         imageUrl: "/images/lawrence-aritao-k2sTHzAnmfY-unsplash.jpg",
-        owner: "35c62d76-8152-4626-8712-eeb96381bea8",
         details:
-          "Tomatoes are highly versatile, great for a variety of culinary uses, and are perfect for home gardeners. They require a lot of sunlight, typically 6–8 hours a day, and need regular watering but not over-watering. They are also sensitive to frost, so timing your planting carefully is essential.",
+          "Tomatoes are highly versatile, great for a variety of culinary uses, and are perfect for home gardeners. They require a lot of sunlight, typically 6-8 hours a day, and need regular watering but not over-watering. They are also sensitive to frost, so timing your planting carefully is essential.",
       },
-      2: {
-        _id: 2,
+      "1240549d-f0e0-497e-ab99-eb8f703713d7": {
+        _id: "1240549d-f0e0-497e-ab99-eb8f703713d7",
         title: "How to Start a Raised Bed Garden",
+        category: "General Gardening Talk",
         text: "Raised bed gardening is perfect for beginners, as it allows for better soil control and drainage. To start, choose a location with good sun exposure, and build a frame using wood, bricks, or other materials. Fill it with a mix of compost and soil, and you're ready to plant!",
-        _ownerId: 102,
-        _createdOn: "2025-03-17T10:15:00Z",
+        _createdOn: 1616237257265,
         updatedAt: "2025-03-17T10:15:00Z",
         imageUrl: "/images/jonathan-kemper-CbZh3kaPxrE-unsplash.jpg",
-        owner: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
         details:
           "Raised bed gardening is an efficient way to maximize space, improve soil quality, and reduce the risk of pests. The elevated structure allows for better drainage, which is essential for healthy root development. You can also control the soil mixture to suit specific plant needs.",
       },
-      3: {
-        _id: 3,
+      "143e5265-333e-4150-80e4-16b61de31aa0": {
+        _id: "143e5265-333e-4150-80e4-16b61de31aa0",
         title: "Easy Care for Indoor Plants",
+        category: "Indoor Plants",
         text: "Indoor plants are great for beginners because they require less maintenance. Some popular choices include pothos, peace lilies, and snake plants. Make sure to place them in areas with indirect sunlight, water them once a week, and keep an eye out for pests.",
-        _ownerId: 103,
-        _createdOn: "2025-03-16T14:30:00Z",
-        updatedAt: "2025-03-16T14:30:00Z",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: 1616237231299,
         imageUrl:
           "https://images.unsplash.com/photo-1528467279403-46af96c37ab3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         owner: "35c62d76-8152-4626-8712-eeb96381bea8",
         details:
           "Indoor plants are perfect for adding a touch of greenery to your home without much effort. Popular options like pothos and snake plants thrive in low light and require little maintenance. They help purify the air and create a calming atmosphere in your living space.",
       },
-      4: {
-        _id: 4,
+      "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
+        _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
         title: "Dealing with Garden Pests Naturally",
+        category: "Diseases & Pests",
         text: "If you're looking to avoid chemicals, try natural pest control methods. Companion planting, such as planting marigolds near tomatoes, can help keep insects away. You can also make your own organic sprays using ingredients like neem oil or garlic.",
-        _ownerId: 104,
-        _createdOn: "2025-03-15T12:45:00Z",
-        updatedAt: "2025-03-15T12:45:00Z",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: 1616237193355,
         imageUrl: "/images/lobostudio-hamburg-wj961KyCaNk-unsplash.jpg",
         details:
           "Instead of relying on chemicals, natural pest control offers an eco-friendly approach to garden care. Companion planting, like pairing marigolds with tomatoes, can deter pests. Additionally, homemade organic sprays are a great way to control bugs without harming the environment.",
       },
-      5: {
-        _id: 5,
+      "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
+        _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e",
         title: "Planting Your First Herb Garden",
+        category: "Edible Plants",
         text: "Herb gardens are a great way to get started with gardening. They are easy to care for and provide fresh ingredients for cooking. Popular herbs include basil, rosemary, and mint. Start by planting them in containers, ensuring they get plenty of sunlight and water regularly.",
-        _ownerId: 105,
-        _createdOn: "2025-03-14T11:00:00Z",
-        updatedAt: "2025-03-14T11:00:00Z",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: 1616237188183,
         imageUrl: "/images/almani-qhizq_V876M-unsplash.jpg",
         owner: "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0",
         details:
           "Herb gardens are a great introduction to gardening, as herbs are easy to care for and don't require much space. Growing them in containers is ideal if you're limited on garden space, and they provide fresh, flavorful ingredients for your cooking.",
       },
-      6: {
-        _id: 6,
+      "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
+        _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c",
         title: "How to Grow Cucumbers in Your Garden",
+        category: "Edible Plants",
         text: "Cucumbers thrive in warm weather and need a lot of space to grow. Plant them in well-draining soil and water consistently. For best results, consider growing them on a trellis to save space and keep the fruit off the ground.",
-        _ownerId: 106,
-        _createdOn: "2025-03-13T09:00:00Z",
-        updatedAt: "2025-03-13T09:00:00Z",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: 1616236790262,
         imageUrl:
           "https://images.unsplash.com/photo-1601906451998-bb5e51856e45?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details:
           "Cucumbers are a great addition to any garden, but they require warm temperatures and space to spread. Planting cucumbers on a trellis is a great space-saving method, and it helps keep the fruit clean and off the ground, preventing rot.",
       },
-      7: {
-        _id: 7,
+      "b8608c22-dd57-4b24-948e-b358f536b958": {
+        _id: "b8608c22-dd57-4b24-948e-b358f536b958",
         title: "Tips for Growing Roses Successfully",
+        category: "Perennials & Roses",
         text: "Roses are a classic favorite in gardens but require specific care to thrive. Ensure they get plenty of sunlight (at least 6 hours a day), and prune them regularly to promote healthy growth. Fertilize every 6 weeks during the growing season and keep an eye out for pests.",
-        _ownerId: 107,
-        _createdOn: "2025-03-12T08:30:00Z",
-        updatedAt: "2025-03-12T08:30:00Z",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: 1615737688036,
         imageUrl:
           "https://images.unsplash.com/photo-1520711956682-ca8887a7e37c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details:
           "Roses require regular care, but the effort is well worth it. With proper sunlight, regular pruning, and consistent fertilization, you can enjoy stunning blooms. Keep an eye out for common pests like aphids and fungal diseases to maintain your rose bushes' health.",
       },
-      8: {
-        _id: 8,
+      "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
+        _id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95",
         title: "Composting 101: The Basics",
+        category: "Compost & Sustainable Practices",
         text: "Composting is an eco-friendly way to recycle organic waste into nutrient-rich soil for your garden. Start with kitchen scraps like fruit and vegetable peels, coffee grounds, and eggshells. Combine them with yard waste such as grass clippings and leaves, turning the pile regularly for best results.",
-        _ownerId: 108,
-        _createdOn: "2025-03-11T07:15:00Z",
-        updatedAt: "2025-03-11T07:15:00Z",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: 1615737655083,
         imageUrl:
           "https://images.unsplash.com/photo-1621460248137-1656be874a8b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details:
           "Composting is a sustainable practice that benefits your garden by providing rich, organic material that improves soil health. By recycling organic waste, you reduce landfill contributions and create your own nutrient-rich compost to support plant growth.",
       },
-      9: {
-        _id: 9,
+      "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
+        _id: "f5929b5c-bca4-4026-8e6e-c09e73908f77",
         title: "How to Grow Succulents in Small Spaces",
+        category: "Indoor Plants",
         text: "Succulents are perfect for small spaces and require minimal care. They thrive in containers and require well-draining soil. These plants love sunlight, so place them near a sunny window and only water when the soil is dry.",
-        _ownerId: 109,
-        _createdOn: "2025-03-10T06:00:00Z",
-        updatedAt: "2025-03-10T06:00:00Z",
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: 1615737591748,
         imageUrl:
           "https://images.unsplash.com/photo-1526403184940-93931285d324?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         owner: "0aef49b7-2798-4b3b-8f37-1f1f0b7b36d0",
         details:
           "Succulents are low-maintenance plants that thrive in dry conditions and are perfect for small living spaces. Their ability to store water in their leaves means they don’t require frequent watering, and they thrive in bright light.",
       },
-      10: {
-        _id: 10,
+      "c7f51805-242b-45ed-ae3e-80b68605141b": {
+        _id: "c7f51805-242b-45ed-ae3e-80b68605141b",
         title: "How to Grow Beautiful Flower Beds",
+        category: "Landscaping & Garden Design",
         text: "Flower beds are a colorful addition to any garden. To start, choose a variety of flowers that bloom at different times to ensure color all season long. Make sure to space them out properly and provide enough sunlight and water for each plant to thrive.",
-        _ownerId: 110,
-        _createdOn: "2025-03-09T05:30:00Z",
-        updatedAt: "2025-03-09T05:30:00Z",
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: 1615737655083,
         imageUrl:
           "https://images.unsplash.com/photo-1527863280617-15596f92e5c8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details:
           "Flower beds can be a vibrant focal point in your garden. By selecting a mix of early, mid, and late-season bloomers, you can enjoy color throughout the growing season. Regular care, including watering, fertilizing, and deadheading, will keep your flower beds looking their best.",
       },
-      11: {
-        _id: 11,
+      "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
+        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
         title: "Best Vegetables to Grow in Containers",
+        category: "Edible Plants",
         text: "Growing vegetables in containers is a great solution for small spaces or people with limited access to a garden. Some of the best options include peppers, lettuce, and radishes. Choose containers with drainage holes and use a good-quality potting mix to ensure success.",
-        _ownerId: 111,
-        _createdOn: "2025-03-08T04:45:00Z",
-        updatedAt: "2025-03-08T04:45:00Z",
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: 1615737688036,
         imageUrl:
           "https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details:
           "Container gardening is ideal for small spaces, allowing you to grow vegetables like peppers and lettuce even in limited areas. Ensure your containers have proper drainage, and use high-quality soil to support healthy growth and high yields.",
       },
-      12: {
-        _id: 12,
+      "733fa9a1-26b6-490d-b299-21f120b2f53a": {
+        _id: "733fa9a1-26b6-490d-b299-21f120b2f53a",
         title: "Creating a Wildlife-Friendly Garden",
+        category: "Organic Gardening",
         text: "A wildlife-friendly garden can attract beneficial insects, birds, and even small mammals. To start, plant a variety of native plants, add a birdbath, and avoid using chemicals that harm wildlife. Creating a natural habitat in your garden is both beautiful and beneficial.",
-        _ownerId: 112,
-        _createdOn: "2025-03-07T03:30:00Z",
-        updatedAt: "2025-03-07T03:30:00Z",
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: 1615033491967,
         imageUrl:
           "https://images.unsplash.com/photo-1511985858324-23f5fff69d92?q=80&w=1018&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details:
@@ -1786,31 +1785,90 @@
         _id: "c7f51805-242b-45ed-ae3e-80b68605141b",
       },
     },
-    teams: {
+    categories: {
       "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Storm Troopers",
+        name: "General Gardening Talk",
         logoUrl: "/assets/atat.png",
-        description: "These ARE the droids we're looking for",
+        description: "For any general gardening discussions",
         _createdOn: 1615737591748,
         _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
       },
       "dc888b1a-400f-47f3-9619-07607966feb8": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Team Rocket",
+        name: "Landscaping & Garden Design",
         logoUrl: "/assets/rocket.png",
-        description: "Gotta catch 'em all!",
+        description: "Design tips, garden planning, landscaping ideas",
         _createdOn: 1615737655083,
         _id: "dc888b1a-400f-47f3-9619-07607966feb8",
       },
       "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Minions",
+        name: "Fast-Growing UK Plants",
         logoUrl: "/assets/hydrant.png",
-        description:
-          "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
+        description: "Plants that thrive quickly in the UK",
         _createdOn: 1615737688036,
         _id: "733fa9a1-26b6-490d-b299-21f120b2f53a",
+      },
+      "34a1cab1-81f1-47e5-aec3-ab6c9810efe2": {
+        name: "Lawn Care & Organic Lawn Feed",
+        logoUrl: "/assets/atat.png",
+        description: "Lawn maintenance and organic methods",
+        _createdOn: 1615737591748,
+        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe2",
+      },
+      "dc888b1a-400f-47f3-9619-07607966feb2": {
+        name: "Edible Plants",
+        logoUrl: "/assets/rocket.png",
+        description: "All things edible in the garden",
+        _createdOn: 1615737655083,
+        _id: "dc888b1a-400f-47f3-9619-07607966feb2",
+      },
+      "733fa9a1-26b6-490d-b299-21f120b2f532": {
+        name: "Trees, Shrubs & Hedges",
+        logoUrl: "/assets/hydrant.png",
+        description: "For discussions on larger plants and hedging",
+        _createdOn: 1615737688036,
+        _id: "733fa9a1-26b6-490d-b299-21f120b2f532",
+      },
+      "34a1cab1-81f1-47e5-aec3-ab6c9810efa1": {
+        name: "Perennials & Roses",
+        logoUrl: "/assets/atat.png",
+        description: "Perennials and rose varieties, care tips",
+        _createdOn: 1615737591748,
+        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efa1",
+      },
+      "dc888b1a-400f-47f3-9619-07607966fea8": {
+        name: "Indoor Plants",
+        logoUrl: "/assets/rocket.png",
+        description: "For all things houseplants",
+        _createdOn: 1615737655083,
+        _id: "dc888b1a-400f-47f3-9619-07607966fea8",
+      },
+      "733fa9a1-26b6-490d-b299-21f120b2f43a": {
+        name: "Organic Gardening",
+        logoUrl: "/assets/hydrant.png",
+        description: "Techniques, tips, and advice for organic gardeners",
+        _createdOn: 1615737688036,
+        _id: "733fa9a1-26b6-490d-b299-21f120b2f43a",
+      },
+      "34a1cab1-81f1-47e5-aec3-ab6c9810e4e2": {
+        name: "Compost & Sustainable Practices",
+        logoUrl: "/assets/atat.png",
+        description: "Composting, recycling, and eco-friendly gardening",
+        _createdOn: 1615737591748,
+        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810e4e1",
+      },
+      "dc888b1a-400f-47f3-9619-07607966ceb2": {
+        name: "Pests, Diseases & Plant Health",
+        logoUrl: "/assets/rocket.png",
+        description: "Troubleshooting garden problems",
+        _createdOn: 1615737655083,
+        _id: "dc888b1a-400f-47f3-9619-07607966ceb8",
+      },
+      "733fa9a1-26b6-490d-b299-21f120b2c532": {
+        name: "Gardening Tools & Equipment",
+        logoUrl: "/assets/hydrant.png",
+        description: "Advice on tools, gadgets, and equipment",
+        _createdOn: 1615737688036,
+        _id: "733fa9a1-26b6-490d-b299-21f120b2c53a",
       },
     },
     members: {

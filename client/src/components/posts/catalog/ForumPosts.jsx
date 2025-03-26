@@ -28,7 +28,7 @@ export default function ForumPosts({ posts }) {
                   </Link>
                 </h3>
                 <div>
-                  <p className="mt-1 text-sm text-gray-500">John Doe</p>
+                  <p className="mt-1 text-m text-gray-500">{post.category}</p>
                 </div>
               </div>
             </div>
