@@ -107,8 +107,8 @@ export default function Footer() {
       <div
         className="text-center p-4"
         style={{
-          backgroundColor: "rgba(0, 0, 0, 0.04)",
-          color: "rgba(0, 0, 0, 0.4)",
+          backgroundColor: "#FFF",
+          color: "rgba(0, 0, 0, 0.3)",
         }}
       >
         Footer Template © 2021 Copyright:

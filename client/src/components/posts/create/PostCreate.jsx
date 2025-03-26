@@ -26,7 +26,7 @@ export default function PostCreate() {
   );
 
   return (
-    <div className="mt-5 text-gray-900 font-sans py-8 ">
+    <div className="mt-5 text-gray-900 font-sans py-8 maxHeight">
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center text-green-600 mb-6">
           Create a Gardening Post

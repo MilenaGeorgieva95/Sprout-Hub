@@ -63,7 +63,7 @@ export default function PostDetails() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white maxHeight">
       <div className="pt-6">
         {/* Image gallery */}
 
