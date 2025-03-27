@@ -4,6 +4,8 @@ import GreenLogoBar from "../common/logo-bars/green-logo-bar/GreenLogoBar";
 import styles from "./HomePage.module.css";
 import WhiteLogoBar from "../common/logo-bars/white-logo-bar/WhiteLogoBar";
 
+const categories = [];
+
 export default function HomePage() {
   return (
     <>
