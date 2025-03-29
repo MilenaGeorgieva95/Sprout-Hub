@@ -5,6 +5,7 @@ import styles from "./PostDetails.module.css";
 import { useDeletePost, usePost } from "../../../api/postsApi";
 import LatestPosts from "./latestPosts/LatestPosts";
 import useAuth from "../../../hooks/useAuth";
+import CommentsSection from "../../comments/comments-section/commentsSection";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -46,7 +47,7 @@ export default function PostDetails() {
           <LatestPosts postId={postId} />
         </div>
 
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+        <div className="mx-auto max-w-2xl px-4 pt-10  sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 ">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {post.title}
@@ -85,8 +86,9 @@ export default function PostDetails() {
           <div className=" lg:row-span-3 lg:mt-0 group relative mx-3">
             <h2 className="sr-only">Author information</h2>
             <p className="text-3xl tracking-tight text-gray-900">Author</p>
-            <Link to={`/member/${post.author?._id}/posts`}>
-              <form className="mt-10">
+
+            <form className="mt-10">
+              <Link to={`/member/${post.author?._id}/posts`}>
                 <div>
                   <h3 className="text-sm font-medium text-gray-900">
                     <span aria-hidden="true" className="absolute inset-0" />
@@ -101,18 +103,18 @@ export default function PostDetails() {
                     />
                   </fieldset>
                 </div>
+              </Link>
 
-                <Link
-                  to={`/member/${post.author?._id}/posts`}
-                  className={
-                    "mt-10 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                    styles.detailsBtn
-                  }
-                >
-                  View Author's Posts
-                </Link>
-              </form>
-            </Link>
+              <Link
+                to={`/member/${post.author?._id}/posts`}
+                className={
+                  "mt-10 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                  styles.detailsBtn
+                }
+              >
+                View Author's Posts
+              </Link>
+            </form>
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
@@ -174,6 +176,7 @@ export default function PostDetails() {
             </div>
           </div>
         </div>
+        <CommentsSection />
       </div>
     </div>
   );
