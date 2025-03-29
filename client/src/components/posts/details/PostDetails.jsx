@@ -6,6 +6,7 @@ import { useDeletePost, usePost } from "../../../api/postsApi";
 import LatestPosts from "./latestPosts/LatestPosts";
 import useAuth from "../../../hooks/useAuth";
 import CommentsSection from "../../comments/comments-section/commentsSection";
+import AddComment from "../../comments/add-comment/AddComment";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -166,7 +167,18 @@ export default function PostDetails() {
             </div>
           </div>
         </div>
-        <CommentsSection />
+
+        <div className="bg-white py-24 sm:py-32">
+          <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+            <CommentsSection />
+            <div className="max-w-xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
+                Add New Comment
+              </h2>
+              <AddComment />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
