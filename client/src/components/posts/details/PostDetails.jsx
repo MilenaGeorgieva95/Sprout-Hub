@@ -7,6 +7,9 @@ import LatestPosts from "./latestPosts/LatestPosts";
 import useAuth from "../../../hooks/useAuth";
 import CommentsSection from "../../comments/comments-section/commentsSection";
 import AddComment from "../../comments/add-comment/AddComment";
+import { useComments, useCreateComment } from "../../../api/commentsApi";
+import { useOptimistic } from "react";
+import { v4 as uuid } from "uuid";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -21,8 +24,13 @@ export default function PostDetails() {
 
   const { del } = useDeletePost();
   const navigate = useNavigate();
-  const { _id: userId } = useAuth();
+  const { _id: userId, username, avatarUrl } = useAuth();
   const isOwner = userId === post._ownerId;
+  const { create } = useCreateComment();
+  const { comments, addNewComment } = useComments(postId);
+  console.log(comments);
+
+  const [optimisticComments, setOptimisticComments] = useOptimistic(comments);
 
   const onDelHandler = async () => {
     const hasConfirm = confirm(
@@ -33,6 +41,27 @@ export default function PostDetails() {
     }
     del(postId);
     navigate("/posts");
+  };
+
+  const commentsCreateHandler = async (formData) => {
+    const comment = formData.get("comment");
+    const newOptimisticComment = {
+      _id: uuid(),
+      _ownerId: userId,
+      postId,
+      comment,
+      pending: true,
+      author: {
+        username,
+        avatarUrl,
+      },
+    };
+    setOptimisticComments((oldComments) => [
+      ...oldComments,
+      newOptimisticComment,
+    ]);
+    const result = await create(postId, comment);
+    addNewComment({ ...result, author: { username, userId, avatarUrl } });
   };
 
   return (
@@ -170,7 +199,7 @@ export default function PostDetails() {
 
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-            <CommentsSection />
+            <CommentsSection commentsData={optimisticComments} />
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
                 Add New Comment

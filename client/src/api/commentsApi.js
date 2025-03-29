@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import { request } from "../../utils/requester";
+import useAuth from "../hooks/useAuth";
+import { request } from "../utils/requester";
 
 const baseUrl = "/data/comments";
 
@@ -15,19 +15,21 @@ function commentsReducer(state, action) {
   }
 }
 
-export const useComments = (gameId) => {
+export const useComments = (postId) => {
   // const [comments, setComments] = useState([]);
   const [comments, dispatch] = useReducer(commentsReducer, []);
+  console.log(comments);
+
   const { accessToken } = useAuth();
   useEffect(() => {
     const searchParams = new URLSearchParams({
-      where: `gameId="${gameId}"`,
+      where: `postId="${postId}"`,
       load: "author=_ownerId:users",
     });
     request
       .get(`${baseUrl}?${searchParams.toString()}`)
       .then((result) => dispatch({ type: "GET_ALL", payload: result }));
-  }, [accessToken, gameId]);
+  }, [accessToken, postId]);
   return {
     comments,
     addNewComment: (commentData) =>
@@ -37,12 +39,11 @@ export const useComments = (gameId) => {
 
 export const useCreateComment = () => {
   const { accessToken, _id } = useAuth();
-  const create = (gameId, comment, email) => {
+  const create = (postId, comment) => {
     const body = {
       _ownerId: _id,
       comment,
-      gameId,
-      email,
+      postId,
     };
     return request.post(baseUrl, body, accessToken);
   };
