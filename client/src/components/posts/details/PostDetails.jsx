@@ -127,8 +127,7 @@ export default function PostDetails() {
             </div>
 
             <div className="mt-10">
-              <div className="mt-10"></div>
-              <div className="mt-4 space-b">
+              <div className="mt-10 flex items-center justify-start gap-x-6">
                 {isOwner ? (
                   <>
                     <Link
@@ -163,15 +162,6 @@ export default function PostDetails() {
                     </Link>
                   </>
                 )}
-                <Link
-                  to={`/posts/${post._id}/comment`}
-                  className={
-                    "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                    styles.detailsBtn
-                  }
-                >
-                  Comment
-                </Link>
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+import AddComment from "../add-comment/AddComment";
+
 const people = [
   {
     name: "Leslie Alexander",
@@ -34,9 +36,12 @@ const people = [
 
 export default function CommentsSection() {
   return (
-    <div className="bg-white py-8 sm:py-2">
-      <div className="mx-auto grid max-w-7xl gap-10 px-10 lg:px-8 xl:grid-cols-2">
-        <ul role="list" className="gap-x-8 gap-y-12  sm:gap-y-16 ">
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+        <ul
+          role="list"
+          className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
+        >
           {people.map((person) => (
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
@@ -58,8 +63,10 @@ export default function CommentsSection() {
           ))}
         </ul>
         <div className="max-w-xl">
-          <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl"></h2>
-          <p className="mt-6 text-lg/8 text-gray-600"></p>
+          <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
+            Add New Comment
+          </h2>
+          <AddComment />
         </div>
       </div>
     </div>
