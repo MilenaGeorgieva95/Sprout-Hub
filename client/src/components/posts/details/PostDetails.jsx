@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { Link, useNavigate, useParams } from "react-router";
 
 import styles from "./PostDetails.module.css";
-import { Radio, RadioGroup } from "@headlessui/react";
 import { useDeletePost, usePost } from "../../../api/postsApi";
 import LatestPosts from "./latestPosts/LatestPosts";
 import useAuth from "../../../hooks/useAuth";
@@ -84,35 +82,37 @@ export default function PostDetails() {
             </p>
           </div>
 
-          <div className=" lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">Product information</h2>
+          <div className=" lg:row-span-3 lg:mt-0 group relative mx-3">
+            <h2 className="sr-only">Author information</h2>
             <p className="text-3xl tracking-tight text-gray-900">Author</p>
+            <Link to={`/member/${post.author?._id}/posts`}>
+              <form className="mt-10">
+                <div>
+                  <h3 className="text-sm font-medium text-gray-900">
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    {post.author?.username}
+                  </h3>
 
-            <form className="mt-10">
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">
-                  {post.author?.username}
-                </h3>
+                  <fieldset aria-label="Author Avatar Image" className="my-3">
+                    <img
+                      alt="author avatar image"
+                      src={post.author?.avatarUrl}
+                      className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                    />
+                  </fieldset>
+                </div>
 
-                <fieldset aria-label="Author Avatar Image" className="m-3">
-                  <img
-                    alt="author avatar image"
-                    src={post.author?.avatarUrl}
-                    className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
-                  />
-                </fieldset>
-              </div>
-
-              <button
-                type="submit"
-                className={
-                  "mt-10 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                  styles.detailsBtn
-                }
-              >
-                View Author's Posts
-              </button>
-            </form>
+                <Link
+                  to={`/member/${post.author?._id}/posts`}
+                  className={
+                    "mt-10 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                    styles.detailsBtn
+                  }
+                >
+                  View Author's Posts
+                </Link>
+              </form>
+            </Link>
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">

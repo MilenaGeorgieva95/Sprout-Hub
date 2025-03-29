@@ -9,6 +9,11 @@
 .detailsBtn {
   background-color: #fff;
   color: #006639;
-  border-radius: 30px !important;
+  border-radius: 30px;
+  border: 2px solid #006639;
+}
+
+.detailsBtn:hover {
+  background-color: #006639;
   border: 2px solid #006639;
 }

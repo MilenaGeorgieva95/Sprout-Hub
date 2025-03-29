@@ -1,0 +1,23 @@
+.clearBtn {
+  background-color: #fff;
+  color: #006639;
+  border-radius: 30px;
+  border: 2px solid #006639;
+}
+
+.clearBtn:hover {
+  background-color: #006639;
+  border: 2px solid #006639;
+}
+
+.solidBtn {
+  background-color: #006639;
+  color: #fff;
+  border-radius: 30px;
+  border: 2px solid #006639;
+}
+
+.solidBtn:hover {
+  background-color: #2dec99;
+  border: 2px solid #006639;
+}
