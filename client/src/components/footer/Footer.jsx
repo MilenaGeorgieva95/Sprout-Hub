@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -33,19 +34,28 @@ export default function Footer() {
               {/* <!-- Links --> */}
               <h6 className="text-uppercase fw-bold mb-4">Popular Posts</h6>
               <p>
-                <a href="/posts/1/details" className="text-reset">
+                <Link
+                  to="/posts/34a1cab1-81f1-47e5-aec3-ab6c9810efe5/details"
+                  className="text-reset"
+                >
                   Growing Tomatoes for Beginners
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="posts/2/details" className="text-reset">
+                <Link
+                  to="posts/1240549d-f0e0-497e-ab99-eb8f703713d7/details"
+                  className="text-reset"
+                >
                   How to Start a Raised Bed Garden
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="posts/3/details" className="text-reset">
+                <Link
+                  to="posts/143e5265-333e-4150-80e4-16b61de31aa0/details"
+                  className="text-reset"
+                >
                   Easy Care for Indoor Plants
-                </a>
+                </Link>
               </p>
             </div>
             {/* <!-- Grid column --> */}
@@ -55,25 +65,25 @@ export default function Footer() {
               {/* <!-- Links --> */}
               <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
-                <a href="/identify" className="text-reset">
+                <Link to="/identify" className="text-reset">
                   Plant Identification
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="/about" className="text-reset">
+                <Link to="/about" className="text-reset">
                   More about us
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="posts" className="text-reset">
+                <Link to="/posts" className="text-reset">
                   Browse Posts
-                </a>
+                </Link>
               </p>
 
               <p>
-                <a href="/categories" className="text-reset">
+                <Link to="/categories" className="text-reset">
                   Browse All Categories
-                </a>
+                </Link>
               </p>
             </div>
             {/* <!-- Grid column --> */}
@@ -112,9 +122,9 @@ export default function Footer() {
         }}
       >
         Footer Template © 2021 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
+        <Link className="text-reset fw-bold" to="https://mdbootstrap.com/">
           MDBootstrap.com
-        </a>
+        </Link>
       </div>
       {/* <!-- Copyright --> */}
     </footer>
