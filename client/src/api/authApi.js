@@ -36,6 +36,8 @@ export const useRegister = () => {
     const registerData = await request.post(
       `${baseUrl}/register`,
       { username, avatarUrl, email, password },
+      "",
+      "",
       { signal: abortRef.current.signal }
     );
     return registerData;

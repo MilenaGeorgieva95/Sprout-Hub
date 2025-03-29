@@ -10,7 +10,7 @@ export default function PostEdit() {
   const formAction = async (formData) => {
     const postData = Object.fromEntries(formData);
     edit(postId, postData);
-    navigate("/posts");
+    navigate(`/posts/${postId}/details`);
   };
 
   return (

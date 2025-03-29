@@ -18,7 +18,6 @@ export default function Register() {
       return;
     }
     const authData = await register(username, avatarUrl, email, password);
-    authData.password = "";
     userLoginHandler(authData);
     navigate("/posts");
   };

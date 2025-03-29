@@ -25,8 +25,7 @@ export async function requester(method, url, body, token) {
     }
 
     if (res.ok == false) {
-      if (res.status === 403 && userCtx) {
-        userCtx.userLoginHandler({});
+      if (res.status === 403) {
       }
       const error = data;
       throw error;
