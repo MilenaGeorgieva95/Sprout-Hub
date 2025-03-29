@@ -1436,18 +1436,24 @@
       "35c62d76-8152-4626-8712-eeb96381bea8": {
         email: "peter@abv.bg",
         username: "Peter",
+        avatarUrl:
+          "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         hashedPassword:
           "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
       },
       "847ec027-f659-4086-8032-5173e2f9c93a": {
         email: "george@abv.bg",
         username: "George",
+        avatarUrl:
+          "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         hashedPassword:
           "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
       },
       "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
         email: "admin@abv.bg",
         username: "Admin",
+        avatarUrl:
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         hashedPassword:
           "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
       },

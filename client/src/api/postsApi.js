@@ -11,7 +11,6 @@ export const usePosts = () => {
   const location = useLocation();
   const search = location.search;
   const queryParams = new URLSearchParams(search);
-  console.log(queryParams.get("sortBy"));
 
   useEffect(() => {
     setPending(true);
@@ -35,10 +34,16 @@ export const usePost = (postId) => {
   const [pending, setPending] = useState(false);
   useEffect(() => {
     setPending(true);
-    request.get(`${baseUrl}/${postId}`).then((data) => {
-      setPending(false);
-      setPost(data);
+
+    const searchParams = new URLSearchParams({
+      load: "author=_ownerId:users",
     });
+    request
+      .get(`${baseUrl}/${postId}?${searchParams.toString()}`)
+      .then((data) => {
+        setPending(false);
+        setPost(data);
+      });
   }, [postId]);
   return { pending, post };
 };

@@ -1,8 +1,6 @@
 import styles from "./PostCard.module.css";
 import { Link } from "react-router";
 export default function PostCard({ post }) {
-  console.log(post);
-
   return (
     <div key={post._id} className={"group relative " + styles.textContainer}>
       <img
