@@ -1,12 +1,13 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Carousel from "../common/carousel/Carousel";
 import GreenLogoBar from "../common/logo-bars/green-logo-bar/GreenLogoBar";
 import styles from "./HomePage.module.css";
 import WhiteLogoBar from "../common/logo-bars/white-logo-bar/WhiteLogoBar";
+import CategorySearch from "../common/category-search/CategorySearch";
 
-const categories = [];
 
 export default function HomePage() {
+  
   return (
     <>
       <div
@@ -33,30 +34,7 @@ export default function HomePage() {
               </Link>
             </h2>
 
-            <form className="display-5 text-dark mb-5">
-              <div className="row g-4 ">
-                <div className="col-12 col-sm-6">
-                  <select
-                    className="form-select border-0"
-                    style={{ height: "55px", fontSize: "18px" }}
-                  >
-                    <option defaultChecked>Search Categories</option>
-                    <option value="vegetables">Vegetables</option>
-                    <option value="fruits">Fruits</option>
-                    <option value="seeds">Seeds</option>
-                  </select>
-                </div>
-
-                <div className="col-12 col-sm-2">
-                  <button
-                    className={"btn btn-primary " + styles.searchBtn}
-                    type="submit"
-                  >
-                    Search
-                  </button>
-                </div>
-              </div>
-            </form>
+           <CategorySearch/>
           </div>
         </div>
       </div>

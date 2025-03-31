@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes, Route } from "react-router";
 import Header from "./components/header/Header";
-import Gallery from "./components/gallery/Gallery";
+import Categories from "./components/categories/Categories";
 import Forum from "./components/posts/catalog/Forum";
 
 import Quests from "./components/Quests/Quests";
@@ -46,7 +46,7 @@ function App() {
           <Route path="/posts/:postId/details" element={<PostDetails />} />
           <Route path="/posts/:postId/edit" element={<PostEdit />} />
           <Route path="/posts/create" element={<PostCreate />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/quests" element={<Quests />} />
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Page404 />} />
