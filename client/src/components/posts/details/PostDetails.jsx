@@ -45,6 +45,9 @@ export default function PostDetails() {
 
   const commentsCreateHandler = async (formData) => {
     const comment = formData.get("comment");
+    console.log(avatarUrl);
+    console.log(username);
+    
     const newOptimisticComment = {
       _id: uuid(),
       _ownerId: userId,
@@ -204,7 +207,7 @@ export default function PostDetails() {
               <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
                 Add New Comment
               </h2>
-              <AddComment />
+              <AddComment onCreate={commentsCreateHandler}/>
             </div>
           </div>
         </div>

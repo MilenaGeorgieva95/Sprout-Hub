@@ -16,7 +16,6 @@ function commentsReducer(state, action) {
 }
 
 export const useComments = (postId) => {
-  // const [comments, setComments] = useState([]);
   const [comments, dispatch] = useReducer(commentsReducer, []);
   console.log(comments);
 

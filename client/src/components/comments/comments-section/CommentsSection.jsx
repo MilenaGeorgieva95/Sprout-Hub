@@ -46,16 +46,16 @@ export default function CommentsSection({ commentsData }) {
         <li key={comment._id}>
           <div className="flex items-center gap-x-6">
             <img
-              alt=""
+              alt="author-avatar-image"
               src={comment.author?.avatarUrl}
-              className="size-16 rounded-full"
+              className="size-18 rounded-full"
             />
             <div>
               <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
                 {comment.author?.username}
               </h3>
               <p className="text-sm/6 font-semibold text-indigo-600">
-                {comment.content}
+                {comment.comment}
               </p>
             </div>
           </div>

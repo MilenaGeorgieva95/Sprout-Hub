@@ -1,10 +1,10 @@
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 
-export default function AddComment() {
+export default function AddComment({ onCreate }) {
   return (
     <div>
-      <form>
+      <form action={onCreate}>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -17,10 +17,10 @@ export default function AddComment() {
                 </label>
                 <div className="mt-2">
                   <textarea
-                    id="comment-body"
-                    name="comment-body"
+                    id="comment"
+                    name="comment"
                     type="text"
-                    autoComplete="comment-body"
+                    autoComplete="comment"
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
