@@ -42,20 +42,20 @@ export default function CommentsSection({ commentsData }) {
       role="list"
       className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
     >
-      {people.map((person) => (
-        <li key={person.name}>
+      {commentsData.map((comment) => (
+        <li key={comment._id}>
           <div className="flex items-center gap-x-6">
             <img
               alt=""
-              src={person.imageUrl}
+              src={comment.author?.avatarUrl}
               className="size-16 rounded-full"
             />
             <div>
               <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
-                {person.name}
+                {comment.author?.username}
               </h3>
               <p className="text-sm/6 font-semibold text-indigo-600">
-                {person.role}
+                {comment.content}
               </p>
             </div>
           </div>
