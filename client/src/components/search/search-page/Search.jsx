@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import CategorySearch from "../category-search/CategorySearch";
 import { useCategory } from "../../../api/categoriesApi";
 import { usePost } from "../../../api/postsApi";
@@ -50,9 +50,7 @@ const products = [
 export default function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
   const category=searchParams.get('category')
-  console.log(category);
-  console.log(searchParams);
-  
+
   const {pending, posts}=useCategory(category);
   console.log(posts);
   
@@ -64,18 +62,18 @@ export default function Search() {
         <CategorySearch/>
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <a key={product.id} href={product.href} className="group">
+          {posts.map((post) => (
+            <Link key={post._id} to={`/posts/${post._id}/details`} className="group" style={{textDecoration: "none"}}>
               <img
-                alt={product.imageAlt}
-                src={product.imageSrc}
+                alt={post.title}
+                src={post.imageUrl}
                 className="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8"
               />
-              <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
+              <h3 className="mt-4 text-sm text-gray-700">{post.title}</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">
-                {product.price}
+                {post.text}
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -155,6 +155,13 @@ export default function PostDetails() {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
+                <p className="text-base text-gray-900">{post.text}</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="sr-only">Details</h3>
+
+              <div className="space-y-6">
                 <p className="text-base text-gray-900">{post.details}</p>
               </div>
             </div>
@@ -183,7 +190,7 @@ export default function PostDetails() {
                     </button>
                   </>
                 ) : (
-                  <>
+                  username&&<>
                     <Link
                       to={`/posts/${post._id}/like`}
                       className={
