@@ -20,10 +20,12 @@ import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
 import UserProvider from "./components/providers/UserProvider";
 import Search from "./components/search/search-page/Search";
+import ErrorBoundary from "./components/error-boundary/ErrorBoundary";
 
 function App() {
 
   return (
+    <ErrorBoundary>
     <UserProvider>
       <div className="bg-white h-full fullHeight">
         <Header />
@@ -51,6 +53,7 @@ function App() {
         <Footer />
       </div>
     </UserProvider>
+    </ErrorBoundary>
   );
 }
 
