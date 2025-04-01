@@ -7,9 +7,11 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import styles from "./Header.module.css";
 import { UserContext, useUserContext } from "../../contexts/UserContext";
 
+
+
 const navigation = [
   {
-    name: "Forum",
+    name: "Catalog",
     href: "/posts",
     path: "M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z",
   },
@@ -21,24 +23,8 @@ const navigation = [
   {
     name: "My Posts",
     href: "/my-posts",
-    path: "M91.7 96C106.3 86.8 116 70.5 116 52C116 23.3 92.7 0 64 0S12 23.3 12 52c0 16.7 7.8 31.5 20 41l0 3 0 352 0 64 64 0 0-64 373.6 0c14.6 0 26.4-11.8 26.4-26.4c0-3.7-.8-7.3-2.3-10.7L432 272l61.7-138.9c1.5-3.4 2.3-7 2.3-10.7c0-14.6-11.8-26.4-26.4-26.4L91.7 96z",
-  },
-  {
-    name: "Gallery",
-    href: "/gallery",
-    path: "M160 32c-35.3 0-64 28.7-64 64l0 224c0 35.3 28.7 64 64 64l352 0c35.3 0 64-28.7 64-64l0-224c0-35.3-28.7-64-64-64L160 32zM396 138.7l96 144c4.9 7.4 5.4 16.8 1.2 24.6S480.9 320 472 320l-144 0-48 0-80 0c-9.2 0-17.6-5.3-21.6-13.6s-2.9-18.2 2.9-25.4l64-80c4.6-5.7 11.4-9 18.7-9s14.2 3.3 18.7 9l17.3 21.6 56-84C360.5 132 368 128 376 128s15.5 4 20 10.7zM192 128a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120L0 344c0 75.1 60.9 136 136 136l320 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-320 0c-48.6 0-88-39.4-88-88l0-224z",
-  },
-  {
-    name: "Marketplace",
-    href: "/marketplace",
-    path: "M547.6 103.8L490.3 13.1C485.2 5 476.1 0 466.4 0L109.6 0C99.9 0 90.8 5 85.7 13.1L28.3 103.8c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1 .8 12.1 .8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zM499.7 254.9c0 0 0 0-.1 0c-5.3 .7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3L448 384l-320 0 0-133.4c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1l-.1 0c-4.1-.6-8.1-1.3-12-2.3L64 384l0 64c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-64 0-131.4c-4 1-8 1.8-12.3 2.3z",
-  },
-
-  {
-    name: "Groups",
-    href: "/groups",
-    path: "M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3l0-84.7zm144.4-49.3C178.7 222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5l0 21.5c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-26.8C26.2 371.2 0 332.7 0 288c0-61.9 50.1-112 112-112l32 0c24 0 46.2 7.5 64.4 20.3zM448 416l0-21.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8 183.5 472 176 496 176l32 0c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2l0 26.8c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0A56 56 0 1 1 456 88zM576 245.7l0 84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM320 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM240 304c0 16.2 6 31 16 42.3l0-84.7c-10 11.3-16 26.1-16 42.3zm144-42.3l0 84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM448 304c0 44.7-26.2 83.2-64 101.2l0 42.8c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-42.8c-37.8-18-64-56.5-64-101.2c0-61.9 50.1-112 112-112l32 0c61.9 0 112 50.1 112 112z",
-  },
+path: "M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"  },
+  
 ];
 
 export default function Header() {
@@ -63,8 +49,9 @@ export default function Header() {
             className={
               "-m-1.5 p-1.5 " + styles.navIconContainer + " " + styles.mainNav
             }
+            style={{textDecoration: 'none'}}
           >
-            <span className="sr-only">Sprout Hub</span>
+            
             <svg
               className={"fa-solid fa-carrot " + styles.navIcon}
               xmlns="http://www.w3.org/2000/svg"
@@ -72,14 +59,16 @@ export default function Header() {
             >
               <path d="M346.7 6C337.6 17 320 42.3 320 72c0 40 15.3 55.3 40 80s40 40 80 40c29.7 0 55-17.6 66-26.7c4-3.3 6-8.2 6-13.3s-2-10-6-13.2c-11.4-9.1-38.3-26.8-74-26.8c-32 0-40 8-40 8s8-8 8-40c0-35.7-17.7-62.6-26.8-74C370 2 365.1 0 360 0s-10 2-13.3 6zM244.6 136c-40 0-77.1 18.1-101.7 48.2l60.5 60.5c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0l-55.3-55.3 0 .1L2.2 477.9C-2 487-.1 497.8 7 505s17.9 9 27.1 4.8l134.7-62.4-52.1-52.1c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L199.7 433l100.2-46.4c46.4-21.5 76.2-68 76.2-119.2C376 194.8 317.2 136 244.6 136z" />
             </svg>
+            <span style={{color: 'white', }}> Sprout Hub</span>
           </Link>
           <Link
             to="/posts/search"
             className={
               "-m-1.5 p-1.5 " + styles.navIconContainer + " " + styles.mainNav
             }
+            style={{textDecoration: 'none'}}
           >
-            <span className="sr-only">Search</span>
+            
             <svg
               className={styles.navIcon}
               xmlns="http://www.w3.org/2000/svg"
@@ -87,6 +76,7 @@ export default function Header() {
             >
               <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
             </svg>
+            <span style={{color: 'white', }} >Search</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -104,7 +94,7 @@ export default function Header() {
             <Link
               key={item.name}
               to={item.href}
-              // className={"-m-1.5 p-1.5 " + styles.navIconContainer}
+              style={{textDecoration: 'none'}}
               className={
                 "-m-1.5 p-1.5 text-sm/6 font-semibold text-gray-900 " +
                 styles.navIconContainer
@@ -118,6 +108,7 @@ export default function Header() {
               >
                 <path d={item.path} />
               </svg>
+              <span style={{color: 'white', }} >{item.name}</span>
             </Link>
           ))}
         </div>
@@ -128,6 +119,7 @@ export default function Header() {
               className={
                 "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
               }
+              style={{textDecoration: 'none'}}
             >
               LOGOUT
             </Link>
@@ -138,6 +130,7 @@ export default function Header() {
                 className={
                   "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
                 }
+                style={{textDecoration: 'none'}}
               >
                 REGISTER
               </Link>
@@ -146,6 +139,7 @@ export default function Header() {
                 className={
                   "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
                 }
+                style={{textDecoration: 'none'}}
               >
                 LOGIN
               </Link>
