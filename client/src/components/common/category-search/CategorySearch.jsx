@@ -3,6 +3,7 @@ import styles from './CategorySearch.module.css'
 
 const categories = [ {
     name: "General Gardening Talk",
+  search:'general',
     logoUrl: "/assets/atat.png",
     description: "For any general gardening discussions",
     _createdOn: 1615737591748,
@@ -10,6 +11,7 @@ const categories = [ {
   },
    {
     name: "Landscaping & Garden Design",
+    search:"landscaping",
     logoUrl: "/assets/rocket.png",
     description: "Design tips, garden planning, landscaping ideas",
     _createdOn: 1615737655083,
@@ -17,6 +19,7 @@ const categories = [ {
   },
    {
     name: "Fast-Growing UK Plants",
+    search:"fast-growing",
     logoUrl: "/assets/hydrant.png",
     description: "Plants that thrive quickly in the UK",
     _createdOn: 1615737688036,
@@ -24,6 +27,7 @@ const categories = [ {
   },
    {
     name: "Lawn Care & Organic Lawn Feed",
+    search:'lawn',
     logoUrl: "/assets/atat.png",
     description: "Lawn maintenance and organic methods",
     _createdOn: 1615737591748,
@@ -31,6 +35,7 @@ const categories = [ {
   },
    {
     name: "Edible Plants",
+    search:"edible",
     logoUrl: "/assets/rocket.png",
     description: "All things edible in the garden",
     _createdOn: 1615737655083,
@@ -38,6 +43,7 @@ const categories = [ {
   },
    {
     name: "Trees, Shrubs & Hedges",
+    search: "trees",
     logoUrl: "/assets/hydrant.png",
     description: "For discussions on larger plants and hedging",
     _createdOn: 1615737688036,
@@ -45,6 +51,7 @@ const categories = [ {
   },
    {
     name: "Perennials & Roses",
+
     logoUrl: "/assets/atat.png",
     description: "Perennials and rose varieties, care tips",
     _createdOn: 1615737591748,
@@ -92,7 +99,7 @@ const categories = [ {
   const onSelect=(formData)=>{
 const category=formData.get('category')
 console.log(category);
-navigate(`/categories?category=${category}`)}
+navigate(`/categories?${category}`)}
     return(
         <form className="display-5 text-dark mb-5" action={onSelect}>
         <div className="row g-4 ">

@@ -19,6 +19,7 @@ import { useState } from "react";
 import { UserContext } from "./contexts/UserContext";
 import Login from "./components/authentication/login/Login";
 import Logout from "./components/authentication/logout/Logout";
+import MyPosts from "./components/posts/my-posts/MyPosts";
 
 function App() {
   const [user, setUser] = useState({});
@@ -47,7 +48,7 @@ function App() {
           <Route path="/posts/:postId/edit" element={<PostEdit />} />
           <Route path="/posts/create" element={<PostCreate />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/quests" element={<Quests />} />
+          <Route path="/my-posts" element={<MyPosts/>} />
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Page404 />} />
         </Routes>

@@ -1,6 +1,8 @@
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import PaginationBar from "./PaginationBar";
 import CategorySearch from "../common/category-search/CategorySearch";
+import { useCategory } from "../../api/categoriesApi";
+import { usePost } from "../../api/postsApi";
 
 const products = [
   {
@@ -47,6 +49,11 @@ const products = [
 ];
 
 export default function Categories() {
+  const params=useSearchParams()
+  console.log(params);
+  
+  const {pending, posts}=useCategory();
+  console.log(posts);
   
   return (
     <div className="bg-white">
