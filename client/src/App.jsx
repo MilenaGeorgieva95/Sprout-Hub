@@ -6,7 +6,6 @@ import Header from "./components/header/Header";
 import Categories from "./components/categories/Categories";
 import Forum from "./components/posts/catalog/Forum";
 
-import Quests from "./components/Quests/Quests";
 import PostDetails from "./components/posts/details/PostDetails";
 import PostEdit from "./components/posts/edit/PostEdit";
 import PostCreate from "./components/posts/create/PostCreate";
@@ -15,28 +14,17 @@ import Page404 from "./components/page404/Page404";
 import Footer from "./components/footer/Footer";
 import Register from "./components/authentication/register/Register";
 
-import { useState } from "react";
-import { UserContext } from "./contexts/UserContext";
 import Login from "./components/authentication/login/Login";
 import Logout from "./components/authentication/logout/Logout";
 import MyPosts from "./components/posts/my-posts/MyPosts";
 import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
+import UserProvider from "./components/providers/UserProvider";
 
 function App() {
-  const [user, setUser] = useState({});
-
-  const userLoginHandler = (userData) => {
-    setUser(userData);
-  };
-  const userLogoutHandler = (userData) => {
-    setUser({});
-  };
 
   return (
-    <UserContext.Provider
-      value={{ ...user, userLoginHandler, userLogoutHandler }}
-    >
+    <UserProvider>
       <div className="bg-white h-full fullHeight">
         <Header />
         <Routes>
@@ -50,18 +38,18 @@ function App() {
           <Route path="/posts/:postId/edit" element={<PostEdit />} />
           <Route path="/posts/create" element={<PostCreate />} />
           <Route path="/my-posts" element={<MyPosts/>} />
-          <Route path="/auth/logout" element={<Logout />} />
+          <Route path="/logout" element={<Logout />} />
           </Route>
-          
+
           <Route element={<GuestGuard />}>
-          <Route path="/auth/register" element={<Register />} />
-          <Route path="/auth/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           </Route>
 
         </Routes>
         <Footer />
       </div>
-    </UserContext.Provider>
+    </UserProvider>
   );
 }
 

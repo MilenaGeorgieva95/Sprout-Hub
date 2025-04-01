@@ -5,7 +5,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import styles from "./Header.module.css";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext, useUserContext } from "../../contexts/UserContext";
 
 const navigation = [
   {
@@ -43,8 +43,11 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { email } = useContext(UserContext);
+  const { email } = useUserContext()
+  
   const isUser = !!email;
+  console.log(isUser);
+  
 
   return (
     <header className=" inset-x-0 top-0 z-50">
@@ -121,7 +124,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {isUser ? (
             <Link
-              to="auth/logout"
+              to="/logout"
               className={
                 "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
               }
@@ -131,7 +134,7 @@ export default function Header() {
           ) : (
             <>
               <Link
-                to="auth/register"
+                to="/register"
                 className={
                   "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
                 }
@@ -139,7 +142,7 @@ export default function Header() {
                 REGISTER
               </Link>
               <Link
-                to="auth/login"
+                to="/login"
                 className={
                   "text-sm/6 font-semibold text-gray-900 " + styles.authBtn
                 }
@@ -197,19 +200,19 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Link
-                  to="/auth/register"
+                  to="/register"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   REGISTER
                 </Link>
                 <Link
-                  to="/auth/login"
+                  to="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   LOGIN
                 </Link>
                 <Link
-                  to="/auth/logout"
+                  to="/logout"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   LOGOUT

@@ -1,11 +1,11 @@
 import { useActionState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useLogin } from "../../../api/authApi";
-import useAuth from "../../../hooks/useAuth";
+import { useUserContext } from "../../../contexts/UserContext";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { userLoginHandler } = useAuth();
+  const { userLoginHandler } = useUserContext();
 
   const { login } = useLogin();
 
