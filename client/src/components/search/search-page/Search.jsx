@@ -1,7 +1,7 @@
 import { useNavigate, useSearchParams } from "react-router";
-import CategorySearch from "../common/category-search/CategorySearch";
-import { useCategory } from "../../api/categoriesApi";
-import { usePost } from "../../api/postsApi";
+import CategorySearch from "../category-search/CategorySearch";
+import { useCategory } from "../../../api/categoriesApi";
+import { usePost } from "../../../api/postsApi";
 
 const products = [
   {
@@ -47,11 +47,13 @@ const products = [
   // More products...
 ];
 
-export default function Categories() {
-  const params=useSearchParams()
-  console.log(params);
+export default function Search() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const category=searchParams.get('category')
+  console.log(category);
+  console.log(searchParams);
   
-  const {pending, posts}=useCategory();
+  const {pending, posts}=useCategory(category);
   console.log(posts);
   
   return (

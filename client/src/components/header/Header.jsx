@@ -69,7 +69,7 @@ export default function Header() {
             <span style={{color: 'white', }}> Sprout Hub</span>
           </Link>
           <Link
-            to="/posts/search"
+            to="/search"
             className={
               "-m-1.5 p-1.5 " + styles.navIconContainer + " " + styles.mainNav
             }

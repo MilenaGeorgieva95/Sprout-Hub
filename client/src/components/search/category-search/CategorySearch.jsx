@@ -99,7 +99,7 @@ const categories = [ {
   const onSelect=(formData)=>{
 const category=formData.get('category')
 console.log(category);
-navigate(`/categories?${category}`)}
+navigate(`/search?category=${category}`)}
     return(
         <form className="display-5 text-dark mb-5" action={onSelect}>
         <div className="row g-4 ">

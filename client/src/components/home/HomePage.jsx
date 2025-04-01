@@ -3,7 +3,7 @@ import Carousel from "../common/carousel/Carousel";
 import GreenLogoBar from "../common/logo-bars/green-logo-bar/GreenLogoBar";
 import styles from "./HomePage.module.css";
 import WhiteLogoBar from "../common/logo-bars/white-logo-bar/WhiteLogoBar";
-import CategorySearch from "../common/category-search/CategorySearch";
+import CategorySearch from "../search/category-search/CategorySearch";
 
 
 export default function HomePage() {
@@ -27,7 +27,7 @@ export default function HomePage() {
               </Link>{" "}
               {}
               <span className={styles.orSpan}>or</span> {}
-              <Link to="/posts">
+              <Link to="/my-posts">
                 <span className={styles.textGreen}>
                   View/Modify/Delete Your Posts
                 </span>

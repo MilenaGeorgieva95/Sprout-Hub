@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes, Route } from "react-router";
 import Header from "./components/header/Header";
-import Categories from "./components/categories/Categories";
 import Forum from "./components/posts/catalog/Forum";
 
 import PostDetails from "./components/posts/details/PostDetails";
@@ -20,6 +19,7 @@ import MyPosts from "./components/posts/my-posts/MyPosts";
 import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
 import UserProvider from "./components/providers/UserProvider";
+import Search from "./components/search/search-page/Search";
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/posts" element={<Forum />} />
           <Route path="/posts/:postId/details" element={<PostDetails />} />
-          <Route path="/categories" element={<Categories />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Page404 />} />
 
