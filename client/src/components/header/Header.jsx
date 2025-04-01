@@ -9,12 +9,14 @@ import { UserContext, useUserContext } from "../../contexts/UserContext";
 
 
 
-const navigation = [
+const guestNav = [
   {
     name: "Catalog",
     href: "/posts",
     path: "M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z",
   },
+];
+const userNav = [
   {
     name: "Create",
     href: "/posts/create",
@@ -90,7 +92,8 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
+          {isUser?
+          ( userNav.map((item) => (
             <Link
               key={item.name}
               to={item.href}
@@ -110,7 +113,32 @@ export default function Header() {
               </svg>
               <span style={{color: 'white', }} >{item.name}</span>
             </Link>
-          ))}
+          )))
+        :
+        (guestNav.map((item) => (
+          <Link
+            key={item.name}
+            to={item.href}
+            style={{textDecoration: 'none'}}
+            className={
+              "-m-1.5 p-1.5 text-sm/6 font-semibold text-gray-900 " +
+              styles.navIconContainer
+            }
+            alt={item.name}
+          >
+            <svg
+              className={styles.menuItem}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path d={item.path} />
+            </svg>
+            <span style={{color: 'white', }} >{item.name}</span>
+          </Link>
+        )))
+        }
+         
+
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {isUser ? (
@@ -182,7 +210,9 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {
+                isUser?
+                (                userNav.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
@@ -190,9 +220,28 @@ export default function Header() {
                   >
                     {item.name}
                   </Link>
-                ))}
+                )))
+                :(guestNav.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </Link>
+                )))
+}
               </div>
+
               <div className="py-6">
+                {isUser? 
+                (<Link
+                  to="/logout"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                >
+                  LOGOUT
+                </Link>)
+              :(<>
                 <Link
                   to="/register"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
@@ -205,12 +254,8 @@ export default function Header() {
                 >
                   LOGIN
                 </Link>
-                <Link
-                  to="/logout"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  LOGOUT
-                </Link>
+                </>
+                )}
               </div>
             </div>
           </div>
