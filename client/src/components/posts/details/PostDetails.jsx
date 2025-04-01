@@ -5,11 +5,11 @@ import styles from "./PostDetails.module.css";
 import { useDeletePost, usePost } from "../../../api/postsApi";
 import LatestPosts from "./latestPosts/LatestPosts";
 import useAuth from "../../../hooks/useAuth";
-import CommentsSection from "../../comments/comments-section/commentsSection";
 import AddComment from "../../comments/add-comment/AddComment";
 import { useComments, useCreateComment } from "../../../api/commentsApi";
 import { useOptimistic } from "react";
 import { v4 as uuid } from "uuid";
+import CommentsSection from "../../comments/comments-section/CommentsSection";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 

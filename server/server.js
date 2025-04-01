@@ -1457,6 +1457,13 @@
         hashedPassword:
           "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
       },
+      "b88982eb-0d47-40ab-97e2-cb8a1c51c1fb":{
+        username: "milena",
+        avatarUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        email: "milenag2@yahoo.com",
+        hashedPassword:
+          "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+    }
     },
     sessions: {},
   };
