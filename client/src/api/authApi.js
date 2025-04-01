@@ -57,12 +57,11 @@ export const useRegister = () => {
 export const useLogout = () => {
   const { accessToken, userLogoutHandler } = useContext(UserContext);
 
-  useEffect(() => {
-    console.log(accessToken);
-    
+  useEffect(() => {  
     if (!accessToken) {
       return;
     }
+     userLogoutHandler()
     request
       .get(`${baseUrl}/logout`, null, accessToken)
       .then(() => userLogoutHandler());
