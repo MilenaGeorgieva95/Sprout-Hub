@@ -39,8 +39,6 @@ export default function Header() {
   const { email } = useUserContext()
   
   const isUser = !!email;
-  console.log(isUser);
-  
 
   return (
     <header className=" inset-x-0 top-0 z-50">

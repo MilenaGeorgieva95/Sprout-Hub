@@ -20,7 +20,6 @@ function classNames(...classes) {
 export default function PostDetails() {
   const { postId } = useParams();
   const { pending, post } = usePost(postId);
-  console.log(post);
 
   const { del } = useDeletePost();
   const navigate = useNavigate();
@@ -28,7 +27,6 @@ export default function PostDetails() {
   const isOwner = userId === post._ownerId;
   const { create } = useCreateComment();
   const { comments, addNewComment } = useComments(postId);
-  console.log(comments);
 
   const [optimisticComments, setOptimisticComments] = useOptimistic(comments);
 
@@ -45,9 +43,6 @@ export default function PostDetails() {
 
   const commentsCreateHandler = async (formData) => {
     const comment = formData.get("comment");
-    console.log(avatarUrl);
-    console.log(username);
-    
     const newOptimisticComment = {
       _id: uuid(),
       _ownerId: userId,

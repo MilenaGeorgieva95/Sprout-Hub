@@ -36,7 +36,7 @@ function App() {
 
           <Route element={<AuthGuard />}>
           <Route path="/posts/:postId/edit" element={<PostEdit />} />
-          <Route path="/posts/:postId/like" element={<PostLike />} />
+          {/* <Route path="/posts/:postId/like" element={<PostLike />} /> */}
           <Route path="/posts/create" element={<PostCreate />} />
           <Route path="/my-posts" element={<MyPosts/>} />
           <Route path="/logout" element={<Logout />} />

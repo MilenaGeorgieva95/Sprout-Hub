@@ -17,7 +17,6 @@ function commentsReducer(state, action) {
 
 export const useComments = (postId) => {
   const [comments, dispatch] = useReducer(commentsReducer, []);
-  console.log(comments);
 
   const { accessToken } = useAuth();
   useEffect(() => {
