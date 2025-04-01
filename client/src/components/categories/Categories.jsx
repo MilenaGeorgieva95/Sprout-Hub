@@ -1,5 +1,4 @@
 import { useNavigate, useSearchParams } from "react-router";
-import PaginationBar from "./PaginationBar";
 import CategorySearch from "../common/category-search/CategorySearch";
 import { useCategory } from "../../api/categoriesApi";
 import { usePost } from "../../api/postsApi";
@@ -77,7 +76,6 @@ export default function Categories() {
             </a>
           ))}
         </div>
-        <PaginationBar />
       </div>
     </div>
   );
