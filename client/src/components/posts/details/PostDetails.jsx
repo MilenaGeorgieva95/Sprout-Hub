@@ -10,6 +10,7 @@ import { useComments, useCreateComment } from "../../../api/commentsApi";
 import { useOptimistic } from "react";
 import { v4 as uuid } from "uuid";
 import CommentsSection from "../../comments/comments-section/CommentsSection";
+import { useCreateLike, useIsLiked, useLikes } from "../../../api/likesApi";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -24,6 +25,13 @@ export default function PostDetails() {
   const { del } = useDeletePost();
   const navigate = useNavigate();
   const { _id: userId, username, avatarUrl } = useAuth();
+
+  const { likes } = useLikes(postId);
+  console.log(likes);
+  const { isLiked } = useIsLiked(postId, userId);
+  console.log(isLiked);
+  const { create: createLike } = useCreateLike();
+
   const isOwner = userId === post._ownerId;
   const { create } = useCreateComment();
   const { comments, addNewComment } = useComments(postId);
@@ -185,17 +193,19 @@ export default function PostDetails() {
                     </button>
                   </>
                 ) : (
-                  username&&<>
-                    <Link
-                      to={`/posts/${post._id}/like`}
-                      className={
-                        "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                        styles.detailsBtn
-                      }
-                    >
-                      Like
-                    </Link>
-                  </>
+                  username && (
+                    <>
+                      <button
+                        onClick={() => createLike(postId)}
+                        className={
+                          "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                          styles.detailsBtn
+                        }
+                      >
+                        Like
+                      </button>
+                    </>
+                  )
                 )}
               </div>
             </div>
@@ -209,7 +219,7 @@ export default function PostDetails() {
               <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
                 Add New Comment
               </h2>
-              <AddComment onCreate={commentsCreateHandler}/>
+              <AddComment onCreate={commentsCreateHandler} />
             </div>
           </div>
         </div>

@@ -1457,13 +1457,14 @@
         hashedPassword:
           "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
       },
-      "b88982eb-0d47-40ab-97e2-cb8a1c51c1fb":{
+      "b88982eb-0d47-40ab-97e2-cb8a1c51c1fb": {
         username: "milena",
-        avatarUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        avatarUrl:
+          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         email: "milenag2@yahoo.com",
         hashedPassword:
           "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
-    }
+      },
     },
     sessions: {},
   };
@@ -1635,35 +1636,12 @@
         _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe5",
       },
     },
-    orders: {},
-    likes: {},
-    ideas: {
-      "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Best Pilates Workout To Do At Home",
-        description:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-        img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-        _createdOn: 1615033373504,
-        _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e",
-      },
-      "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "4 Eady DIY Idea To Try!",
-        description:
-          "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-        img: "./images/brightideacropped.jpg",
-        _createdOn: 1615033452480,
-        _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c",
-      },
-      "b8608c22-dd57-4b24-948e-b358f536b958": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Dinner Recipe",
-        description:
-          "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-        img: "./images/dinner.jpg",
-        _createdOn: 1615033491967,
-        _id: "b8608c22-dd57-4b24-948e-b358f536b958",
+    likes: {
+      "d6d5e956-98d5-4db0-8062-7405d887099a": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        postId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe5",
+        _createdOn: 1743541088182,
+        _id: "d6d5e956-98d5-4db0-8062-7405d887099a",
       },
     },
     categories: {
