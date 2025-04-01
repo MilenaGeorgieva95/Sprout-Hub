@@ -1,16 +1,16 @@
 import { Link } from "react-router";
 
-export default function Page404() {
+export default function ErrorPage({hasError,errorMessage}) {
   return (
     <>
       <div className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center w-full">
-          <p className="text-lg font-semibold text-black-600">404</p>
+          <p className="text-lg font-semibold text-black-600">{errorMessage}</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-            Page not found
+           Error Occured 
           </h1>
           <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            Sorry, we couldn't find the page you're looking for.
+            Sorry, unexpected error occured.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link

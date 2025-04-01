@@ -1,4 +1,5 @@
 import { Component } from "react";
+import ErrorPage from "./ErrorPage";
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -13,17 +14,16 @@ export default class ErrorBoundary extends Component {
   static getDerivedStateFromError(error) {
     console.log("error occured: " + error);
     return {
-        hasError:true,
-        errorMessage:error.message
-    }
+      hasError: true,
+      errorMessage: error.message,
+    };
   }
 
   render() {
     if (this.state.hasError) {
       return (
         <>
-          <h1>Error Page</h1>
-          <p>{this.state.errorMessage}</p>
+        <ErrorPage errorMessage={this.state.errorMessage} hasError={this.state.hasError}/>
         </>
       );
     }
