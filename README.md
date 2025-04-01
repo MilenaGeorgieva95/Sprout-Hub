@@ -27,22 +27,39 @@
 ### 📂 Folder Structure  
 
 ```
-/sprout-hub
-│── /public                # Static assets  
-│── /src                   # Main application source code  
-│   ├── /components        # Reusable UI components  
-│   ├── /pages             # Application pages (Catalog, Details, My Posts, etc.)  
-│   ├── /context           # Context API for global state management  
-│   ├── /hooks             # Custom React hooks  
-│   ├── /services          # API communication logic  
-│   ├── /utils             # Utility functions  
-│   ├── /styles            # External CSS styling  
-│   ├── App.js             # Root component  
-│   ├── index.js           # Entry point  
-│── /server                # SoftUni Practice Server (optional local setup)  
-│── .gitignore             # Ignored files  
-│── package.json           # Dependencies & scripts  
-│── README.md              # Project documentation  
+sprout-hub
+│── /client                  # Sprout Hub project folder  
+│   ├── /public              # Static assets  
+│   ├── /src                 # Main application source code  
+│   │   ├── /api             # Custom hooks to manage API requests  
+│   │   ├── /components      # Reusable UI components  
+│   │   │   ├── /authentication  # Login, Register, Logout pages  
+│   │   │   ├── /categories       # Search posts by category page  
+│   │   │   ├── /comments         # Comments section functionality  
+│   │   │   ├── /common           # Small reusable components (logo, bars, spinner, etc.)  
+│   │   │   ├── /footer           # Footer component  
+│   │   │   ├── /guards           # Route guards (protecting private and public routes)  
+│   │   │   ├── /header           # Header & navigation (including mobile nav)  
+│   │   │   ├── /home             # Home page  
+│   │   │   ├── /page404          # 404 Not Found page  
+│   │   │   ├── /posts            # Post resource CRUD functionality  
+│   │   │   │   ├── /catalog      # View all posts  
+│   │   │   │   ├── /create       # Create a new post  
+│   │   │   │   ├── /edit         # Edit own posts  
+│   │   │   │   ├── /my-posts     # View own posts  
+│   │   │   ├── /providers        # User Context provider  
+│   │   ├── /contexts             # Context API for global state management  
+│   │   ├── /hooks                # Custom React hooks  
+│   │   ├── /services             # API communication logic (optional, if separate from /api)  
+│   │   ├── /utils                # Utility functions  
+│   │   ├── /styles               # External CSS styling  
+│   │   ├── App.js                # Root component  
+│   │   ├── index.css             # Global styles  
+│   │   ├── main.js               # Application entry point  
+│── /server                       # SoftUni Practice Server (optional local setup) with seed data  
+│── .gitignore                     # Files to ignore in Git  
+│── package.json                   # Project dependencies & scripts  
+│── README.md                      # Project documentation  
 ```
 
 ---
