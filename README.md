@@ -80,8 +80,8 @@ sprout-hub
 
 1️⃣ **Clone the Repository**  
 ```bash
-git clone https://github.com/yourusername/sprout-hub.git
-cd sprout-hub
+git clone https://github.com/MilenaGeorgieva95/Sprout-Hub.git
+cd client
 ```
   
 2️⃣ **Install Dependencies**  
@@ -91,17 +91,20 @@ npm install
   
 3️⃣ **Start the Development Server**  
 ```bash
-npm start
+cd server
+node server
 ```
 
 4️⃣ **Access the App**  
-Visit `http://localhost:3000` in your browser.  
+Visit `http://localhost:5173` in your browser.
+
+Server runs on `http://localhost:3030` in your browser. 
 
 ---
 
 ## 🛠 Usage  
 
-- **Sign up / Log in** to create and manage content.  
+- **Sign up / Log in** to create and manage posts, comments and likes.  
 - **Browse the catalog** for available posts.  
 - **Search by category or title** to find relevant posts.  
 - **Create, edit, or delete your posts** in the *My Posts* section.  
@@ -142,8 +145,10 @@ Visit `http://localhost:3000` in your browser.
 ## 🎨 UI/UX  
 
 - **Responsive design** for desktop & mobile.  
-- **Clean and modern styling** using external CSS files.  
-- **Intuitive navigation** with clear visual hierarchy.  
+- **Clean and modern styling** using Tailwind CSS, Bootstrap and external CSS files, for flexible and consistent UI.
+- **Intuitive navigation** with clear visual hierarchy.
+- **Reusable UI components** to ensure consistency across the application.  
+- **User-friendly forms and interactive elements** for better accessibility and experience. 
 
 ---
 
@@ -161,12 +166,6 @@ Want to improve **Sprout Hub**? Contributions are welcome!
 ## 📜 License  
 
 This project is licensed under the **MIT License**.  
-
----
-
-## 🌍 Deployment  
-
-🔗 **Live Demo:** [Sprout Hub on Vercel/Netlify](#) (Add link when deployed)  
 
 ---
 
