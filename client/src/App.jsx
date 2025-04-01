@@ -21,6 +21,7 @@ import Login from "./components/authentication/login/Login";
 import Logout from "./components/authentication/logout/Logout";
 import MyPosts from "./components/posts/my-posts/MyPosts";
 import AuthGuard from "./components/guards/AuthGuard";
+import GuestGuard from "./components/guards/GuestGuard";
 
 function App() {
   const [user, setUser] = useState({});
@@ -39,22 +40,22 @@ function App() {
       <div className="bg-white h-full fullHeight">
         <Header />
         <Routes>
-          <Route path="/auth">
-            <Route path="/auth/register" element={<Register />} />
-            <Route path="/auth/login" element={<Login />} />
-
-          </Route>
           <Route path="/posts" element={<Forum />} />
           <Route path="/posts/:postId/details" element={<PostDetails />} />
           <Route path="/categories" element={<Categories />} />
-
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Page404 />} />
+
           <Route element={<AuthGuard />}>
           <Route path="/posts/:postId/edit" element={<PostEdit />} />
           <Route path="/posts/create" element={<PostCreate />} />
           <Route path="/my-posts" element={<MyPosts/>} />
           <Route path="/auth/logout" element={<Logout />} />
+          </Route>
+          
+          <Route element={<GuestGuard />}>
+          <Route path="/auth/register" element={<Register />} />
+          <Route path="/auth/login" element={<Login />} />
           </Route>
 
         </Routes>
