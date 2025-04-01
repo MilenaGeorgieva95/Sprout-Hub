@@ -3,9 +3,6 @@ import styles from "./ForumPosts.module.css";
 import { Link } from "react-router";
 
 export default function ForumPosts({ posts }) {
-  if(0.2<0.5){
-    throw new Error('posts error')
-  }
   return (
     <>
       <div className={styles.subNavContainer}>
