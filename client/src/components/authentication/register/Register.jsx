@@ -1,29 +1,44 @@
 import { Link, useNavigate } from "react-router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useRegister } from "../../../api/authApi";
-import {  useUserContext } from "../../../contexts/UserContext";
+import { useUserContext } from "../../../contexts/UserContext";
+import ErrorModal from "../../common/error-modal/ErrorModal";
 
 export default function Register() {
   const { register } = useRegister();
-  const { userLoginHandler } = useUserContext()
+  const { userLoginHandler } = useUserContext();
   const navigate = useNavigate();
+
+  const [error, setError] = useState("");
+  const triggerError = (errorMessage) => {
+    setError(errorMessage);
+  };
 
   const registerHandler = async (formData) => {
     const { username, avatarUrl, email, password, rePassword } =
       Object.fromEntries(formData);
 
     if (password !== rePassword || password === "") {
-      console.log("Password mismatch!");
-
+      triggerError("Password mismatch!");
       return;
     }
-    const authData = await register(username, avatarUrl, email, password);
-    userLoginHandler(authData);
-    navigate("/posts");
+    try {
+      const authData = await register(username, avatarUrl, email, password);
+      userLoginHandler(authData);
+      navigate("/posts");
+    } catch (error) {
+      triggerError(error.message);
+    }
   };
 
   return (
     <section>
+      {error && (
+        <div>
+          <button onClick={triggerError}>Cause Error</button>
+          <ErrorModal error={error} onClose={() => setError("")} />
+        </div>
+      )}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 items-center maxHeight">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
