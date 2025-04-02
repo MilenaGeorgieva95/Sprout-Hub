@@ -7,12 +7,10 @@ const cardsData = [
 ];
 
 export default function CarouselCardsContainer({ categories }) {
-  console.log(categories);
-
   return (
-    <div className="d-flex justify-content-center">
-      {cardsData.map((cardData) => (
-        <CarouselCard key={cardData.id} imgUrl={cardData.imgUrl} />
+    <div className="d-flex justify-content-center px-20">
+      {categories.map((cardData) => (
+        <CarouselCard key={cardData._id} category={cardData} />
       ))}
     </div>
   );

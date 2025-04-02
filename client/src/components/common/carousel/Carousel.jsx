@@ -52,10 +52,7 @@ export default function Carousel() {
           data-bs-target="#carouselExample"
           data-bs-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-prev-icon"></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
