@@ -34,8 +34,7 @@ export default function PostDetails() {
     setLikeId,
     pending: pendingLike,
   } = useLikes(postId, userId);
-  console.log(likes);
-  console.log(isLiked);
+
   const { create: createLike } = useCreateLike();
   const { delLike } = useDeleteLike();
 
@@ -126,7 +125,7 @@ export default function PostDetails() {
                   to={reviews.href}
                   className="mx-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  {reviews.totalCount} likes
+                  {likes.length} likes
                 </Link>
               </div>
             </div>
