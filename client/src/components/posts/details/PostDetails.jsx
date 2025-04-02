@@ -10,7 +10,7 @@ import { useComments, useCreateComment } from "../../../api/commentsApi";
 import { useOptimistic } from "react";
 import { v4 as uuid } from "uuid";
 import CommentsSection from "../../comments/comments-section/CommentsSection";
-import { useCreateLike, useLikes } from "../../../api/likesApi";
+import { useCreateLike, useDeleteLike, useLikes } from "../../../api/likesApi";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -28,14 +28,16 @@ export default function PostDetails() {
 
   const {
     likes,
-    setLikes,
+    likeId,
     isLiked,
     setIsLiked,
+    setLikeId,
     pending: pendingLike,
   } = useLikes(postId, userId);
   console.log(likes);
   console.log(isLiked);
   const { create: createLike } = useCreateLike();
+  const { delLike } = useDeleteLike();
 
   const isOwner = userId === post._ownerId;
   const { create } = useCreateComment();
@@ -76,12 +78,12 @@ export default function PostDetails() {
   };
 
   const likeHandler = () => {
+    createLike(postId, setLikeId);
     setIsLiked(true);
-    createLike(postId);
   };
   const dislikeHandler = () => {
-    setIsLiked(true);
-    delLike(postId);
+    delLike(likeId);
+    setIsLiked(false);
   };
 
   return (
