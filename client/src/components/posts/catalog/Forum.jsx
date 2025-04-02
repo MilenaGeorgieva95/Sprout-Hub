@@ -3,13 +3,26 @@ import TopPicksBar from "../../common/top-picks/TopPicksBar";
 import Spinner from "../../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
 import { usePosts } from "../../../api/postsApi";
+import { useState } from "react";
+import ErrorModal from "../../common/error-modal/ErrorModal";
 
 export default function Forum() {
-  const { pending, posts } = usePosts();
+  const [error, setError] = useState("");
+  const triggerError = (errorMessage) => {
+    setError(errorMessage);
+  };
+
+  const { pending, posts } = usePosts(triggerError);
 
   return (
     <>
       <div className="bg-white">
+        {error && (
+          <div>
+            <button onClick={triggerError}>Cause Error</button>
+            <ErrorModal error={error} onClose={() => setError("")} />
+          </div>
+        )}
         <div className="mx-auto max-w-2xl px-4 py-6 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-center text-gray-900">
             Browse All Posts

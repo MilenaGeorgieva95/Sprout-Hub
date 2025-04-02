@@ -5,7 +5,7 @@ import { useLocation } from "react-router";
 
 const baseUrl = "/data/posts";
 
-export const usePosts = () => {
+export const usePosts = (triggerError) => {
   const [posts, setPosts] = useState([]);
   const [pending, setPending] = useState(false);
   const location = useLocation();
@@ -14,10 +14,14 @@ export const usePosts = () => {
 
   useEffect(() => {
     setPending(true);
-    request.get(baseUrl + `?${queryParams.toString()}`).then((data) => {
-      setPending(false);
-      setPosts(data);
-    });
+    try {
+      request.get(baseUrl + `?${queryParams.toString()}`).then((data) => {
+        setPending(false);
+        setPosts(data);
+      });
+    } catch (error) {
+      triggerError(error.message);
+    }
   }, [search]);
   return { pending, posts };
 };

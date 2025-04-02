@@ -20,19 +20,18 @@ export async function requester(method, url, body, token) {
   try {
     const res = await fetch(`${host}${url}`, options);
     let data;
+
     if (res.status !== 204) {
       data = await res.json();
     }
 
-    if (res.ok == false) {
-      if (res.status === 403) {
-      }
+    if (res.status !== 200 && res.status !== 204) {
       const error = data;
       throw error;
     }
     return data;
   } catch (error) {
-    // alert(`Error: ${error.message}`);
+    console.log(error);
     throw error;
   }
 }
