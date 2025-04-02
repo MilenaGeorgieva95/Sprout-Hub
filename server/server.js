@@ -1679,56 +1679,64 @@
       },
       "dc888b1a-400f-47f3-9619-07607966feb2": {
         name: "Edible Plants",
-        logoUrl: "/assets/rocket.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1727128828514-ac5ebc4b50a6?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "All things edible in the garden",
         _createdOn: 1615737655083,
         _id: "dc888b1a-400f-47f3-9619-07607966feb2",
       },
       "733fa9a1-26b6-490d-b299-21f120b2f532": {
         name: "Trees, Shrubs & Hedges",
-        logoUrl: "/assets/hydrant.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1672210839356-8c7ad576683c?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "For discussions on larger plants and hedging",
         _createdOn: 1615737688036,
         _id: "733fa9a1-26b6-490d-b299-21f120b2f532",
       },
       "34a1cab1-81f1-47e5-aec3-ab6c9810efa1": {
         name: "Perennials & Roses",
-        logoUrl: "/assets/atat.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1717465842425-f9e8a670776e?q=80&w=2928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Perennials and rose varieties, care tips",
         _createdOn: 1615737591748,
         _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efa1",
       },
       "dc888b1a-400f-47f3-9619-07607966fea8": {
         name: "Indoor Plants",
-        logoUrl: "/assets/rocket.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1583753075968-1236ccb83c66?q=80&w=3124&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "For all things houseplants",
         _createdOn: 1615737655083,
         _id: "dc888b1a-400f-47f3-9619-07607966fea8",
       },
       "733fa9a1-26b6-490d-b299-21f120b2f43a": {
         name: "Organic Gardening",
-        logoUrl: "/assets/hydrant.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1729372506731-155dcc815085?q=80&w=3136&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Techniques, tips, and advice for organic gardeners",
         _createdOn: 1615737688036,
         _id: "733fa9a1-26b6-490d-b299-21f120b2f43a",
       },
       "34a1cab1-81f1-47e5-aec3-ab6c9810e4e2": {
         name: "Compost & Sustainable Practices",
-        logoUrl: "/assets/atat.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Composting, recycling, and eco-friendly gardening",
         _createdOn: 1615737591748,
         _id: "34a1cab1-81f1-47e5-aec3-ab6c9810e4e1",
       },
       "dc888b1a-400f-47f3-9619-07607966ceb2": {
         name: "Pests, Diseases & Plant Health",
-        logoUrl: "/assets/rocket.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1718975129176-1777e482891b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Troubleshooting garden problems",
         _createdOn: 1615737655083,
         _id: "dc888b1a-400f-47f3-9619-07607966ceb8",
       },
       "733fa9a1-26b6-490d-b299-21f120b2c532": {
         name: "Gardening Tools & Equipment",
-        logoUrl: "/assets/hydrant.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1621460248083-6271cc4437a8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Advice on tools, gadgets, and equipment",
         _createdOn: 1615737688036,
         _id: "733fa9a1-26b6-490d-b299-21f120b2c53a",
