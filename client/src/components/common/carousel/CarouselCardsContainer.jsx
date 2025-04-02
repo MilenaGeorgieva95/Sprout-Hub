@@ -8,7 +8,7 @@ const cardsData = [
 
 export default function CarouselCardsContainer({ categories }) {
   return (
-    <div className="d-flex justify-content-center px-20">
+    <div className="d-flex justify-content-center px-30">
       {categories.map((cardData) => (
         <CarouselCard key={cardData._id} category={cardData} />
       ))}

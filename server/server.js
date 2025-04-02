@@ -1647,28 +1647,32 @@
     categories: {
       "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
         name: "General Gardening Talk",
-        logoUrl: "/assets/atat.png",
+        logoUrl:
+          "https://plus.unsplash.com/premium_photo-1678832237885-ef157b15b8ad?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "For any general gardening discussions",
         _createdOn: 1615737591748,
         _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
       },
       "dc888b1a-400f-47f3-9619-07607966feb8": {
         name: "Landscaping & Garden Design",
-        logoUrl: "/assets/rocket.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1720084562443-cdc761d5fac6?q=80&w=3094&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Design tips, garden planning, landscaping ideas",
         _createdOn: 1615737655083,
         _id: "dc888b1a-400f-47f3-9619-07607966feb8",
       },
       "733fa9a1-26b6-490d-b299-21f120b2f53a": {
         name: "Fast-Growing UK Plants",
-        logoUrl: "/assets/hydrant.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1648725953113-482867389de2?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Plants that thrive quickly in the UK",
         _createdOn: 1615737688036,
         _id: "733fa9a1-26b6-490d-b299-21f120b2f53a",
       },
       "34a1cab1-81f1-47e5-aec3-ab6c9810efe2": {
         name: "Lawn Care & Organic Lawn Feed",
-        logoUrl: "/assets/atat.png",
+        logoUrl:
+          "https://images.unsplash.com/photo-1596734040367-d26232da30d7?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Lawn maintenance and organic methods",
         _createdOn: 1615737591748,
         _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe2",
