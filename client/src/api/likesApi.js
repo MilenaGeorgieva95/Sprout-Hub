@@ -4,30 +4,25 @@ import useAuth from "../hooks/useAuth";
 
 const baseUrl = "/data/likes";
 
-export const useLikes = (postId) => {
+export const useLikes = (postId, userId) => {
   const [likes, setLikes] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
+
   useEffect(() => {
     const searchParams = new URLSearchParams({
       where: `postId="${postId}"`,
     });
     request.get(`${baseUrl}?${searchParams.toString()}`).then((data) => {
       setLikes(data);
-    });
-  }, [postId]);
-  return { likes };
-};
-
-export const useIsLiked = (postId, userId) => {
-  const [isLiked, setIsLiked] = useState([]);
-  useEffect(() => {
-    const searchParams = new URLSearchParams({
-      where: `postId="${postId}" AND _ownerId="${userId}"`,
-    });
-    request.get(`${baseUrl}?${searchParams.toString()}`).then((data) => {
-      setIsLiked(data);
+      if (userId) {
+        const userLike = data.find((el) => el._ownerId === userId);
+        if (userLike) {
+          setIsLiked(true);
+        }
+      }
     });
   }, [postId, userId]);
-  return { isLiked };
+  return { likes, setLikes, isLiked, setIsLiked };
 };
 
 export const useCreateLike = () => {

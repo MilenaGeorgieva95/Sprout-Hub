@@ -10,7 +10,7 @@ import { useComments, useCreateComment } from "../../../api/commentsApi";
 import { useOptimistic } from "react";
 import { v4 as uuid } from "uuid";
 import CommentsSection from "../../comments/comments-section/CommentsSection";
-import { useCreateLike, useIsLiked, useLikes } from "../../../api/likesApi";
+import { useCreateLike, useLikes } from "../../../api/likesApi";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -26,9 +26,8 @@ export default function PostDetails() {
   const navigate = useNavigate();
   const { _id: userId, username, avatarUrl } = useAuth();
 
-  const { likes } = useLikes(postId);
+  const { likes, setLikes, isLiked, setIsLiked } = useLikes(postId, userId);
   console.log(likes);
-  const { isLiked } = useIsLiked(postId, userId);
   console.log(isLiked);
   const { create: createLike } = useCreateLike();
 
@@ -195,15 +194,35 @@ export default function PostDetails() {
                 ) : (
                   username && (
                     <>
-                      <button
-                        onClick={() => createLike(postId)}
-                        className={
-                          "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                          styles.detailsBtn
-                        }
-                      >
-                        Like
-                      </button>
+                      {isLiked ? (
+                        <button
+                          onClick={() => {
+                            setIsLiked(true);
+
+                            createLike(postId);
+                          }}
+                          className={
+                            "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                            styles.detailsBtn
+                          }
+                        >
+                          Like
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            setIsLiked(true);
+
+                            createLike(postId);
+                          }}
+                          className={
+                            "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                            styles.detailsBtn
+                          }
+                        >
+                          Dislike
+                        </button>
+                      )}
                     </>
                   )
                 )}

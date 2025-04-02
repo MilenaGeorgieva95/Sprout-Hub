@@ -11,8 +11,7 @@ export const usePosts = () => {
   const location = useLocation();
   const search = location.search;
   const queryParams = new URLSearchParams(search);
-  console.log(queryParams);
-  
+
   useEffect(() => {
     setPending(true);
     request.get(baseUrl + `?${queryParams.toString()}`).then((data) => {
@@ -88,11 +87,10 @@ export const useMyPosts = () => {
     const searchParams = new URLSearchParams({
       where: `_ownerId="${_id}"`,
     });
-    request
-      .get(`${baseUrl}?${searchParams.toString()}`)
-      .then(setPosts);
+    request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
   }, [_id]);
   return {
-posts, setPosts
+    posts,
+    setPosts,
   };
 };
