@@ -32,7 +32,7 @@ export async function requester(method, url, body, token) {
     }
     return data;
   } catch (error) {
-    alert(`Error: ${error.message}`);
+    // alert(`Error: ${error.message}`);
     throw error;
   }
 }

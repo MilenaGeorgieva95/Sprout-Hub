@@ -1,21 +1,30 @@
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useLogin } from "../../../api/authApi";
 import { useUserContext } from "../../../contexts/UserContext";
+import ErrorModal from "../../common/error-modal/ErrorModal";
 
 export default function Login() {
   const navigate = useNavigate();
   const { userLoginHandler } = useUserContext();
-
   const { login } = useLogin();
+
+  const [error, setError] = useState("");
+  const triggerError = (errorMessage) => {
+    setError(errorMessage);
+  };
 
   const loginHandler = async (previousState, formData) => {
     const formValues = Object.fromEntries(formData);
 
-    const authData = await login(formValues.email, formValues.password);
-    userLoginHandler(authData);
-    navigate("/posts");
-    return formValues;
+    try {
+      const authData = await login(formValues.email, formValues.password);
+      userLoginHandler(authData);
+      navigate("/posts");
+      return formValues;
+    } catch (error) {
+      triggerError(error.message);
+    }
   };
 
   const [values, loginAction, isPending] = useActionState(loginHandler, {
@@ -25,6 +34,12 @@ export default function Login() {
 
   return (
     <section>
+      {error && (
+        <div>
+          <button onClick={triggerError}>Cause Error</button>
+          <ErrorModal error={error} onClose={() => setError("")} />
+        </div>
+      )}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 items-center maxHeight">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
