@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 import CarouselCardsContainer from "./CarouselCardsContainer";
+import { request } from "../../../utils/requester";
+import Spinner from "../spinner/Spinner";
 
 export default function Carousel() {
+  const [categories, setCategories] = useState([]);
+  const [pending, setPending] = useState(false);
+  console.log(categories);
+  console.log(pending);
+
+  useEffect(() => {
+    setPending(true);
+    try {
+      request.get("/data/categories").then((data) => {
+        setCategories(data);
+        setPending(false);
+      });
+    } catch (error) {
+      alert(error.message);
+    }
+  }, []);
   return (
     <div>
       <div
@@ -8,17 +27,23 @@ export default function Carousel() {
         className="carousel slide"
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <CarouselCardsContainer />
-          </div>
-          <div className="carousel-item">
-            <CarouselCardsContainer />
-          </div>
-          <div className="carousel-item">
-            <CarouselCardsContainer />
-          </div>
-        </div>
+        {!pending ? (
+          <>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <CarouselCardsContainer categories={categories.slice(0, 4)} />
+              </div>
+              <div className="carousel-item">
+                <CarouselCardsContainer categories={categories.slice(4, 8)} />
+              </div>
+              <div className="carousel-item">
+                <CarouselCardsContainer categories={categories.slice(8, 12)} />
+              </div>
+            </div>
+          </>
+        ) : (
+          <Spinner />
+        )}
 
         {/* Carousel Controls */}
         <button

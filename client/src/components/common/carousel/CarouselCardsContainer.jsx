@@ -6,7 +6,9 @@ const cardsData = [
   { id: 4, imgUrl: "./images/almani-qhizq_V876M-unsplash.jpg" },
 ];
 
-export default function CarouselCardsContainer() {
+export default function CarouselCardsContainer({ categories }) {
+  console.log(categories);
+
   return (
     <div className="d-flex justify-content-center">
       {cardsData.map((cardData) => (

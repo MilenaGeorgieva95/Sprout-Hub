@@ -5,9 +5,7 @@ import styles from "./HomePage.module.css";
 import WhiteLogoBar from "../common/logo-bars/white-logo-bar/WhiteLogoBar";
 import CategorySearch from "../search/category-search/CategorySearch";
 
-
 export default function HomePage() {
-  
   return (
     <>
       <div
@@ -34,7 +32,7 @@ export default function HomePage() {
               </Link>
             </h2>
 
-           <CategorySearch/>
+            <CategorySearch />
           </div>
         </div>
       </div>

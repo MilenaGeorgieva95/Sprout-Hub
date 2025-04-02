@@ -3,21 +3,31 @@ import { useLocation } from "react-router";
 import { request } from "../utils/requester";
 
 const baseUrl = "/data/posts";
+const categoriesUrl = "/data/categories";
 
 export const useCategory = (category) => {
-    const [posts, setPosts] = useState([]);
-    const [pending, setPending] = useState(false);
-    
-    const queryParams = new URLSearchParams({
-      where: `category LIKE "${category}"`
-    });
-    
-    useEffect(() => {
-      setPending(true);
+  const [posts, setPosts] = useState([]);
+  const [pending, setPending] = useState(false);
+
+  const queryParams = new URLSearchParams({
+    where: `category LIKE "${category}"`,
+  });
+
+  useEffect(() => {
+    setPending(true);
+    try {
       request.get(`${baseUrl}?${queryParams.toString()}`).then((data) => {
         setPending(false);
         setPosts(data);
       });
-    }, [category]);
-    return { pending, posts };
-  };
+    } catch (error) {
+      alert(error.message);
+    }
+  }, [category]);
+  return { pending, posts };
+};
+
+// export const useCategories = () => {
+
+//   return { categories };
+// };
