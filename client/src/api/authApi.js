@@ -1,6 +1,6 @@
 import { request } from "../utils/requester";
 import useAuth from "../hooks/useAuth";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 const baseUrl = "/users";
 
@@ -57,15 +57,21 @@ export const useRegister = () => {
 export const useLogout = () => {
   const { accessToken, userLogoutHandler } = useContext(UserContext);
 
-  useEffect(() => {  
+  const [error, setError] = useState("");
+
+  useEffect(() => {
     if (!accessToken) {
       return;
     }
-     userLogoutHandler()
-    request
-      .get(`${baseUrl}/logout`, null, accessToken)
-      .then(() => userLogoutHandler());
+    userLogoutHandler();
+    try {
+      request
+        .get(`${baseUrl}/logout`, null, accessToken)
+        .then(() => userLogoutHandler());
+    } catch (error) {
+      setError(error.message);
+    }
   }, [accessToken, userLogoutHandler]);
 
-  return { isLoggedOut: !!accessToken };
+  return { isLoggedOut: !!accessToken, error, setError };
 };
