@@ -7,8 +7,10 @@ const baseUrl = "/data/likes";
 export const useLikes = (postId, userId) => {
   const [likes, setLikes] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
+    setPending(true);
     const searchParams = new URLSearchParams({
       where: `postId="${postId}"`,
     });
@@ -20,9 +22,10 @@ export const useLikes = (postId, userId) => {
           setIsLiked(true);
         }
       }
+      setPending(false);
     });
   }, [postId, userId]);
-  return { likes, setLikes, isLiked, setIsLiked };
+  return { likes, setLikes, isLiked, setIsLiked, pending };
 };
 
 export const useCreateLike = () => {

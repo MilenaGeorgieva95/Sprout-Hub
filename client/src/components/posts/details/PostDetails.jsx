@@ -26,7 +26,13 @@ export default function PostDetails() {
   const navigate = useNavigate();
   const { _id: userId, username, avatarUrl } = useAuth();
 
-  const { likes, setLikes, isLiked, setIsLiked } = useLikes(postId, userId);
+  const {
+    likes,
+    setLikes,
+    isLiked,
+    setIsLiked,
+    pending: pendingLike,
+  } = useLikes(postId, userId);
   console.log(likes);
   console.log(isLiked);
   const { create: createLike } = useCreateLike();
@@ -67,6 +73,15 @@ export default function PostDetails() {
     ]);
     const result = await create(postId, comment);
     addNewComment({ ...result, author: { username, userId, avatarUrl } });
+  };
+
+  const likeHandler = () => {
+    setIsLiked(true);
+    createLike(postId);
+  };
+  const dislikeHandler = () => {
+    setIsLiked(true);
+    delLike(postId);
   };
 
   return (
@@ -196,31 +211,24 @@ export default function PostDetails() {
                     <>
                       {isLiked ? (
                         <button
-                          onClick={() => {
-                            setIsLiked(true);
-
-                            createLike(postId);
-                          }}
-                          className={
-                            "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                            styles.detailsBtn
-                          }
-                        >
-                          Like
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            setIsLiked(true);
-
-                            createLike(postId);
-                          }}
+                          onClick={dislikeHandler}
                           className={
                             "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                             styles.detailsBtn
                           }
                         >
                           Dislike
+                        </button>
+                      ) : (
+                        <button
+                          disabled={pendingLike}
+                          onClick={likeHandler}
+                          className={
+                            "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                            styles.detailsBtn
+                          }
+                        >
+                          Like
                         </button>
                       )}
                     </>
