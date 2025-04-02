@@ -1,17 +1,24 @@
 import useForm from "../../../hooks/useForm";
 import { useNavigate } from "react-router";
 import { useCreatePost } from "../../../api/postsApi";
+import { useState } from "react";
+import ErrorModal from "../../common/error-modal/ErrorModal";
 
 export default function PostCreate() {
   const navigate = useNavigate();
   const { create } = useCreatePost();
+
+  const [error, setError] = useState("");
+  const triggerError = (errorMessage) => {
+    setError(errorMessage);
+  };
 
   const formSubmit = async (values) => {
     try {
       const newPost = await create(values);
       navigate("/posts");
     } catch (error) {
-      console.log(error);
+      triggerError(error.message);
     }
   };
 
@@ -28,6 +35,12 @@ export default function PostCreate() {
   return (
     <div className="mt-5 text-gray-900 font-sans py-8 maxHeight">
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+        {error && (
+          <div>
+            <button onClick={triggerError}>Cause Error</button>
+            <ErrorModal error={error} onClose={() => setError("")} />
+          </div>
+        )}
         <h1 className="text-3xl font-bold text-center text-green-600 mb-6">
           Create a Gardening Post
         </h1>
