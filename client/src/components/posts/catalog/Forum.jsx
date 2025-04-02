@@ -3,16 +3,10 @@ import TopPicksBar from "../../common/top-picks/TopPicksBar";
 import Spinner from "../../common/spinner/Spinner";
 import ForumPosts from "./ForumPosts";
 import { usePosts } from "../../../api/postsApi";
-import { useState } from "react";
 import ErrorModal from "../../common/error-modal/ErrorModal";
 
 export default function Forum() {
-  const [error, setError] = useState("");
-  const triggerError = (errorMessage) => {
-    setError(errorMessage);
-  };
-
-  const { pending, posts } = usePosts(triggerError);
+  const { pending, posts, error, setError } = usePosts();
 
   return (
     <>

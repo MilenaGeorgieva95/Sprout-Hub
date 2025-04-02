@@ -11,6 +11,7 @@ export const usePosts = (triggerError) => {
   const location = useLocation();
   const search = location.search;
   const queryParams = new URLSearchParams(search);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setPending(true);
@@ -20,10 +21,10 @@ export const usePosts = (triggerError) => {
         setPosts(data);
       });
     } catch (error) {
-      triggerError(error.message);
+      setError(error.message);
     }
   }, [search]);
-  return { pending, posts };
+  return { pending, posts, error, setError };
 };
 
 export const useCreatePost = () => {
