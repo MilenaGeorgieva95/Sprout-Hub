@@ -10,22 +10,28 @@ export const useLikes = (postId, userId) => {
   const [likeId, setLikeId] = useState("");
   const [pending, setPending] = useState(false);
 
+  const controller = new AbortController();
+  const signal = controller.signal;
+
   useEffect(() => {
     setPending(true);
     const searchParams = new URLSearchParams({
       where: `postId="${postId}"`,
     });
-    request.get(`${baseUrl}?${searchParams.toString()}`).then((data) => {
-      setLikes(data);
-      if (userId) {
-        const userLike = data.find((el) => el._ownerId === userId);
-        if (userLike) {
-          setIsLiked(true);
-          setLikeId(userLike._id);
+    request
+      .get(`${baseUrl}?${searchParams.toString()}`, "", "", { signal })
+      .then((data) => {
+        setLikes(data);
+        if (userId) {
+          const userLike = data.find((el) => el._ownerId === userId);
+          if (userLike) {
+            setIsLiked(true);
+            setLikeId(userLike._id);
+          }
         }
-      }
-      setPending(false);
-    });
+        setPending(false);
+      });
+    return controller.abort();
   }, [likeId, isLiked]);
   return { likes, likeId, isLiked, setIsLiked, pending, setLikeId };
 };
