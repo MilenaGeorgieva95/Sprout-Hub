@@ -29,7 +29,7 @@ export default function PostCreate() {
     {
       title: "",
       text: "",
-      category: "",
+      category: "General Gardening Talk",
       imageUrl: "",
     },
     formSubmit
@@ -96,12 +96,12 @@ export default function PostCreate() {
               id="category"
               name="category"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-              required
               onChange={changeHandler}
-              value={values.category}
             >
               {categories.map((category) => (
-                <option value={category.search}>{category.name}</option>
+                <option key={category._id} value={category.search}>
+                  {category.name}
+                </option>
               ))}
             </select>
           </div>

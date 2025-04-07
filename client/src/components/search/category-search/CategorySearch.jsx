@@ -20,7 +20,6 @@ export default function CategorySearch() {
             style={{ height: "55px", fontSize: "18px" }}
             name="category"
           >
-            <option defaultChecked>Search Categories</option>
             {categories.map((category) => (
               <option key={category._id} value={category.name}>
                 {category.name}
