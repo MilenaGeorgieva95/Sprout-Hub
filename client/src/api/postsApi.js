@@ -30,6 +30,7 @@ export const usePosts = (triggerError) => {
 export const useCreatePost = () => {
   const { accessToken } = useAuth();
   const create = (postData) => {
+    postData.rating = 0;
     return request.post(baseUrl, postData, accessToken);
   };
   return { create };
