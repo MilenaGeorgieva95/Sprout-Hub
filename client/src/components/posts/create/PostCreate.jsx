@@ -3,6 +3,9 @@ import { useNavigate } from "react-router";
 import { useCreatePost } from "../../../api/postsApi";
 import { useState } from "react";
 import ErrorModal from "../../common/error-modal/ErrorModal";
+import categoriesList from "../../../utils/categoriesList";
+
+const categories = categoriesList;
 
 export default function PostCreate() {
   const navigate = useNavigate();
@@ -88,7 +91,7 @@ export default function PostCreate() {
             >
               Category:
             </label>
-            <input
+            <select
               type="text"
               id="category"
               name="category"
@@ -96,7 +99,11 @@ export default function PostCreate() {
               required
               onChange={changeHandler}
               value={values.category}
-            />
+            >
+              {categories.map((category) => (
+                <option value={category.search}>{category.name}</option>
+              ))}
+            </select>
           </div>
 
           <div className="mb-4">
