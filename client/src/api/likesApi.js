@@ -26,7 +26,7 @@ export const useLikes = (postId, userId) => {
       }
       setPending(false);
     });
-  }, [postId, userId]);
+  }, [postId, userId, isLiked, likeId]);
   return { likes, likeId, isLiked, setIsLiked, pending, setLikeId };
 };
 
