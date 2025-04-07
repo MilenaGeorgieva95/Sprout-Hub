@@ -212,6 +212,7 @@ export default function PostDetails() {
                     <>
                       {isLiked ? (
                         <button
+                          disabled={pendingLike}
                           onClick={dislikeHandler}
                           className={
                             "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
