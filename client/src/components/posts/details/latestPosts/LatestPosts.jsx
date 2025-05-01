@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useLatestPosts } from "../../../../api/postsApi";
-import PostCard from "./postCard";
+import PostCard from "./PostCard";
 
 export default function LatestPosts() {
   const { postId } = useParams();
