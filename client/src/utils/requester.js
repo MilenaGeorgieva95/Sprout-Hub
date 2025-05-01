@@ -1,6 +1,8 @@
 const host = "http://localhost:3030";
 
 export async function requester(method, url, body, token) {
+  console.log("from requester " + process.env.NODE_ENV);
+
   const options = {
     method,
   };
