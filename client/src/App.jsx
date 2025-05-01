@@ -23,36 +23,34 @@ import Search from "./components/search/search-page/Search";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary";
 
 function App() {
-
   return (
     <ErrorBoundary>
-    <UserProvider>
-      <div className="bg-white h-full fullHeight">
-        <Header />
-        <Routes>
-          <Route path="/posts" element={<Forum />} />
-          <Route path="/posts/:postId/details" element={<PostDetails />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<Page404 />} />
+      <UserProvider>
+        <div className="bg-white h-full fullHeight">
+          <Header />
+          <Routes>
+            <Route path="/posts" element={<Forum />} />
+            <Route path="/posts/:postId/details" element={<PostDetails />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<Page404 />} />
 
-          <Route element={<AuthGuard />}>
-          <Route path="/posts/:postId/edit" element={<PostEdit />} />
-          {/* <Route path="/posts/:postId/like" element={<PostLike />} /> */}
-          <Route path="/posts/create" element={<PostCreate />} />
-          <Route path="/my-posts" element={<MyPosts/>} />
-          <Route path="/logout" element={<Logout />} />
-          </Route>
+            <Route element={<AuthGuard />}>
+              <Route path="/posts/:postId/edit" element={<PostEdit />} />
+              {/* <Route path="/posts/:postId/like" element={<PostLike />} /> */}
+              <Route path="/posts/create" element={<PostCreate />} />
+              <Route path="/my-posts" element={<MyPosts />} />
+              <Route path="/logout" element={<Logout />} />
+            </Route>
 
-          <Route element={<GuestGuard />}>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          </Route>
-
-        </Routes>
-        <Footer />
-      </div>
-    </UserProvider>
+            <Route element={<GuestGuard />}>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
+      </UserProvider>
     </ErrorBoundary>
   );
 }
