@@ -1,4 +1,5 @@
-# 🌱 Sprout Hub
+# 🌱 [Sprout Hub](https://sprout-hub-458309.web.app/)
+## 📌[https://sprout-hub-458309.web.app/](https://sprout-hub-458309.web.app)
 
 **Sprout Hub** is a modern **Single Page Application (SPA)** built with **React.js**, providing an interactive platform for users to create, manage, and engage with content. The project follows best practices in front-end development and connects to the **SoftUni Practice Server** as the back-end.
 
@@ -74,8 +75,9 @@ sprout-hub
 - **React Router** – Client-side routing
 - **Fetch API / Axios** – Communication with the back-end
 - **CSS Modules** – Component styling
-- **SoftUni Practice Server** – Back-end service
-- **GitHub** – Version control
+- **SoftUni Practice Server** – Deployed at Google Cloud Run as Back-end server
+- **GitHub** – Version control connected to Firebase SDK
+- **React APP** deployed at Firebase
 
 ---
 
