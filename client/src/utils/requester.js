@@ -1,9 +1,7 @@
 const host = import.meta.env.VITE_APP_SERVER_URL;
 
 export async function requester(method, url, body, token) {
-  console.log("from requester " + process.env.NODE_ENV);
-  console.log("from vite " + import.meta.env.VITE_APP_SERVER_URL);
-  console.log("mode from vite " + import.meta.env.VITE_APP_SERVER_URL);
+  console.log(host);
 
   const options = {
     method,
