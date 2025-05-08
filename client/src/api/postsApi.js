@@ -100,3 +100,19 @@ export const useMyPosts = () => {
     setPosts,
   };
 };
+
+export const useAuthorsPosts = (authorId) => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams({
+      where: `_ownerId="${authorId}"`,
+      load: "author=_ownerId:users",
+    });
+    request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
+  }, [authorId]);
+  return {
+    posts,
+    setPosts,
+  };
+};
