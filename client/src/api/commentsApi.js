@@ -37,10 +37,10 @@ export const useComments = (postId) => {
 
 export const useCreateComment = () => {
   const { accessToken, _id } = useAuth();
-  const create = (postId, comment) => {
+  const create = (postId, content) => {
     const body = {
       _ownerId: _id,
-      comment,
+      content,
       postId,
     };
     return request.post(baseUrl, body, accessToken);

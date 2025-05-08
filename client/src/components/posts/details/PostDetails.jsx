@@ -56,12 +56,12 @@ export default function PostDetails() {
   };
 
   const commentsCreateHandler = async (formData) => {
-    const comment = formData.get("comment");
+    const content = formData.get("content");
     const newOptimisticComment = {
       _id: uuid(),
       _ownerId: userId,
       postId,
-      comment,
+      content,
       pending: true,
       author: {
         username,
@@ -72,7 +72,7 @@ export default function PostDetails() {
       ...oldComments,
       newOptimisticComment,
     ]);
-    const result = await create(postId, comment);
+    const result = await create(postId, content);
     addNewComment({ ...result, author: { username, userId, avatarUrl } });
   };
 
@@ -244,12 +244,14 @@ export default function PostDetails() {
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
             <CommentsSection commentsData={optimisticComments} />
-            <div className="max-w-xl">
-              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
-                Add New Comment
-              </h2>
-              <AddComment onCreate={commentsCreateHandler} />
-            </div>
+            {username && (
+              <div className="max-w-xl">
+                <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
+                  Add New Comment
+                </h2>
+                <AddComment onCreate={commentsCreateHandler} />
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function CommentsSection({ commentsData }) {
                 {comment.author?.username}
               </h3>
               <p className="text-sm/6 font-semibold text-indigo-600">
-                {comment.comment}
+                {comment.content}
               </p>
             </div>
           </div>
