@@ -4,10 +4,35 @@ import { useRegister } from "../../../api/authApi";
 import { useUserContext } from "../../../contexts/UserContext";
 import ErrorModal from "../../common/error-modal/ErrorModal";
 
+const avatars = [
+  {
+    name: "avatar1",
+    url: "https://images.unsplash.com/photo-1740252117070-7aa2955b25f8?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "avatar2",
+    url: "https://images.unsplash.com/photo-1740252117027-4275d3f84385?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+    {
+    name: "avatar3",
+    url: "https://images.unsplash.com/photo-1740252117012-bb53ad05e370?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "avatar4",
+    url: "https://images.unsplash.com/photo-1740252117044-2af197eea287?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
 export default function Register() {
   const { register } = useRegister();
   const { userLoginHandler } = useUserContext();
   const navigate = useNavigate();
+  const [selectedAvatar, setSelectedAvatar] = useState("avatar1");
+  const [customUrl, setCustomUrl] = useState("");
+
+  const avatarOptionChangehandler = (e) => {
+    setSelectedAvatar(e.target.value);
+  };
 
   const [error, setError] = useState("");
   const triggerError = (errorMessage) => {
@@ -15,7 +40,7 @@ export default function Register() {
   };
 
   const registerHandler = async (formData) => {
-    const { username, avatarUrl, email, password, rePassword } =
+    const { username, avatar, email, password, rePassword } =
       Object.fromEntries(formData);
 
     if (password !== rePassword || password === "") {
@@ -23,6 +48,12 @@ export default function Register() {
       return;
     }
     try {
+      const avatarUrl =
+        selectedAvatar === "custom"
+          ? customUrl
+          : avatars.find((el) => el.name === selectedAvatar).url;
+      console.log(avatarUrl);
+
       const authData = await register(username, avatarUrl, email, password);
       userLoginHandler(authData);
       navigate("/posts");
@@ -76,19 +107,59 @@ export default function Register() {
                 htmlFor="avatarUrl"
                 className="block text-sm/6 font-medium text-gray-900"
               >
-                Avatar image URL
+                Avatar image
               </label>
               <div className="mt-2">
-                <input
+                {/* <input
                   id="avatarUrl"
                   name="avatarUrl"
                   type="url"
                   required
                   autoComplete="email"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                />
+                /> */}
+                {avatars.map((avatar) => {
+                  return (
+                    <div key={avatar.name}>
+                      <input
+                        type="radio"
+                        name="avatar"
+                        value={avatar.name}
+                        checked={selectedAvatar === avatar.name}
+                        onChange={avatarOptionChangehandler}
+                      />
+                      <img src={avatar.url} alt="avatar image" />
+                    </div>
+                  );
+                })}
+
+                <div>
+                  <input
+                    type="radio"
+                    id="custom"
+                    name="avatar"
+                    value="custom"
+                    checked={selectedAvatar === "custom"}
+                    onChange={avatarOptionChangehandler}
+                  />
+                  <label htmlFor="custom">Custom URL</label>
+                  {selectedAvatar === "custom" && (
+                    <input
+                      id="custom"
+                      placeholder="Enter image URL"
+                      name="avatar"
+                      type="url"
+                      value={customUrl}
+                      onChange={(e) => {
+                        setCustomUrl(e.target.value);
+                      }}
+                      className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    />
+                  )}
+                </div>
               </div>
             </div>
+
             <div>
               <label
                 htmlFor="email"
