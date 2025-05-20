@@ -13,12 +13,8 @@ const avatars = [
     name: "avatar2",
     url: "https://images.unsplash.com/photo-1740252117027-4275d3f84385?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-    {
-    name: "avatar3",
-    url: "https://images.unsplash.com/photo-1740252117012-bb53ad05e370?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
   {
-    name: "avatar4",
+    name: "avatar3",
     url: "https://images.unsplash.com/photo-1740252117044-2af197eea287?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
@@ -105,34 +101,11 @@ export default function Register() {
             <div>
               <label
                 htmlFor="avatarUrl"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="pt-3 block text-sm/6 font-medium text-gray-900"
               >
                 Avatar image
               </label>
               <div className="mt-2">
-                {/* <input
-                  id="avatarUrl"
-                  name="avatarUrl"
-                  type="url"
-                  required
-                  autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                /> */}
-                {avatars.map((avatar) => {
-                  return (
-                    <div key={avatar.name}>
-                      <input
-                        type="radio"
-                        name="avatar"
-                        value={avatar.name}
-                        checked={selectedAvatar === avatar.name}
-                        onChange={avatarOptionChangehandler}
-                      />
-                      <img src={avatar.url} alt="avatar image" />
-                    </div>
-                  );
-                })}
-
                 <div>
                   <input
                     type="radio"
@@ -142,7 +115,7 @@ export default function Register() {
                     checked={selectedAvatar === "custom"}
                     onChange={avatarOptionChangehandler}
                   />
-                  <label htmlFor="custom">Custom URL</label>
+                  <label className="px-2" htmlFor="custom">Custom URL</label>
                   {selectedAvatar === "custom" && (
                     <input
                       id="custom"
@@ -157,6 +130,20 @@ export default function Register() {
                     />
                   )}
                 </div>
+                {avatars.map((avatar) => {
+                  return (
+                    <div key={avatar.name}>
+                      <input
+                        type="radio"
+                        name="avatar"
+                        value={avatar.name}
+                        checked={selectedAvatar === avatar.name}
+                        onChange={avatarOptionChangehandler}
+                      />
+                      <img src={avatar.url} alt="avatar image" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
