@@ -62,7 +62,7 @@ export default function Search() {
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {posts.map((post) => (
-            <Link key={post._id} to={`/posts/${post._id}/details`} className="group" style={{textDecoration: "none"}}>
+            <Link key={post._id} to={`/posts/${post.objectId}/details`} className="group" style={{textDecoration: "none"}}>
               <img
                 alt={post.title}
                 src={post.imageUrl}

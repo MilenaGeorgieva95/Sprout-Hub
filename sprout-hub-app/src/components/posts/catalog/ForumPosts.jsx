@@ -22,7 +22,7 @@ export default function ForumPosts({ posts }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-gray-700">
-                  <Link to={`/posts/${post._id}/details`}>
+                  <Link to={`/posts/${post.objectId}/details`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     {post.title}
                   </Link>
@@ -33,7 +33,7 @@ export default function ForumPosts({ posts }) {
               </div>
             </div>
             <Link
-              to={`/posts/${post._id}/details`}
+              to={`/posts/${post.objectId}/details`}
               className={
                 "mt-6 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                 styles.detailsBtn

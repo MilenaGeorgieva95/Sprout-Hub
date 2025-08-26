@@ -16,7 +16,7 @@ export const useLikes = (postId, userId) => {
   useEffect(() => {
     setPending(true);
     const searchParams = new URLSearchParams({
-      where: `postId="${postId}"`,
+      // where: `postId="${postId}"`,
     });
     request
       .get(`${baseUrl}?${searchParams.toString()}`, "", "", { signal })

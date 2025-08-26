@@ -24,7 +24,7 @@ export default function PostDetails() {
 
   const { del } = useDeletePost();
   const navigate = useNavigate();
-  const { _id: userId, username, avatarUrl } = useAuth();
+  const { objectId: userId, username, avatarUrl } = useAuth();
 
   const {
     likes,
@@ -189,7 +189,7 @@ export default function PostDetails() {
                 {isOwner ? (
                   <>
                     <Link
-                      to={`/posts/${post._id}/edit`}
+                      to={`/posts/${post.objectId}/edit`}
                       className={
                         "mt-6 flex items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                         styles.detailsBtn

@@ -21,8 +21,8 @@ export const useComments = (postId) => {
   const { sessionToken } = useAuth();
   useEffect(() => {
     const searchParams = new URLSearchParams({
-      where: `postId="${postId}"`,
-      load: "author=_ownerId:users",
+      // where: `postId="${postId}"`,
+      // load: "author=_ownerId:users",
     });
     request
       .get(`${baseUrl}?${searchParams.toString()}`)
