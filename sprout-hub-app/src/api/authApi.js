@@ -34,13 +34,13 @@ export const useRegister = () => {
 
   const register = async (username, avatarUrl, email, password) => {
     const registerData = await request.post(
-      '/register',
+      '/users',
       { username, avatarUrl, email, password },
       "",
       "",
       { signal: abortRef.current.signal }
     );
-    return registerData;
+    return {...registerData, username, avatarUrl, email};
   };
 
   useEffect(() => {
