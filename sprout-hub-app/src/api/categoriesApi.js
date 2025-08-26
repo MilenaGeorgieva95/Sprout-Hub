@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { request } from "../utils/requester";
 
-const baseUrl = "/data/posts";
-const categoriesUrl = "/data/categories";
+const baseUrl = "/classes/posts";
+const categoriesUrl = "/classes/categories";
 
 export const useCategory = (category) => {
   const [posts, setPosts] = useState([]);

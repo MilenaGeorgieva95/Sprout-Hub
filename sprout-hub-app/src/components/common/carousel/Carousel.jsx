@@ -12,7 +12,7 @@ export default function Carousel() {
   useEffect(() => {
     setPending(true);
     try {
-      request.get("/data/categories").then((data) => {
+      request.get("/classes/categories").then((data) => {
         setCategories(data);
         setPending(false);
       });

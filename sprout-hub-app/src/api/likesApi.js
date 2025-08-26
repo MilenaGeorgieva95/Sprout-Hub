@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { request } from "../utils/requester";
 import useAuth from "../hooks/useAuth";
 
-const baseUrl = "/data/likes";
+const baseUrl = "/classes/likes";
 
 export const useLikes = (postId, userId) => {
   const [likes, setLikes] = useState([]);

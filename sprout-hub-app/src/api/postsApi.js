@@ -3,7 +3,7 @@ import { request } from "../utils/requester";
 import useAuth from "../hooks/useAuth";
 import { useLocation } from "react-router";
 
-const baseUrl = "/data/posts";
+const baseUrl = "/classes/posts";
 
 export const usePosts = (triggerError) => {
   const [posts, setPosts] = useState([]);

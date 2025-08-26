@@ -2,14 +2,13 @@ import { request } from "../utils/requester";
 import useAuth from "../hooks/useAuth";
 import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
-const baseUrl = "/users";
 
 export const useLogin = () => {
   const abortRef = useRef(new AbortController());
 
   const login = async (email, password) => {
     const loginData = await request.post(
-      `${baseUrl}/login`,
+      `/login`,
       {
         email,
         password,
@@ -35,7 +34,7 @@ export const useRegister = () => {
 
   const register = async (username, avatarUrl, email, password) => {
     const registerData = await request.post(
-      `${baseUrl}/register`,
+      '/register',
       { username, avatarUrl, email, password },
       "",
       "",
@@ -66,7 +65,7 @@ export const useLogout = () => {
     userLogoutHandler();
     try {
       request
-        .get(`${baseUrl}/logout`, null, accessToken)
+        .get(`/logout`, null, accessToken)
         .then(() => userLogoutHandler());
     } catch (error) {
       setError(error.message);

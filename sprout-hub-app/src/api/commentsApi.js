@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { request } from "../utils/requester";
 
-const baseUrl = "/data/comments";
+const baseUrl = "/classes/comments";
 
 function commentsReducer(state, action) {
   switch (action.type) {
