@@ -29,9 +29,8 @@ export async function requester(method, url, body, token) {
       data = await res.json();
     }
     
-    return data?.results;
+    return data?.results || data
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }

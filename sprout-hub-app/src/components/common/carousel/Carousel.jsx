@@ -6,8 +6,6 @@ import Spinner from "../spinner/Spinner";
 export default function Carousel() {
   const [categories, setCategories] = useState([]);
   const [pending, setPending] = useState(false);
-  console.log(categories);
-  console.log(pending);
 
   useEffect(() => {
     setPending(true);

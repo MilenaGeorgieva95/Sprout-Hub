@@ -52,7 +52,6 @@ export default function Search() {
   const category=searchParams.get('category')
 
   const {pending, posts}=useCategory(category);
-  console.log(posts);
   
   return (
     <div className="bg-white">

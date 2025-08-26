@@ -18,7 +18,7 @@ export default function Login() {
     const formValues = Object.fromEntries(formData);
 
     try {
-      const authData = await login(formValues.email, formValues.password);
+      const authData = await login(formValues.email, formValues.password);      
       userLoginHandler(authData);
       navigate("/posts");
       return formValues;

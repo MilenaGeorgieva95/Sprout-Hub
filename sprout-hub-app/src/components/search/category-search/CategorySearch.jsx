@@ -8,7 +8,6 @@ export default function CategorySearch() {
 
   const onSelect = (formData) => {
     const category = formData.get("category");
-    console.log(category);
     navigate(`/search?category=${category}`);
   };
   return (

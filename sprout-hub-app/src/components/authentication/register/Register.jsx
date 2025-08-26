@@ -48,8 +48,6 @@ export default function Register() {
         selectedAvatar === "custom"
           ? customUrl
           : avatars.find((el) => el.name === selectedAvatar).url;
-      console.log(avatarUrl);
-
       const authData = await register(username, avatarUrl, email, password);
       userLoginHandler(authData);
       navigate("/posts");

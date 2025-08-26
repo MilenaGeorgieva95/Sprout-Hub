@@ -6,11 +6,12 @@ export default function useLocalStorage() {
     if (!authJson) {
      return {};
     }
-    const authData = JSON.parse(authJson);
+    const authData = JSON.parse(authJson | '');
     return authData;
   });
 
   const setLocalStorageUser = (userData) => {
+
     const userDataJson = JSON.stringify(userData);
     localStorage.setItem('auth', userDataJson);
     setAuthData(userData);
