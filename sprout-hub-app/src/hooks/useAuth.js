@@ -7,7 +7,7 @@ export default function useAuth() {
     email,
     username,
     avatarUrl,
-    accessToken,
+    sessionToken,
     userLoginHandler,
     userLogoutHandler,
   } = useContext(UserContext);
@@ -16,7 +16,7 @@ export default function useAuth() {
     email,
     username,
     avatarUrl,
-    accessToken,
+    sessionToken,
     userLoginHandler,
     userLogoutHandler,
   };

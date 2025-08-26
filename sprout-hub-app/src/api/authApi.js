@@ -54,23 +54,23 @@ export const useRegister = () => {
 };
 
 export const useLogout = () => {
-  const { accessToken, userLogoutHandler } = useContext(UserContext);
+  const { sessionToken, userLogoutHandler } = useContext(UserContext);
 
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!accessToken) {
+    if (!sessionToken) {
       return;
     }
     userLogoutHandler();
     try {
       request
-        .get(`/logout`, null, accessToken)
+        .get(`/logout`, null, sessionToken)
         .then(() => userLogoutHandler());
     } catch (error) {
       setError(error.message);
     }
-  }, [accessToken, userLogoutHandler]);
+  }, [sessionToken, userLogoutHandler]);
 
-  return { isLoggedOut: !!accessToken, error, setError };
+  return { isLoggedOut: !!sessionToken, error, setError };
 };

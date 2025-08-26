@@ -28,10 +28,10 @@ export const usePosts = (triggerError) => {
 };
 
 export const useCreatePost = () => {
-  const { accessToken } = useAuth();
+  const { sessionToken } = useAuth();
   const create = (postData) => {
     postData.rating = 0;
-    return request.post(baseUrl, postData, accessToken);
+    return request.post(baseUrl, postData, sessionToken);
   };
   return { create };
 };
@@ -53,16 +53,16 @@ export const usePost = (postId) => {
   return { pending, post };
 };
 export const useEditPost = () => {
-  const { accessToken } = useAuth();
+  const { sessionToken } = useAuth();
 
   const edit = (postId, postData) =>
-    request.put(`${baseUrl}/${postId}`, postData, accessToken);
+    request.put(`${baseUrl}/${postId}`, postData, sessionToken);
   return { edit };
 };
 export const useDeletePost = () => {
-  const { accessToken } = useAuth();
+  const { sessionToken } = useAuth();
 
-  const del = (postId) => request.del(`${baseUrl}/${postId}`, "", accessToken);
+  const del = (postId) => request.del(`${baseUrl}/${postId}`, "", sessionToken);
   return { del };
 };
 

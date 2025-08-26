@@ -37,13 +37,13 @@ export const useLikes = (postId, userId) => {
 };
 
 export const useCreateLike = () => {
-  const { accessToken, _id } = useAuth();
+  const { sessionToken, _id } = useAuth();
   const create = (postId, setLikeId) => {
     const body = {
       _ownerId: _id,
       postId,
     };
-    request.post(baseUrl, body, accessToken).then((result) => {
+    request.post(baseUrl, body, sessionToken).then((result) => {
       setLikeId(result._id);
       return result;
     });
@@ -52,9 +52,9 @@ export const useCreateLike = () => {
 };
 
 export const useDeleteLike = () => {
-  const { accessToken } = useAuth();
+  const { sessionToken } = useAuth();
 
   const delLike = (likeId) =>
-    request.del(`${baseUrl}/${likeId}`, "", accessToken);
+    request.del(`${baseUrl}/${likeId}`, "", sessionToken);
   return { delLike };
 };

@@ -18,7 +18,7 @@ function commentsReducer(state, action) {
 export const useComments = (postId) => {
   const [comments, dispatch] = useReducer(commentsReducer, []);
 
-  const { accessToken } = useAuth();
+  const { sessionToken } = useAuth();
   useEffect(() => {
     const searchParams = new URLSearchParams({
       where: `postId="${postId}"`,
@@ -27,7 +27,7 @@ export const useComments = (postId) => {
     request
       .get(`${baseUrl}?${searchParams.toString()}`)
       .then((result) => dispatch({ type: "GET_ALL", payload: result }));
-  }, [accessToken, postId]);
+  }, [sessionToken, postId]);
   return {
     comments,
     addNewComment: (commentData) =>
@@ -36,14 +36,14 @@ export const useComments = (postId) => {
 };
 
 export const useCreateComment = () => {
-  const { accessToken, _id } = useAuth();
+  const { sessionToken, _id } = useAuth();
   const create = (postId, content) => {
     const body = {
       _ownerId: _id,
       content,
       postId,
     };
-    return request.post(baseUrl, body, accessToken);
+    return request.post(baseUrl, body, sessionToken);
   };
   return { create };
 };
