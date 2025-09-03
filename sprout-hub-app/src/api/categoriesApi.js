@@ -10,7 +10,7 @@ export const useCategory = (category) => {
   const [pending, setPending] = useState(false);
 
   const queryParams = new URLSearchParams({
-    where: `category LIKE "${category}"`,
+    where: JSON.stringify({ category })
   });
 
   useEffect(() => {
