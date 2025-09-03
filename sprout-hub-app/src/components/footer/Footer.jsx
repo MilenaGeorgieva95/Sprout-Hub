@@ -18,6 +18,7 @@ export default function Footer() {
             {/* <!-- Grid column --> */}
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               {/* <!-- Content --> */}
+              <p> ©2025 Milena Georgieva. All rights reserved.</p>
               <h6 className="text-uppercase fw-bold mb-4">
                 <i className="fas fa-carrot me-3"></i>Sprout Hub
               </h6>
