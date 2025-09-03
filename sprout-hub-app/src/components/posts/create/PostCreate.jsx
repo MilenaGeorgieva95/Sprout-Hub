@@ -3,9 +3,9 @@ import { useNavigate } from "react-router";
 import { useCreatePost } from "../../../api/postsApi";
 import { useState } from "react";
 import ErrorModal from "../../common/error-modal/ErrorModal";
-import categoriesList from "../../../utils/categoriesList";
+import { useCategories } from "../../../api/categoriesApi";
 
-const categories = categoriesList;
+const {categories, pending} = useCategories()
 
 export default function PostCreate() {
   const navigate = useNavigate();
