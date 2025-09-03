@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router";
 import styles from "./CategorySearch.module.css";
-import categoriesList from "../../../utils/categoriesList";
+import { useCategories } from "../../../api/categoriesApi";
 
-const categories = categoriesList;
 export default function CategorySearch() {
   const navigate = useNavigate();
+  const {categories, pending}=useCategories();
 
   const onSelect = (formData) => {
     const category = formData.get("category");
@@ -19,11 +19,11 @@ export default function CategorySearch() {
             style={{ height: "55px", fontSize: "18px" }}
             name="category"
           >
-            {categories.map((category) => (
-              <option key={category._id} value={category.name}>
+            {pending?<option disabled>Loading...</option>:categories.length>0?categories.map((category) => (
+              <option key={category.objectId} value={category.search}>
                 {category.name}
               </option>
-            ))}
+            )):<option disabled>No categories found.</option>}
           </select>
         </div>
 

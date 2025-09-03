@@ -27,7 +27,36 @@ export const useCategory = (category) => {
   return { pending, posts };
 };
 
-// export const useCategories = () => {
+export const useCategories = () => {
+  const [categories, setCategories] = useState([]);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState(null);
 
-//   return { categories };
-// };
+  useEffect(() => {
+    let isMounted = true;
+    setPending(true);
+    request
+      .get(categoriesUrl)
+      .then((data) => {
+        if (isMounted) {
+          setCategories(data || []);
+          setError(null);
+        }
+      })
+      .catch((err) => {
+        if (isMounted) {
+          console.error(err);
+          setError(err);
+        }
+      })
+      .finally(() => {
+        if (isMounted) setPending(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  return { categories, pending, error };
+};
