@@ -5,9 +5,10 @@ import { useState } from "react";
 import ErrorModal from "../../common/error-modal/ErrorModal";
 import { useCategories } from "../../../api/categoriesApi";
 
-const {categories, pending} = useCategories()
+
 
 export default function PostCreate() {
+  const {categories, pending} = useCategories()
   const navigate = useNavigate();
   const { create } = useCreatePost();
 
