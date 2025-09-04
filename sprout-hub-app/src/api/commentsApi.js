@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { request } from "../utils/requester";
 
-const baseUrl = "/classes/comments";
+const baseUrl = "/classes/postcomments";
 
 function commentsReducer(state, action) {
   switch (action.type) {
@@ -36,12 +36,24 @@ export const useComments = (postId) => {
 };
 
 export const useCreateComment = () => {
-  const { sessionToken, objectId } = useAuth();
+  const { sessionToken, objectId, username, avatarUrl } = useAuth();
   const create = (postId, content) => {
     const body = {
-      _ownerId: objectId,
+      ownerId: {
+        __type: "Pointer",
+        className: "_User",
+        objectId,
+      },
       content,
-      postId,
+      postId: {
+        __type: "Pointer",
+        className: "posts",
+        objectId: postId,
+      },
+      author: {
+        username,
+        avatarUrl,
+      },
     };
     return request.post(baseUrl, body, sessionToken);
   };

@@ -24,7 +24,7 @@ export default function PostDetails() {
 
   const { del } = useDeletePost();
   const navigate = useNavigate();
-  const { objectId: userId, username, avatarUrl } = useAuth();
+  const { objectId:userId, username, avatarUrl } = useAuth();
 
   const {
     likes,
@@ -38,7 +38,7 @@ export default function PostDetails() {
   const { create: createLike } = useCreateLike();
   const { delLike } = useDeleteLike();
 
-  const isOwner = userId === post._ownerId;
+  const isOwner = userId === post.ownerId?.objectId;
   const { create } = useCreateComment();
   const { comments, addNewComment } = useComments(postId);
 
@@ -59,7 +59,7 @@ export default function PostDetails() {
     const content = formData.get("content");
     const newOptimisticComment = {
       objectId: uuid(),
-      _ownerId: userId,
+      ownerId: userId,
       postId,
       content,
       pending: true,
@@ -73,7 +73,7 @@ export default function PostDetails() {
       newOptimisticComment,
     ]);
     const result = await create(postId, content);
-    addNewComment({ ...result, author: { username, userId, avatarUrl } });
+    addNewComment({ ...result,content, author: { username, userId, avatarUrl } });
   };
 
   const likeHandler = () => {
