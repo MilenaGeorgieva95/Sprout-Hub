@@ -36,10 +36,10 @@ export const useComments = (postId) => {
 };
 
 export const useCreateComment = () => {
-  const { sessionToken, _id } = useAuth();
+  const { sessionToken, objectId } = useAuth();
   const create = (postId, content) => {
     const body = {
-      _ownerId: _id,
+      _ownerId: objectId,
       content,
       postId,
     };

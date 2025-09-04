@@ -28,9 +28,15 @@ export const usePosts = (triggerError) => {
 };
 
 export const useCreatePost = () => {
-  const { sessionToken } = useAuth();
+  const { sessionToken, objectId, avatarUrl, username } = useAuth();
   const create = (postData) => {
     postData.rating = 0;
+    (postData.ownerId = {
+      __type: "Pointer",
+      className: "_User",
+      objectId,
+    }),
+      (postData.author = { username, avatarUrl });
     return request.post(baseUrl, postData, sessionToken);
   };
   return { create };
@@ -74,7 +80,7 @@ export const useLatestPosts = (postId) => {
     const searchParams = new URLSearchParams({
       // sortBy: "_createdOn desc",
       // pageSize: PAGE_SIZE,
-      // select: "_id,imageUrl,title,category",
+      // select: "objectId,imageUrl,title,category",
     });
 
     request.get(`${baseUrl}?${searchParams.toString()}`).then((postsData) => {
@@ -88,13 +94,13 @@ export const useLatestPosts = (postId) => {
 export const useMyPosts = () => {
   const [posts, setPosts] = useState([]);
 
-  const { objetId:_id } = useAuth();
+  const { objetId: objectId } = useAuth();
   useEffect(() => {
     const searchParams = new URLSearchParams({
-      where: `_ownerId="${_id}"`,
+      where: `_ownerId="${objectId}"`,
     });
     request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
-  }, [_id]);
+  }, [objectId]);
   return {
     posts,
     setPosts,

@@ -6,7 +6,7 @@ export default function CommentsSection({ commentsData }) {
     >
       {commentsData.map((comment) => (
         <li
-          key={comment._id}
+          key={comment.objectId}
           style={
             comment.pending
               ? {

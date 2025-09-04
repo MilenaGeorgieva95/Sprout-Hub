@@ -58,7 +58,7 @@ export default function PostDetails() {
   const commentsCreateHandler = async (formData) => {
     const content = formData.get("content");
     const newOptimisticComment = {
-      _id: uuid(),
+      objectId: uuid(),
       _ownerId: userId,
       postId,
       content,
@@ -139,7 +139,7 @@ export default function PostDetails() {
             <p className="text-3xl tracking-tight text-gray-900">Author</p>
 
             <form className="mt-10">
-              <Link to={`/author/${post.author?._id}`}>
+              <Link to={`/author/${post.author?.objectId}`}>
                 <div>
                   <h3 className="text-sm font-medium text-gray-900">
                     <span aria-hidden="true" className="absolute inset-0" />
@@ -157,7 +157,7 @@ export default function PostDetails() {
               </Link>
 
               <Link
-                to={`/author/${post.author?._id}`}
+                to={`/author/${post.author?.objectId}`}
                 className={
                   "mt-10 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
                   styles.detailsBtn

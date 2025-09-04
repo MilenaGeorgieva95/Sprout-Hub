@@ -85,6 +85,24 @@ export default function PostCreate() {
             ></input>
           </div>
 
+                    <div className="mb-4">
+            <label
+              htmlFor="text"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Details:
+            </label>
+            <input
+              id="details"
+              name="details"
+              rows="4"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              required
+              onChange={changeHandler}
+              value={values.details}
+            ></input>
+          </div>
+
           <div className="mb-4">
             <label
               htmlFor="category"
@@ -100,7 +118,7 @@ export default function PostCreate() {
               onChange={changeHandler}
             >
               {categories.map((category) => (
-                <option key={category._id} value={category.search}>
+                <option key={category.objectId} value={category.search}>
                   {category.name}
                 </option>
               ))}

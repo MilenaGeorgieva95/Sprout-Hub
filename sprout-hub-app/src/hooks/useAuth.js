@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/UserContext";
 
 export default function useAuth() {
   const {
-    _id,
+    objectId,
     email,
     username,
     avatarUrl,
@@ -12,7 +12,7 @@ export default function useAuth() {
     userLogoutHandler,
   } = useContext(UserContext);
   return {
-    _id,
+    objectId,
     email,
     username,
     avatarUrl,

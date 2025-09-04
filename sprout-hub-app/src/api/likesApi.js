@@ -26,7 +26,7 @@ export const useLikes = (postId, userId) => {
           const userLike = data.find((el) => el._ownerId === userId);
           if (userLike) {
             setIsLiked(true);
-            setLikeId(userLike._id);
+            setLikeId(userLike.objectId);
           }
         }
         setPending(false);
@@ -37,14 +37,14 @@ export const useLikes = (postId, userId) => {
 };
 
 export const useCreateLike = () => {
-  const { sessionToken, _id } = useAuth();
+  const { sessionToken, objectId } = useAuth();
   const create = (postId, setLikeId) => {
     const body = {
-      _ownerId: _id,
+      _ownerId: objectId,
       postId,
     };
     request.post(baseUrl, body, sessionToken).then((result) => {
-      setLikeId(result._id);
+      setLikeId(result.objectId);
       return result;
     });
   };
