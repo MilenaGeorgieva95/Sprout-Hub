@@ -1,12 +1,12 @@
 import { useActionState, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useLogin } from "../../../api/authApi";
-import { useUserContext } from "../../../contexts/UserContext";
 import ErrorModal from "../../common/error-modal/ErrorModal";
+import useAuth from "../../../hooks/useAuth";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { userLoginHandler } = useUserContext();
+  const { userLoginHandler } = useAuth();
   const { login } = useLogin();
 
   const [error, setError] = useState("");

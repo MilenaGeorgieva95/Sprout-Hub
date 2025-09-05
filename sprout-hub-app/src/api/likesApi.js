@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { request } from "../utils/requester";
 import useAuth from "../hooks/useAuth";
 
-const baseUrl = "/classes/likes";
+const baseUrl = "/classes/postlikes";
 
 export const useLikes = (postId, userId) => {
   const [likes, setLikes] = useState([]);
@@ -15,15 +15,13 @@ export const useLikes = (postId, userId) => {
 
   useEffect(() => {
     setPending(true);
-    const searchParams = new URLSearchParams({
-      // where: `postId="${postId}"`,
-    });
+    const searchParam = `where={"postId":{"__type":"Pointer","className":"posts","objectId":"${postId}"}}`
     request
-      .get(`${baseUrl}?${searchParams.toString()}`, "", "", { signal })
+      .get(`${baseUrl}?${searchParam}`, "", "", { signal })
       .then((data) => {
         setLikes(data);
         if (userId) {
-          const userLike = data.find((el) => el._ownerId === userId);
+          const userLike = data.find((el) => el.ownerId.objectId === userId);
           if (userLike) {
             setIsLiked(true);
             setLikeId(userLike.objectId);
@@ -40,8 +38,16 @@ export const useCreateLike = () => {
   const { sessionToken, objectId } = useAuth();
   const create = (postId, setLikeId) => {
     const body = {
-      _ownerId: objectId,
-      postId,
+      ownerId: {
+        __type: "Pointer",
+        className: "_User",
+        objectId,
+      },
+      postId: {
+        __type: "Pointer",
+        className: "posts",
+        objectId:postId
+      },
     };
     request.post(baseUrl, body, sessionToken).then((result) => {
       setLikeId(result.objectId);

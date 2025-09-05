@@ -22,7 +22,7 @@ export const useComments = (postId) => {
   useEffect(() => {
     const searchParams = new URLSearchParams({
       // where: `postId="${postId}"`,
-      // load: "author=_ownerId:users",
+      // load: "author=ownerId:users",
     });
     request
       .get(`${baseUrl}?${searchParams.toString()}`)

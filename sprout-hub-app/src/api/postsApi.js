@@ -47,7 +47,7 @@ export const usePost = (postId) => {
   useEffect(() => {
     setPending(true);
     const searchParams = new URLSearchParams({
-      // load: "author=_ownerId:users",
+      // load: "author=ownerId:users",
     });
     request
       .get(`${baseUrl}/${postId}?${searchParams.toString()}`)
@@ -97,7 +97,7 @@ export const useMyPosts = () => {
   const { objetId: objectId } = useAuth();
   useEffect(() => {
     const searchParams = new URLSearchParams({
-      where: `_ownerId="${objectId}"`,
+      where: `ownerId="${objectId}"`,
     });
     request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
   }, [objectId]);
@@ -112,8 +112,8 @@ export const useAuthorsPosts = (authorId) => {
 
   useEffect(() => {
     const searchParams = new URLSearchParams({
-      // where: `_ownerId="${authorId}"`,
-      // load: "author=_ownerId:users",
+      // where: `ownerId="${authorId}"`,
+      // load: "author=ownerId:users",
     });
     request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
   }, [authorId]);

@@ -9,7 +9,7 @@ export interface Post {
 
 export interface DbPost extends Post {
   objectId: string;
-  _ownerId: Pointer;
+  ownerId: Pointer;
   _createdOn: number;
 }
 interface Pointer {

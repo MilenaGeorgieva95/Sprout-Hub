@@ -17,6 +17,9 @@ export async function requester(method, url, body, token) {
     options.body = JSON.stringify(body);
   }
 
+  if(!token){
+   token=localStorage.getItem('auth').sessionToken
+  }
   if (token) {
     options.headers['X-Parse-Session-Token'] = token;
   }
