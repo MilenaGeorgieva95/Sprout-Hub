@@ -7,6 +7,9 @@
 .author-card {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  padding: 1em;
+  margin: 0.5rem 0;
 }
 
 .author-card p{

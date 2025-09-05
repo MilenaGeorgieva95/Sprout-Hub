@@ -2,6 +2,29 @@
   width: 70%;
 }
 
+.postTextContainer{
+display: flex;
+flex-wrap: wrap;
+
+}
+
+.postTextContainer div{
+max-width: 550px;
+margin-right: 2rem;
+}
+
+.postTitle{
+  font-size: 40px;
+}
+
+.postSection{
+  max-width: 80%;
+  display: flex;
+    justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
 .detailsBtn {
   border-radius: 30px !important;
   border: 2px solid hsl(154, 100%, 20%);

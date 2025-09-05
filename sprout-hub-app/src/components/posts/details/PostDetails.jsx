@@ -104,10 +104,8 @@ export default function PostDetails() {
         </div>
 
         <div className="mx-auto px-4 pt-10  sm:px-6 lg:px-8 lg:pt-16 ">
-          <div className="">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              {post.title}
-            </h1>
+          <div className={styles.postSection}>
+            <h1 className={styles.postTitle}>{post.title}</h1>
             <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
               <div className="flex items-center">
@@ -134,101 +132,108 @@ export default function PostDetails() {
                 </Link>
               </div>
             </div>
-            <p className="mt-3 text-2xl tracking-tight text-gray-900">
-              Category: {post.category}
-            </p>
-                        <section className="mt-10">
-                <div className="author-card">
-                  <div className="avatar-md">
-                    <img
-                      alt="author avatar image"
-                      src={post.author?.avatarUrl}
-                      className="group-hover:opacity-75"
-                    />
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">
-                    Post written by:{" "}
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    {capitalize(post.author?.username)}
-                  </p>
+
+            <section className="mt-10">
+              <div className="author-card">
+                <div className="avatar-md">
+                  <img
+                    alt="author avatar image"
+                    src={post.author?.avatarUrl}
+                    className="group-hover:opacity-75"
+                  />
                 </div>
+                <p className="text-sm font-medium text-gray-900">
+                  Post written by:{" "}
+                  <span aria-hidden="true" className="absolute inset-0" />
+                  {capitalize(post.author?.username)}
+                </p>
+              </div>
             </section>
           </div>
-
-          <div className="py-10 lg:pt-6 lg:pr-8 lg:pb-16">
+          <section className={styles.postSection}>
             <div>
-              <h3 className="sr-only">Description</h3>
+              <h3>Category: </h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{post.text}</p>
+                <p className="text-base text-gray-900">{post.category}</p>
               </div>
             </div>
-            <div>
-              <h3 className="sr-only">Details</h3>
+            <div className={styles.postTextContainer}>
+              <div>
+                <h3>Description: </h3>
 
-              <div className="space-y-6">
-                <p className="text-base text-gray-900">{post.details}</p>
+                <div className="space-y-6">
+                  <p className="text-base text-gray-900">{post.text}</p>
+                </div>
+              </div>
+              <div>
+                <h3>Details: </h3>
+
+                <div className="space-y-6">
+                  <p className="text-base text-gray-900">{post.details}</p>
+                </div>
               </div>
             </div>
-
-            <div className="mt-10">
-              <div className="mt-10 flex items-center justify-start gap-x-6">
-                {isOwner ? (
+                      <div className="mt-10">
+            <div className="mt-10 flex items-center justify-start gap-x-6">
+              {isOwner ? (
+                <>
+                  <Link
+                    to={`/posts/${post.objectId}/edit`}
+                    className={
+                      "mt-6 flex items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                      styles.detailsBtn
+                    }
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    onClick={onDelHandler}
+                    className={
+                      "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                      styles.detailsBtn
+                    }
+                  >
+                    Delete
+                  </button>
+                </>
+              ) : (
+                username && (
                   <>
-                    <Link
-                      to={`/posts/${post.objectId}/edit`}
-                      className={
-                        "mt-6 flex items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                        styles.detailsBtn
-                      }
-                    >
-                      Edit
-                    </Link>
-                    <button
-                      onClick={onDelHandler}
-                      className={
-                        "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                        styles.detailsBtn
-                      }
-                    >
-                      Delete
-                    </button>
+                    {isLiked ? (
+                      <button
+                        disabled={pendingLike}
+                        onClick={dislikeHandler}
+                        className={
+                          "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                          styles.detailsBtn
+                        }
+                      >
+                        Dislike
+                      </button>
+                    ) : (
+                      <button
+                        disabled={pendingLike}
+                        onClick={likeHandler}
+                        className={
+                          "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
+                          styles.detailsBtn
+                        }
+                      >
+                        Like
+                      </button>
+                    )}
                   </>
-                ) : (
-                  username && (
-                    <>
-                      {isLiked ? (
-                        <button
-                          disabled={pendingLike}
-                          onClick={dislikeHandler}
-                          className={
-                            "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                            styles.detailsBtn
-                          }
-                        >
-                          Dislike
-                        </button>
-                      ) : (
-                        <button
-                          disabled={pendingLike}
-                          onClick={likeHandler}
-                          className={
-                            "mt-6 flex  items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                            styles.detailsBtn
-                          }
-                        >
-                          Like
-                        </button>
-                      )}
-                    </>
-                  )
-                )}
-              </div>
+                )
+              )}
             </div>
           </div>
+          </section>
+
+
         </div>
 
-        <div className="bg-white py-24 sm:py-32">
+        <div className={"bg-white py-24 sm:py-32 "+styles.postSection}>
           <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
             {username && (
               <div className="max-w-xl">
