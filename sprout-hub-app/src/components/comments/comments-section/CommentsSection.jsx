@@ -1,3 +1,5 @@
+import { capitalize } from "../../../utils/capitalize";
+
 export default function CommentsSection({ commentsData }) {
   return (
     <ul
@@ -25,7 +27,7 @@ export default function CommentsSection({ commentsData }) {
             />
             <div>
               <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
-                {comment.author?.username}
+                {capitalize(comment.author?.username)}
               </h3>
               <p className="text-sm/6 font-semibold text-indigo-600">
                 {comment.content}
