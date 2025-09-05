@@ -20,12 +20,9 @@ export const useComments = (postId) => {
 
   const { sessionToken } = useAuth();
   useEffect(() => {
-    const searchParams = new URLSearchParams({
-      // where: `postId="${postId}"`,
-      // load: "author=ownerId:users",
-    });
+    const searchParams = `where={"postId":{"__type":"Pointer","className":"posts","objectId":"${postId}"}}`
     request
-      .get(`${baseUrl}?${searchParams.toString()}`)
+      .get(`${baseUrl}?${searchParams}`)
       .then((result) => dispatch({ type: "GET_ALL", payload: result }));
   }, [sessionToken, postId]);
   return {
