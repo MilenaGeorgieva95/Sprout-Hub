@@ -46,11 +46,8 @@ export const usePost = (postId) => {
   const [pending, setPending] = useState(false);
   useEffect(() => {
     setPending(true);
-    const searchParams = new URLSearchParams({
-      // load: "author=ownerId:users",
-    });
     request
-      .get(`${baseUrl}/${postId}?${searchParams.toString()}`)
+      .get(`${baseUrl}/${postId}`)
       .then((data) => {
         setPending(false);
         setPost(data);
@@ -76,14 +73,8 @@ export const useLatestPosts = (postId) => {
   const [latestPosts, setPosts] = useState([]);
 
   useEffect(() => {
-    const PAGE_SIZE = 3;
-    const searchParams = new URLSearchParams({
-      // sortBy: "_createdOn desc",
-      // pageSize: PAGE_SIZE,
-      // select: "objectId,imageUrl,title,category",
-    });
-
-    request.get(`${baseUrl}?${searchParams.toString()}`).then((postsData) => {
+    const searchParams = 'limit=3'
+    request.get(`${baseUrl}?${searchParams}`).then((postsData) => {
       const displayPosts = postsData?.filter((el) => el.objetId != postId);
       setPosts(displayPosts);
     });
@@ -96,9 +87,7 @@ export const useMyPosts = () => {
 
   const { objetId: objectId } = useAuth();
   useEffect(() => {
-    const searchParams = new URLSearchParams({
-      where: `ownerId="${objectId}"`,
-    });
+    const searchParams =`where={ownerId="${objectId}"`
     request.get(`${baseUrl}?${searchParams.toString()}`).then(setPosts);
   }, [objectId]);
   return {

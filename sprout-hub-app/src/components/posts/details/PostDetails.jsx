@@ -144,7 +144,6 @@ export default function PostDetails() {
                 </div>
                 <p className="text-sm font-medium text-gray-900">
                   Post written by:{" "}
-                  <span aria-hidden="true" className="absolute inset-0" />
                   {capitalize(post.author?.username)}
                 </p>
               </div>
