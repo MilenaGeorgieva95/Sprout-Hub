@@ -18,7 +18,7 @@
 }
 
 .section {
-  background-color: rgb(250, 239, 239, 0.5);
+  background-color: rgba(250, 239, 239, 0.695);
 
   border-radius: 18px;
 }
@@ -41,4 +41,10 @@
   padding: 8px 20px;
   margin-bottom: 0.9em;
   font-size: large;
+}
+
+@media (max-width: 800px) {
+  .offersBar {
+    display: none;
+  }
 }
