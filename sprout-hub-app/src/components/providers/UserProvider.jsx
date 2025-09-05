@@ -3,7 +3,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 
 
 export default function UserProvider({ children }) {
-  const [authData, setLocalStorageUser] = useLocalStorage();
+  const [authData, setLocalStorageUser] = useLocalStorage("auth", {});
 
   const userLoginHandler = (user) => {
     setLocalStorageUser(user);

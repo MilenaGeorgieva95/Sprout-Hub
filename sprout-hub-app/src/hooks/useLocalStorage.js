@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-export default function useLocalStorage() {
+export default function useLocalStorage(key = "auth", initialValue = {}) {
   const [authData, setAuthData] = useState(() => {
     const authJson = localStorage.getItem('auth');
     if (!authJson) {
      return {};
     }
-    const authData = JSON.parse(authJson | '');
+    const authData = JSON.parse(authJson || '');
     return authData;
   });
 

@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useRegister } from "../../../api/authApi";
-import { useUserContext } from "../../../contexts/UserContext";
 import ErrorModal from "../../common/error-modal/ErrorModal";
+import useAuth from "../../../hooks/useAuth";
 
 const avatars = [
   {
@@ -21,7 +21,7 @@ const avatars = [
 
 export default function Register() {
   const { register } = useRegister();
-  const { userLoginHandler } = useUserContext();
+  const { userLoginHandler } = useAuth();
   const navigate = useNavigate();
   const [selectedAvatar, setSelectedAvatar] = useState("avatar1");
   const [customUrl, setCustomUrl] = useState("");

@@ -5,7 +5,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import styles from "./Header.module.css";
-import { UserContext, useUserContext } from "../../contexts/UserContext";
+import useAuth from "../../hooks/useAuth";
 
 const guestNav = [
   {
@@ -34,13 +34,12 @@ const userNav = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { email } = useUserContext();
+  const { email } = useAuth();
   useEffect(() => {
     setMobileMenuOpen(false);
   }, []);
 
   const isUser = !!email;
-
   return (
     <header className=" inset-x-0 top-0 z-50">
       <nav
@@ -138,7 +137,7 @@ export default function Header() {
                 </Link>
               ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-center">
           {isUser ? (
             <Link
               to="/logout"
