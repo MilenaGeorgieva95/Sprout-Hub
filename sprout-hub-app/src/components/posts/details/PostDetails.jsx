@@ -11,6 +11,7 @@ import { useOptimistic } from "react";
 import { v4 as uuid } from "uuid";
 import CommentsSection from "../../comments/comments-section/CommentsSection";
 import { useCreateLike, useDeleteLike, useLikes } from "../../../api/likesApi";
+import { capitalize } from "../../../utils/capitalize";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -24,7 +25,7 @@ export default function PostDetails() {
 
   const { del } = useDeletePost();
   const navigate = useNavigate();
-  const { objectId:userId, username, avatarUrl } = useAuth();
+  const { objectId: userId, username, avatarUrl } = useAuth();
 
   const {
     likes,
@@ -73,7 +74,11 @@ export default function PostDetails() {
       newOptimisticComment,
     ]);
     const result = await create(postId, content);
-    addNewComment({ ...result,content, author: { username, userId, avatarUrl } });
+    addNewComment({
+      ...result,
+      content,
+      author: { username, userId, avatarUrl },
+    });
   };
 
   const likeHandler = () => {
@@ -98,8 +103,8 @@ export default function PostDetails() {
           <LatestPosts postId={postId} />
         </div>
 
-        <div className="mx-auto max-w-2xl px-4 pt-10  sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 ">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+        <div className="mx-auto px-4 pt-10  sm:px-6 lg:px-8 lg:pt-16 ">
+          <div className="">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {post.title}
             </h1>
@@ -132,43 +137,25 @@ export default function PostDetails() {
             <p className="mt-3 text-2xl tracking-tight text-gray-900">
               Category: {post.category}
             </p>
-          </div>
-
-          <div className=" lg:row-span-3 lg:mt-0 group relative mx-3">
-            <h2 className="sr-only">Author information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">Author</p>
-
-            <form className="mt-10">
-              <Link to={`/author/${post.author?.objectId}`}>
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900">
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    {post.author?.username}
-                  </h3>
-
-                  <fieldset aria-label="Author Avatar Image" className="my-3">
+                        <section className="mt-10">
+                <div className="author-card">
+                  <div className="avatar-md">
                     <img
                       alt="author avatar image"
                       src={post.author?.avatarUrl}
-                      className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                      className="group-hover:opacity-75"
                     />
-                  </fieldset>
+                  </div>
+                  <p className="text-sm font-medium text-gray-900">
+                    Post written by:{" "}
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    {capitalize(post.author?.username)}
+                  </p>
                 </div>
-              </Link>
-
-              <Link
-                to={`/author/${post.author?.objectId}`}
-                className={
-                  "mt-10 flex w-full items-center justify-center rounded-md px-8 py-3 text-base group-hover:opacity-75  btn btn-outline-primary " +
-                  styles.detailsBtn
-                }
-              >
-                View Author's Posts
-              </Link>
-            </form>
+            </section>
           </div>
 
-          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
+          <div className="py-10 lg:pt-6 lg:pr-8 lg:pb-16">
             <div>
               <h3 className="sr-only">Description</h3>
 
@@ -243,15 +230,18 @@ export default function PostDetails() {
 
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-            <CommentsSection commentsData={optimisticComments} />
             {username && (
               <div className="max-w-xl">
                 <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
                   Add New Comment
                 </h2>
-                <AddComment onCreate={commentsCreateHandler} />
+                <AddComment
+                  onCreate={commentsCreateHandler}
+                  username={capitalize(username)}
+                />
               </div>
             )}
+            <CommentsSection commentsData={optimisticComments} />
           </div>
         </div>
       </div>

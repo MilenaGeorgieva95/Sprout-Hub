@@ -1,4 +1,4 @@
-export default function AddComment({ onCreate }) {
+export default function AddComment({ onCreate, username }) {
   return (
     <div>
       <form action={onCreate}>
@@ -10,7 +10,7 @@ export default function AddComment({ onCreate }) {
                   htmlFor="street-address"
                   className="block text-sm/6 font-medium text-gray-900"
                 >
-                  Comment as George
+                  Comment as {username}
                 </label>
                 <div className="mt-2">
                   <textarea
